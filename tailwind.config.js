@@ -3,7 +3,21 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      fontFamily: ["inter", "sans-serif"],
+      fontFamily: ["Poppins", "sans-serif"],
+      keyframes: {
+        scale: {
+          '0%, 100%': {
+            transform: 'scale(1)',
+          },
+          '50%': {
+            transform: 'scale(2)',
+          },
+
+        },
+      },
+      animation: {
+        scale: "scale 2s infinite",
+      },
     },
   },
   plugins: [],
