@@ -12,7 +12,11 @@ const Landing = () => {
     // Landing page
     <>
       <section className="relative m-auto h-screen w-screen overflow-hidden">
-        <img src={HeadshotLanding} className="relative z-10 ml-auto" alt="" />
+        <img
+          src={HeadshotLanding}
+          className="relative -top-[4.2rem] z-10 h-[15rem] mob:left-14 mob:m-auto tab:right-0 tab:ml-auto tab:h-[20rem] des:h-[25rem]"
+          alt=""
+        />
 
         {/* bg circles */}
         <img
