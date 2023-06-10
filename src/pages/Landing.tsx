@@ -165,7 +165,7 @@ const Landing = () => {
             </div>
 
             <article
-              className="relative h-[8rem] cursor-pointer overflow-hidden rounded-round border-none bg-[#69533E] duration-500 hover:scale-95 group tab:h-[11rem] des:h-[24.5rem]  des:flex-1"
+              className="relative h-[8rem] cursor-pointer overflow-hidden rounded-round border-none bg-[#69533E] duration-500 hover:scale-95 group tab:h-[13rem] des:h-[24.5rem]  des:flex-1"
               title="About me"
             >
               <div className="relative z-10 flex h-full flex-col justify-between px-9 py-5 des:px-12 des:py-9">
@@ -178,7 +178,7 @@ const Landing = () => {
                   </div>
                 </div>
                 <div className=" animate-marqeeAnimation whitespace-nowrap">
-                  <h3 className="group-hover:opacity-0 duration-300 hidden text-6xl font-medium text-white-text des:block">
+                  <h3 className="group-hover:opacity-0 duration-300 hidden des:text-6xl tab:text-4xl font-medium text-white-text tab:block">
                     Visit and browse through my projects
                   </h3>
                 </div>
