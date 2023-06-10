@@ -24,14 +24,33 @@ import {
 } from "@heroicons/react/24/outline";
 
 import { Link } from "react-router-dom";
-
-// type Props = {}
+import Particles from "react-particles";
+import type { Container, Engine } from "tsparticles-engine";
+import { loadFull } from "tsparticles";
+import { useCallback } from "react";
 
 const Landing = () => {
+  const particlesInit = useCallback(async (engine: Engine) => {
+    console.log(engine);
+
+    // you can initialize the tsParticles instance (engine) here, adding custom shapes or presets
+    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+    // starting from v2 you can add only the features you need reducing the bundle size
+    await loadFull(engine);
+  }, []);
+  const particlesLoaded = useCallback(
+    async (container: Container | undefined) => {
+      await console.log(container);
+    },
+    []
+  );
+
   return (
     // Landing page
     <>
-      <section>
+       
+
+      <section  id="intro" className="relative z-[2]">
         <div className="flex flex-col tab:flex-row-reverse">
           <img
             src={HeadshotLanding}
@@ -48,7 +67,7 @@ const Landing = () => {
                   rel="noopener noreferrer"
                 >
                   <img
-                    className="cursor-pointer transition-all  duration-500 hover:scale-125"
+                    className="cursor-pointer transition-all duration-500 hover:scale-125 des:w-8"
                     src={LinkedInIcon}
                     title="LinkedIn - Nima Bargestan"
                     alt="LinkedIn Icon"
@@ -60,7 +79,7 @@ const Landing = () => {
                   rel="noopener noreferrer"
                 >
                   <img
-                    className="cursor-pointer transition-all duration-500 hover:scale-125"
+                    className="cursor-pointer transition-all duration-500 hover:scale-125 des:w-8"
                     src={GitHubIcon}
                     title="Github - Nima Bargestan"
                     alt="Github Icon"
@@ -72,7 +91,7 @@ const Landing = () => {
                   rel="noopener noreferrer"
                 >
                   <img
-                    className="cursor-pointer transition-all duration-500 hover:scale-125"
+                    className="cursor-pointer transition-all duration-500 hover:scale-125 des:w-8"
                     src={TwitterIcon}
                     title="Twitter - Nima Bargestan"
                     alt="Twitter Icon"
@@ -85,77 +104,79 @@ const Landing = () => {
                   rel="noopener noreferrer"
                 >
                   <img
-                    className="cursor-pointer transition-all duration-500 hover:scale-125"
+                    className="cursor-pointer transition-all duration-500 hover:scale-125 des:w-8"
                     src={MailIcon}
                     title="Mail - Nima Bargestan"
                     alt="Mail Icon"
                   />
                 </Link>
               </div>
-              <h2 className="font-outline-1 text-center text-2xl font-bold text-transparent tab:text-start tab:text-3xl">
+              <h2 className="font-outline-1 text-center text-2xl font-bold text-transparent tab:text-start tab:text-3xl des:text-5xl">
                 Hi there, I'm
               </h2>
             </div>
 
-            <h1 className="w-full text-center text-2xl font-bold text-Dark-brown tab:text-start tab:text-5xl">
+            <h1 className="w-full text-center text-2xl font-bold text-Dark-brown tab:text-start tab:text-5xl des:text-6xl">
               Nima Bargestan
             </h1>
-            <h2 className="font-outline-1 w-full text-center text-2xl font-bold text-transparent tab:text-start tab:text-3xl">
+            <h2 className="font-outline-1 w-full text-center text-2xl font-bold text-transparent tab:text-start tab:text-3xl des:text-5xl">
               Full Stack Developer
             </h2>
           </div>
         </div>
 
         {/* CTAs */}
-        <section id="intro">
-          <div className="mt-10 tab:mt-16 flex flex-col gap-2 px-4">
-            <div className="flex w-full flex-col gap-2 tab:flex-row">
+        <section>
+          <div className="mt-10 flex w-full flex-col gap-2 px-4 tab:mt-16 des:mt-24 des:flex-row-reverse">
+            <div className="flex flex-1 flex-col gap-2">
+              <div className="flex w-full flex-col gap-2 tab:flex-row">
+                <article
+                  className="h-[8rem] cursor-pointer rounded-round border-none bg-[#D58F6B] duration-500 hover:scale-95 tab:h-[11rem] tab:flex-1  des:h-[12rem]"
+                  title="Stack"
+                >
+                  <div className="flex h-full items-end justify-between px-9 pb-5 des:px-10 des:py-8">
+                    <h3 className=" align-bottom text-lg text-white-text">
+                      Stack
+                    </h3>
+                    <CommandLineIcon className="mb-1 h-5 text-white-text tab:h-6" />
+                  </div>
+                </article>
+                <article
+                  className="h-[8rem] cursor-pointer rounded-round border-none bg-[#1B1716] duration-500 hover:scale-95  tab:h-[11rem] tab:flex-1  des:h-[12rem]"
+                  title="About me"
+                >
+                  <div className="flex h-full items-end justify-between px-9 pb-5 des:px-10 des:py-8">
+                    <h3 className=" align-bottom text-lg text-white-text">
+                      About me
+                    </h3>
+                    <UserCircleIcon className="mb-1 h-5 text-white-text tab:h-6" />
+                  </div>
+                </article>
+              </div>
               <article
-                className="h-[8rem] cursor-pointer rounded-round border-none bg-[#D58F6B] duration-500 hover:scale-95 tab:h-[11rem] tab:flex-1  des:h-[12rem]"
-                title="Stack"
-              >
-                <div className="flex h-full items-end justify-between px-9 pb-5">
-                  <h3 className=" align-bottom text-lg text-white-text">
-                    Stack
-                  </h3>
-                  <CommandLineIcon className="mb-1 h-5 text-white-text tab:h-6" />
-                </div>
-              </article>
-              <article
-                className="h-[8rem] cursor-pointer rounded-round border-none bg-[#1B1716] duration-500 hover:scale-95  tab:h-[11rem] tab:flex-1  des:h-[12rem]"
+                className="h-[8rem] cursor-pointer rounded-round border-none bg-[#3C2A20] duration-500 hover:scale-95  tab:h-[11rem] des:h-[12rem]"
                 title="About me"
               >
-                <div className="flex h-full items-end justify-between px-9 pb-5">
+                <div className="flex h-full items-end justify-between px-9 pb-5 des:px-10 des:py-8">
                   <h3 className=" align-bottom text-lg text-white-text">
-                    About me
+                    Contact me
                   </h3>
-                  <UserCircleIcon className="mb-1 h-5 text-white-text tab:h-6" />
+                  <PhoneIcon className="mb-1 h-5 text-white-text tab:h-6" />
                 </div>
               </article>
             </div>
-            <article
-              className="h-[8rem] cursor-pointer rounded-round border-none bg-[#3C2A20] duration-500 hover:scale-95  tab:h-[11rem] des:h-[12rem]"
-              title="About me"
-            >
-              <div className="flex h-full items-end justify-between px-9 pb-5">
-                <h3 className=" align-bottom text-lg text-white-text">
-                  Contact me
-                </h3>
-                <PhoneIcon className="mb-1 h-5 text-white-text tab:h-6" />
-              </div>
-            </article>
 
             <article
-              className="relative h-[8rem] cursor-pointer overflow-hidden rounded-round border-none bg-[#69533E] duration-500 hover:scale-95  tab:h-[11rem] des:h-[12rem]"
+              className="relative h-[8rem] cursor-pointer overflow-hidden rounded-round border-none bg-[#69533E] duration-500 hover:scale-95 tab:h-[11rem] des:h-[24.5rem]  des:flex-1"
               title="About me"
             >
-              <div className="relative z-10 flex h-full flex-col justify-between px-9 py-5">
+              <div className="relative z-10 flex h-full flex-col justify-between px-9 py-5 des:px-12 des:py-9">
                 <div className="flex w-full items-start justify-between">
                   <h3 className=" align-bottom text-base text-white-text">
                     Work
                   </h3>
-                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-Light-brown tab:h-12">
-                    <PaperClipIcon className=" w-7 p-2 text-white-text tab:w-8 " />
+                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-Light-brown tab:h-12 tab:w-12 des:h-14 des:w-14 ">
+                    <PaperClipIcon className=" w-7 p-2 text-white-text tab:w-8 des:w-9" />
                   </div>
                 </div>
 
@@ -168,14 +189,88 @@ const Landing = () => {
               </div>
               <img
                 src={shapes}
-                className="absolute inset-0 z-[1] m-auto h-24 animate-rotate"
+                className="absolute inset-0 z-[1] m-auto h-20 animate-rotate tab:h-24 des:h-28"
                 alt="rotating shapes"
               />
             </article>
           </div>
         </section>
         {/* bg circles */}
+      
       </section>
+      <Particles
+      className="absolute z-[0]"
+            id="tsparticles"
+            init={particlesInit}
+            loaded={particlesLoaded}
+            options={{
+               
+                fpsLimit: 60,
+                interactivity: {
+                    events: {
+                        onClick: {
+                            enable: true,
+                            mode: "push",
+                        },
+                        onHover: {
+                            enable: true,
+                            mode: "repulse",
+                        },
+                        resize: true,
+                    },
+                    modes: {
+                        push: {
+                            quantity: 4,
+                        },
+                        repulse: {
+                            distance: 150,
+                            duration: 0.5,
+                        },
+                    },
+                },
+                particles: {
+                    color: {
+                        value: "#8C7A69",
+                    },
+                    links: {
+                        color: "#69533E",
+                        distance: 150,
+                        enable: true,
+                        opacity: 0.4,
+                        width: 1,
+                    },
+                    collisions: {
+                        enable: true,
+                    },
+                    move: {
+                        direction: "none",
+                        enable: true,
+                        outModes: {
+                            default: "bounce",
+                        },
+                        random: false,
+                        speed: 2,
+                        straight: false,
+                    },
+                    number: {
+                        density: {
+                            enable: true,
+                            area: 800,
+                        },
+                        value: 90,
+                    },
+                    opacity: {
+                        value: 0.3,
+                    },
+                    shape: {
+                        type: "circle",
+                    },
+                    size: {
+                        value: { min: 1, max: 5 },
+                    },
+                },
+            }}
+        />
     </>
   );
 };
