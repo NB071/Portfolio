@@ -153,7 +153,7 @@ const Landing = () => {
               </div>
               <article
                 className="h-[8rem] cursor-pointer rounded-round border-none bg-[#3C2A20] duration-500 hover:scale-95  tab:h-[11rem] des:h-[12rem]"
-                title="About me"
+                title="Contact me"
               >
                 <div className="flex h-full items-end justify-between px-9 pb-5 des:px-10 des:py-8">
                   <h3 className=" align-bottom text-lg text-white-text">
