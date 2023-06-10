@@ -20,14 +20,14 @@ export default {
       },
       fontFamily: ["Poppins", "sans-serif"],
       keyframes: {
-        scale: {
-          '0%, 100%': {
-            transform: 'scale(1)',
-          },
-          '50%': {
-            transform: 'scale(2)',
-          },
+      marqeeAnimation: {
+        "0%, 100%": {
+              transform: "translateX(115%)"
         },
+        "50%": {
+              transform: "translateX(-150%)"
+        }
+      },
         rotate: {
           "0%": {
             transform: "rotate(0);"
@@ -36,9 +36,10 @@ export default {
             transform: "rotate(360deg)"
           }
         }
+
       },
       animation: {
-        scale: "scale 2s infinite",
+        marqeeAnimation: "marqeeAnimation 15s linear infinite",
         rotate: "rotate 4s linear infinite"
       },
     },
