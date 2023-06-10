@@ -3,12 +3,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  .font-outline-1 {
+    -webkit-text-stroke: 1px #69533E;
+  }
+  .font-outline-2 {
+    -webkit-text-stroke: 2px #69533E;
+  }
+}
+
 html,
 body,
 #root {
+  font-family: "Poppins", sans-serif;
   height: 100%;
   width: 100%;
-  font-family: "Poppins", sans-serif;
 }
 #root {
   background-color: #edebdf;
