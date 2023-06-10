@@ -1,6 +1,6 @@
 import HeadshotLanding from "@/assets/Headshot-landing.svg";
 
-// svgs
+// Svgs
 import shapes from "@/assets/WorksBgShapes.svg";
 
 // Social icon svgs
@@ -9,16 +9,22 @@ import GitHubIcon from "@/assets/socialIcons/Github.svg";
 import TwitterIcon from "@/assets/socialIcons/Twitter.svg";
 import MailIcon from "@/assets/socialIcons/Mail.svg";
 
-//hero icons
+// Projects Logo svgs
+import DigiBookshelfLogo from "@/assets/projectsLogo/DigiBookshelfLogo.svg";
+import LyristLogo from "@/assets/projectsLogo/LyristLogo.svg";
+import DailyQuotesLogo from "@/assets/projectsLogo/DailyQuotesLogo.svg";
+
+// Hero icons
 import {
   CommandLineIcon,
   UserCircleIcon,
   PhoneIcon,
   ArrowSmallDownIcon,
   PaperClipIcon,
+  ArrowUpRightIcon,
 } from "@heroicons/react/24/outline";
 
-// libs
+// Libs
 import { Link } from "react-router-dom";
 import Particles from "react-particles";
 import type { Container, Engine } from "tsparticles-engine";
@@ -39,7 +45,6 @@ const Landing = () => {
   );
 
   return (
-   
     <>
       <section id="intro" className="relative z-[2]">
         <div className="flex flex-col tab:flex-row-reverse">
@@ -117,7 +122,7 @@ const Landing = () => {
         </div>
 
         {/* CTAs */}
-        <section className="max-w-[1920px] m-auto">
+        <section className="m-auto max-w-[1920px]">
           <div className="mt-10 flex w-full flex-col gap-2 px-4 tab:mt-16 des:mt-24 des:flex-row-reverse">
             <div className="flex flex-1 flex-col gap-2">
               <div className="flex w-full flex-col gap-2 tab:flex-row">
@@ -157,41 +162,110 @@ const Landing = () => {
               </article>
             </div>
 
-            <article
-              className="relative h-[8rem] cursor-pointer overflow-hidden rounded-round border-none bg-[#69533E] duration-500 hover:scale-95 group tab:h-[13rem] des:h-[24.5rem]  des:flex-1"
-              title="About me"
-            >
-              <div className="relative z-10 flex h-full flex-col justify-between px-9 py-5 des:px-12 des:py-9">
-                <div className="flex w-full items-center justify-between">
-                  <h3 className="align-bottom text-base text-white-text des:text-3xl">
-                    Work
-                  </h3>
-                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-Light-brown tab:h-12 tab:w-12 des:h-14 des:w-14 ">
-                    <PaperClipIcon className=" w-7 p-2 text-white-text tab:w-8 des:w-9" />
+            <Link to="#work">
+              <article
+                className="group relative h-[8rem] cursor-pointer overflow-hidden rounded-round border-none bg-[#69533E] duration-500 hover:scale-95 tab:h-[13rem] des:h-[24.5rem]  des:flex-1"
+                title="About me"
+              >
+                <div className="relative z-10 flex h-full flex-col justify-between px-9 py-5 des:px-12 des:py-9">
+                  <div className="flex w-full items-center justify-between">
+                    <h3 className="align-bottom text-base text-white-text des:text-3xl">
+                      Work
+                    </h3>
+                    <div className="flex h-9 w-9 items-center justify-center rounded-full bg-Light-brown tab:h-12 tab:w-12 des:h-14 des:w-14 ">
+                      <PaperClipIcon className=" w-7 p-2 text-white-text tab:w-8 des:w-9" />
+                    </div>
+                  </div>
+                  <div className=" animate-marqeeAnimation whitespace-nowrap">
+                    <h3 className="hidden font-medium text-white-text duration-300 group-hover:opacity-0 tab:block tab:text-4xl des:text-6xl">
+                      Visit and browse through my projects
+                    </h3>
+                  </div>
+                  <div className="flex w-full items-end justify-between">
+                    <h3 className=" align-bottom text-lg text-white-text">
+                      See my works
+                    </h3>
+                    <ArrowSmallDownIcon className="h-5 animate-bounce pr-[.35rem] text-white-text tab:h-6 des:h-8" />
                   </div>
                 </div>
-                <div className=" animate-marqeeAnimation whitespace-nowrap">
-                  <h3 className="group-hover:opacity-0 duration-300 hidden des:text-6xl tab:text-4xl font-medium text-white-text tab:block">
-                    Visit and browse through my projects
-                  </h3>
-                </div>
-                <div className="flex w-full items-end justify-between">
-                  <h3 className=" align-bottom text-lg text-white-text">
-                    See my works
-                  </h3>
-                  <ArrowSmallDownIcon className="h-5 animate-bounce pr-[.35rem] text-white-text tab:h-6 des:h-8" />
-                </div>
-              </div>
-              <img
-                src={shapes}
-                className="absolute inset-0 z-[1] m-auto h-20 animate-rotate tab:h-24 des:h-28 group-hover:contrast-200	duration-300 "
-                alt="rotating shapes"
-              />
-            </article>
+                <img
+                  src={shapes}
+                  className="absolute inset-0 z-[1] m-auto h-20 animate-rotate duration-300 group-hover:contrast-200 tab:h-24	des:h-28 "
+                  alt="rotating shapes"
+                />
+              </article>
+            </Link>
           </div>
         </section>
       </section>
-      
+
+      {/* work section */}
+      <section
+        className="relative z-[2] m-auto mt-32 max-w-[1920px] px-4"
+        id="work"
+      >
+        <div className="flex items-center">
+          <div className=" w-14 rounded-l-round rounded-r-round border-t-2 border-Light-brown tab:w-32"></div>
+          <h2 className="mx-4  text-2xl font-bold text-Dark-brown tab:text-4xl">
+            Work
+          </h2>
+          <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-Light-brown"></div>
+        </div>
+        <section className="mt-12 flex flex-col gap-2">
+          <Link to="/projects/Digibookshelf">
+            <article className="group relative flex h-[17.125rem] w-full cursor-pointer flex-col justify-between rounded-round bg-[#6936F5] p-10 duration-500 hover:scale-95">
+              <div className="flex w-full justify-between font-medium text-white">
+                <p>01.</p>
+                <p>Featured</p>
+              </div>
+              <div className="flex w-full justify-between font-medium text-white">
+                <p>Capstone Project</p>
+                <ArrowUpRightIcon className="h-5 w-5 group-hover:animate-bounce" />
+              </div>
+              <img
+                src={DigiBookshelfLogo}
+                className="absolute inset-0 m-auto duration-500 group-hover:scale-125"
+                alt="Digi Bookshelf logo"
+              />
+            </article>
+          </Link>
+          <Link to="/projects/Lyrist">
+            <article className="group relative flex h-[17.125rem] w-full cursor-pointer flex-col justify-between rounded-round bg-[#5BAE95] p-10 duration-500 hover:scale-95">
+              <div className="flex w-full justify-between font-medium text-[#186E54]">
+                <p>02.</p>
+                <p>Showcase</p>
+              </div>
+              <div className="flex w-full justify-between font-medium text-[#186E54]">
+                <p>Project in Progress</p>
+                <ArrowUpRightIcon className="h-5 w-5 group-hover:animate-bounce" />
+              </div>
+              <img
+                src={LyristLogo}
+                className="absolute inset-0 m-auto duration-500 group-hover:scale-125"
+                alt="Digi Bookshelf logo"
+              />
+            </article>
+          </Link>
+          <Link to="/projects/DailyQuotes">
+            <article className="group relative flex h-[17.125rem] w-full cursor-pointer flex-col justify-between rounded-round bg-[#FF59EE] p-10 duration-500 hover:scale-95">
+              <div className="flex w-full justify-between font-medium text-[#99258D]">
+                <p>03.</p>
+                <p>Showcase</p>
+              </div>
+              <div className="flex w-full justify-between font-medium text-[#99258D]">
+                <p>Project in Queue</p>
+                <ArrowUpRightIcon className="h-5 w-5 group-hover:animate-bounce" />
+              </div>
+              <img
+                src={DailyQuotesLogo}
+                className="absolute inset-0 m-auto duration-500 group-hover:scale-125"
+                alt="Digi Bookshelf logo"
+              />
+            </article>
+          </Link>
+        </section>
+      </section>
+
       <Particles
         className="absolute z-[0]"
         id="tsparticles"
@@ -201,10 +275,6 @@ const Landing = () => {
           fpsLimit: 60,
           interactivity: {
             events: {
-              onClick: {
-                enable: true,
-                mode: "push",
-              },
               onHover: {
                 enable: true,
                 mode: "repulse",
