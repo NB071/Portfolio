@@ -117,7 +117,7 @@ const Landing = () => {
         </div>
 
         {/* CTAs */}
-        <section>
+        <section className="max-w-[1920px] m-auto">
           <div className="mt-10 flex w-full flex-col gap-2 px-4 tab:mt-16 des:mt-24 des:flex-row-reverse">
             <div className="flex flex-1 flex-col gap-2">
               <div className="flex w-full flex-col gap-2 tab:flex-row">
