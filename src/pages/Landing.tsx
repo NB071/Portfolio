@@ -1,10 +1,5 @@
 import HeadshotLanding from "@/assets/Headshot-landing.svg";
 
-// Blur Circle svgs
-// import BlurCircleLightBrown from "@/assets/bgBlurCircles/bgBlurCircleLightBrown.svg";
-// import BlurCircleDarkBrown from "@/assets/bgBlurCircles/bgBlurCircleDarkBrown.svg";
-// import BlurCircleDarkGray from "@/assets/bgBlurCircles/bgBlurCircleDarkGray.svg";
-
 // svgs
 import shapes from "@/assets/WorksBgShapes.svg";
 
@@ -23,6 +18,7 @@ import {
   PaperClipIcon,
 } from "@heroicons/react/24/outline";
 
+// libs
 import { Link } from "react-router-dom";
 import Particles from "react-particles";
 import type { Container, Engine } from "tsparticles-engine";
@@ -33,9 +29,6 @@ const Landing = () => {
   const particlesInit = useCallback(async (engine: Engine) => {
     console.log(engine);
 
-    // you can initialize the tsParticles instance (engine) here, adding custom shapes or presets
-    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-    // starting from v2 you can add only the features you need reducing the bundle size
     await loadFull(engine);
   }, []);
   const particlesLoaded = useCallback(
@@ -46,7 +39,7 @@ const Landing = () => {
   );
 
   return (
-    // Landing page
+   
     <>
       <section id="intro" className="relative z-[2]">
         <div className="flex flex-col tab:flex-row-reverse">
@@ -197,8 +190,8 @@ const Landing = () => {
             </article>
           </div>
         </section>
-        {/* bg circles */}
       </section>
+      
       <Particles
         className="absolute z-[0]"
         id="tsparticles"
