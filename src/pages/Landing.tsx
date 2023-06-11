@@ -72,7 +72,7 @@ import {
   ExclamationCircleIcon,
   ArrowPathIcon,
   CheckBadgeIcon,
-  ShieldExclamationIcon
+  ShieldExclamationIcon,
 } from "@heroicons/react/24/outline";
 
 // Libs
@@ -1216,50 +1216,62 @@ const Landing = () => {
           </div>
           <section className="mt-20 flex flex-col gap-5  px-4 tab:px-24">
             <div className="flex flex-col gap-10 text-center text-2xl font-medium text-Dark-brown tab:flex-row tab:items-center tab:justify-between tab:text-left">
-              <p className="tab:w-[50%]">
+              <p className="flex-1">
                 Do you have a question, an idea, or a project you need help
                 with? Contact me!
               </p>
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-1 flex-col gap-2">
                 <div className="flex flex-wrap justify-center gap-2">
-                  <Link
-                    to="matilto:nimam700@gmail.com"
-                    className="rounded-round border border-Dark-brown px-7 py-2 text-base underline"
-                  >
-                    Nimam700@gmail.com
+                  <Link to="matilto:nimam700@gmail.com">
+                    <div className="flex items-center gap-4 rounded-round border border-Dark-brown px-7 py-2 text-sm text-Dark-brown underline ">
+                      <img src={MailIcon} alt="Mail icon" className="w-6" />
+                      Nimam700@gmail.com
+                    </div>
                   </Link>
-                  <Link
-                    to="tel:+16472916922"
-                    className="rounded-round border border-Dark-brown px-7 py-2 text-base underline"
-                  >
-                    +1 (647) 291-6922
+                  <Link to="tel:+16472916922">
+                    <div className="flex items-center gap-4 rounded-round border border-Dark-brown px-7 py-2 text-sm text-Dark-brown underline">
+                      <PhoneIcon className="w-6" />
+                      +1 (647) 291-6922
+                    </div>
                   </Link>
                 </div>
                 <div className="flex flex-wrap justify-center gap-2">
                   <Link
                     to="https://www.linkedin.com/in/nima-bargestan/"
-                    className="rounded-round border border-Dark-brown px-7 py-2 text-base underline"
+                    className="group rounded-round border border-Dark-brown px-7 py-2 text-base underline"
                   >
-                    <img src={LinkedInIcon} alt="LinkedIn Icon" />
+                    <img
+                      src={LinkedInIcon}
+                      alt="LinkedIn Icon"
+                      className="duration-500 group-hover:scale-90"
+                    />
                   </Link>
                   <Link
                     to="https://github.com/NB071"
-                    className="rounded-round border border-Dark-brown px-7 py-2 text-base underline"
+                    className="group rounded-round border border-Dark-brown px-7 py-2 text-base underline"
                   >
-                    <img src={GitHubIcon} alt="Github Icon" />
+                    <img
+                      src={GitHubIcon}
+                      className="duration-500 group-hover:scale-90"
+                      alt="Github Icon"
+                    />
                   </Link>
                   <Link
                     to="https://twitter.com/nimdev071"
-                    className="rounded-round border border-Dark-brown px-7 py-2 text-base underline"
+                    className="group rounded-round border border-Dark-brown px-7 py-2 text-base underline"
                   >
-                    <img src={TwitterIcon} alt="Twitter Icon" />
+                    <img
+                      src={TwitterIcon}
+                      className="duration-500 group-hover:scale-90"
+                      alt="Twitter Icon"
+                    />
                   </Link>
                 </div>
               </div>
             </div>
             <FormikProvider value={formik}>
               <form onSubmit={formik.handleSubmit}>
-                <div className="mt-5 flex flex-col gap-10 tab:gap-14">
+                <div className="mt-5 flex flex-col gap-10 tab:gap-12">
                   <div className="flex flex-col gap-10 tab:flex-row tab:gap-2">
                     <div className="relative flex-1">
                       <label
@@ -1272,7 +1284,7 @@ const Landing = () => {
                         type="text"
                         name="name"
                         id="name"
-                        className={`w-full rounded-round border bg-white px-7 py-7 text-Dark-brown ${
+                        className={`w-full rounded-round border bg-white px-7 py-7 text-Dark-brown duration-500 hover:border-Light-brown focus:outline-Dark-brown ${
                           formik.touched.name && formik.errors.name
                             ? "border-red-600"
                             : ""
@@ -1301,7 +1313,7 @@ const Landing = () => {
                         type="text"
                         name="email"
                         id="email"
-                        className={`w-full rounded-round border bg-white px-7 py-7 text-Dark-brown ${
+                        className={`w-full rounded-round border bg-white px-7 py-7 text-Dark-brown duration-500 hover:border-Light-brown focus:outline-Dark-brown ${
                           formik.touched.email && formik.errors.email
                             ? "border-red-600"
                             : ""
@@ -1330,7 +1342,7 @@ const Landing = () => {
                         type="text"
                         id="subject"
                         name="subject"
-                        className={`w-full rounded-round border bg-white px-7 py-7 text-Dark-brown ${
+                        className={`w-full rounded-round border bg-white px-7 py-7 text-Dark-brown duration-500 hover:border-Light-brown focus:outline-Dark-brown ${
                           formik.touched.subject && formik.errors.subject
                             ? "border-red-600"
                             : ""
@@ -1359,7 +1371,7 @@ const Landing = () => {
                       </label>
                       <textarea
                         name="message"
-                        className={`h-56 w-full resize-none rounded-round border bg-white px-7 py-7 text-Dark-brown ${
+                        className={`h-56 w-full resize-none rounded-round border bg-white px-7 py-7 text-Dark-brown duration-500 hover:border-Light-brown focus:outline-Dark-brown ${
                           formik.touched.message && formik.errors.message
                             ? "border-red-600"
                             : ""
@@ -1395,16 +1407,23 @@ const Landing = () => {
                         )}
                       </button>
                     ) : sendformSuccess === true ? (
-                      <div className="bg-green-600 text-green-900 flex flex-col items-center justify-center gap-1 rounded-round px-20 py-5 duration-500  tab:mt-5">
-                        <CheckBadgeIcon className="w-8 animate-pulse"/>
+                      <div className="flex flex-col items-center justify-center gap-1 rounded-round bg-green-600 px-20 py-5 text-green-900 duration-500  tab:mt-5">
+                        <CheckBadgeIcon className="w-8 animate-pulse" />
                         <p className="font-bold">Success</p>
-                        <p className="w-40 text-center">Thank you! I received your message. I will reply as soon as possible!</p>
+                        <p className="w-40 text-center">
+                          Thank you! I received your message. I will reply as
+                          soon as possible!
+                        </p>
                       </div>
                     ) : (
-                      <div className="bg-red-600 text-red-900 flex flex-col items-center justify-center gap-1 rounded-round px-20 py-5 duration-500 tab:mt-5">
-                        <ShieldExclamationIcon className="w-8 animate-pulse"/>
-                        <p className="font-bold">Failed - Please try again later</p>
-                        <p className="w-40 text-center">If the issue persists, contact me directly. Thank you!</p>
+                      <div className="flex flex-col items-center justify-center gap-1 rounded-round bg-red-600 px-20 py-5 text-red-900 duration-500 tab:mt-5">
+                        <ShieldExclamationIcon className="w-8 animate-pulse" />
+                        <p className="font-bold">
+                          Failed - Please try again later
+                        </p>
+                        <p className="w-40 text-center">
+                          If the issue persists, contact me directly. Thank you!
+                        </p>
                       </div>
                     )}
                   </div>
