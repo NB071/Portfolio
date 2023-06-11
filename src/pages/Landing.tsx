@@ -1126,7 +1126,7 @@ const Landing = () => {
                     <img
                       src={AnisaLogo}
                       className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
-                      alt="Security+ logo"
+                      alt="Anisa logo"
                     />
                     <div className="flex flex-col items-center gap-5 text-white-text">
                       <h3 className="w-48 text-center text-lg font-medium tab:w-56">
