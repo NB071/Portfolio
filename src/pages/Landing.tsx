@@ -1433,6 +1433,9 @@ const Landing = () => {
           </section>
         </section>
       </main>
+      <footer className="mt-20 flex items-center justify-center h-52 text-Dark-brown font-medium">
+                      <p>Copyright © 2023 Nima Bargestan</p>
+      </footer>
       <Particles
         className="absolute z-[0]"
         id="tsparticles"
