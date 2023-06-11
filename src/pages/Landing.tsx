@@ -53,7 +53,9 @@ import dockerIcon from "@/assets/StackLogos/dev/Docker.svg";
 import SecurityPlusIcon from "@/assets/certificationsLogos/SecurityPlus Logo Certified CE.png";
 import IBMCybersecurityFundamentals from "@/assets/certificationsLogos/IBM Cybersecurity Fundamentals.png"
 import eJPT from "@/assets/certificationsLogos/eJPT.png"
-import AnisaLogo from "@/assets/certificationsLogos/AnisaHouseLogo.png"
+import AnisaLogo from "@/assets/certificationsLogos/AnisaHouseLogo.jpeg"
+import ArjangLogo from "@/assets/certificationsLogos/ArjangLogo.jpeg"
+import HubspotLogo from "@/assets/certificationsLogos/HubSpot-Academy-Logo.png"
 
 // Hero icons
 import {
@@ -763,7 +765,7 @@ const Landing = () => {
               </div>
             </div>
           </section>
-          <section className="mt-20 flex flex-col items-center justify-center gap-8 px-4 des:flex-row des:gap-16 des:px-36">
+          <section className="mt-20 flex flex-col items-center justify-center gap-8 px-4 des:flex-row des:gap-16 des:px-36 cursor-grab active:cursor-grabbing">
             <h3 className="text-3xl font-bold text-Dark-brown">
               My Certifications:
             </h3>
@@ -875,8 +877,101 @@ const Landing = () => {
                 <SwiperSlide className="p-9">
                   <div className="flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
                     <img
+                      src={ArjangLogo}
+                      className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
+                      alt="Security+ logo"
+                    />
+                    <div className="flex flex-col items-center gap-5 text-white-text">
+                      <h3 className="w-48 tab:w-56 text-center text-lg font-medium">
+                        Title:{" "}
+                        <span className="underline">
+                        CEH - Training Course [IRN]
+                        </span>
+                      </h3>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          window.open(
+                            "https://drive.google.com/file/d/1HcgTc6xShKkpbZujw-4xNOWIJJ5Pa_V6/view?usp=drivesdk",
+                            "_blank",
+                            "noopener,noreferrer"
+                          )
+                        }
+                        className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
+                      >
+                        <EyeIcon className="w-5" />
+                        View Certification
+                      </button>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide className="p-9">
+                  <div className="flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                    <img
+                      src={ArjangLogo}
+                      className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
+                      alt="Security+ logo"
+                    />
+                    <div className="flex flex-col items-center gap-5 text-white-text">
+                      <h3 className="tab:w-56 text-center text-lg font-medium">
+                        Title:{" "}
+                        <span className="underline">
+                        SANS PenTest Pack L1 ( SEC560 / SEC573 / SEC575 / SEC617 / SEC542 / SEC580 ) - Training Course [IRN]
+                        </span>
+                      </h3>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          window.open(
+                            "https://drive.google.com/file/d/1XWtNwHLBOzytbS9o0TaDLRYpUivZoLQ6/view?usp=drivesdk",
+                            "_blank",
+                            "noopener,noreferrer"
+                          )
+                        }
+                        className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
+                      >
+                        <EyeIcon className="w-5" />
+                        View Certification
+                      </button>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide className="p-9">
+                  <div className="flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                    <img
+                      src={HubspotLogo}
+                      className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
+                      alt="Security+ logo"
+                    />
+                    <div className="flex flex-col items-center gap-5 text-white-text">
+                      <h3 className="w-48 tab:w-56 text-center text-lg font-medium">
+                        Title:{" "}
+                        <span className="underline">
+                        HubSpot Academy - Digital Marketing 
+                        </span>
+                      </h3>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          window.open(
+                            "https://app.hubspot.com/academy/achievements/2zp710wl/en/1/nima-bargestan/digital-marketing",
+                            "_blank",
+                            "noopener,noreferrer"
+                          )
+                        }
+                        className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
+                      >
+                        <EyeIcon className="w-5" />
+                        View Certification
+                      </button>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide className="p-9">
+                  <div className="flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                    <img
                       src={AnisaLogo}
-                      className="h-auto w-14 rounded-round  contrast-[.8] tab:h-full tab:w-52"
+                      className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
                       alt="Security+ logo"
                     />
                     <div className="flex flex-col items-center gap-5 text-white-text">
@@ -903,9 +998,131 @@ const Landing = () => {
                     </div>
                   </div>
                 </SwiperSlide>
-                <SwiperSlide>Slide 5</SwiperSlide>
-                <SwiperSlide>Slide 6</SwiperSlide>
-                <SwiperSlide>Slide 7</SwiperSlide>
+                <SwiperSlide className="p-9">
+                  <div className="flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                    <img
+                      src={ArjangLogo}
+                      className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
+                      alt="Security+ logo"
+                    />
+                    <div className="flex flex-col items-center gap-5 text-white-text">
+                      <h3 className="w-48 text-center text-lg font-medium">
+                        Title:{" "}
+                        <span className="underline">
+                        CCNA - Bootcamp Training Course [IRN]
+                        </span>
+                      </h3>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          window.open(
+                            "https://drive.google.com/file/d/1RjEqnJ4IAo-61zesspswOKcD0T13vdUs/view?usp=drivesdk",
+                            "_blank",
+                            "noopener,noreferrer"
+                          )
+                        }
+                        className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
+                      >
+                        <EyeIcon className="w-5" />
+                        View Certification
+                      </button>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide className="p-9">
+                  <div className="flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                    <img
+                      src={AnisaLogo}
+                      className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
+                      alt="Security+ logo"
+                    />
+                    <div className="flex flex-col items-center gap-5 text-white-text">
+                      <h3 className="w-48 tab:w-56 text-center text-lg font-medium">
+                        Title:{" "}
+                        <span className="underline">
+                        LPIC-1 - Training Course [IRN]
+                        </span>
+                      </h3>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          window.open(
+                            "https://drive.google.com/file/d/1ELQy6zUyYivzC2QcWUh8487cZC8ZAPcy/view?usp=sharing",
+                            "_blank",
+                            "noopener,noreferrer"
+                          )
+                        }
+                        className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
+                      >
+                        <EyeIcon className="w-5" />
+                        View Certification
+                      </button>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide className="p-9">
+                  <div className="flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                    <img
+                      src={AnisaLogo}
+                      className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
+                      alt="Security+ logo"
+                    />
+                    <div className="flex flex-col items-center gap-5 text-white-text">
+                      <h3 className="w-48 tab:w-56 text-center text-lg font-medium">
+                        Title:{" "}
+                        <span className="underline">
+                        LPIC-2 - Training Course [IRN]
+                        </span>
+                      </h3>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          window.open(
+                            "https://drive.google.com/file/d/1RiyGcxg7EJ3xZ8czmswEMFVw25S8cBKZ/view?usp=sharing",
+                            "_blank",
+                            "noopener,noreferrer"
+                          )
+                        }
+                        className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
+                      >
+                        <EyeIcon className="w-5" />
+                        View Certification
+                      </button>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide className="p-9">
+                  <div className="flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                    <img
+                      src={AnisaLogo}
+                      className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
+                      alt="Security+ logo"
+                    />
+                    <div className="flex flex-col items-center gap-5 text-white-text">
+                      <h3 className="w-48 tab:w-56 text-center text-lg font-medium">
+                        Title:{" "}
+                        <span className="underline">
+                        Python Programming - Training Course [IRN]
+                        </span>
+                      </h3>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          window.open(
+                            "https://drive.google.com/file/d/1a6CPf8ymXWb_PpagtzwkqDh4sgp1KCxB/view?usp=sharing",
+                            "_blank",
+                            "noopener,noreferrer"
+                          )
+                        }
+                        className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
+                      >
+                        <EyeIcon className="w-5" />
+                        View Certification
+                      </button>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                
                 <SwiperSlide>Slide 8</SwiperSlide>
                 <SwiperSlide>Slide 9</SwiperSlide>
               </Swiper>
