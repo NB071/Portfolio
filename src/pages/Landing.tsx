@@ -68,6 +68,7 @@ import {
   ArrowUpCircleIcon,
   DocumentArrowDownIcon,
   EyeIcon,
+  PaperAirplaneIcon,
 } from "@heroicons/react/24/outline";
 
 // Libs
@@ -1157,6 +1158,132 @@ const Landing = () => {
                 </SwiperSlide>
               </Swiper>
             </div>
+          </section>
+        </section>
+        <section className="m-auto mt-20 max-w-[1920px] px-4" id="contact-me">
+          <div className="flex items-center">
+            <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-Light-brown tab:w-32"></div>
+            <h2 className="mx-4 text-2xl font-bold text-Dark-brown tab:text-4xl">
+              Contact me
+            </h2>
+            <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-Light-brown tab:w-32"></div>
+          </div>
+          <section className="mt-20 flex flex-col gap-5  px-4 tab:px-24">
+            <div className="flex flex-col gap-10 text-center text-2xl font-medium text-Dark-brown tab:flex-row tab:items-center tab:justify-between tab:text-left">
+              <p className="tab:w-[50%]">
+                Do you have a question, an idea, or a project you need help
+                with? Contact me!
+              </p>
+              <div className="flex flex-col gap-2">
+                <div className="flex flex-wrap justify-center gap-2">
+                  <Link
+                    to="matilto:nimam700@gmail.com"
+                    className="rounded-round border border-Dark-brown px-7 py-2 text-base underline"
+                  >
+                    Nimam700@gmail.com
+                  </Link>
+                  <Link
+                    to="tel:+16472916922"
+                    className="rounded-round border border-Dark-brown px-7 py-2 text-base underline"
+                  >
+                    +1 (647) 291-6922
+                  </Link>
+                </div>
+                <div className="flex justify-center gap-2 flex-wrap">
+                  <Link
+                    to="https://www.linkedin.com/in/nima-bargestan/"
+                    className="rounded-round border border-Dark-brown px-7 py-2 text-base underline"
+                  >
+                    <img src={LinkedInIcon} alt="LinkedIn Icon" />
+                  </Link>
+                  <Link
+                    to="https://github.com/NB071"
+                    className="rounded-round border border-Dark-brown px-7 py-2 text-base underline"
+                  >
+                    <img src={GitHubIcon} alt="Github Icon" />
+                  </Link>
+                  <Link
+                    to="https://twitter.com/nimdev071"
+                    className="rounded-round border border-Dark-brown px-7 py-2 text-base underline"
+                  >
+                    <img src={TwitterIcon} alt="Twitter Icon" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <form action="">
+              <div className="mt-5 flex flex-col gap-10 tab:gap-14">
+                <div className="flex flex-col gap-10 tab:flex-row tab:gap-2">
+                  <div className="flex-1">
+                    <label
+                      htmlFor="name"
+                      className="block font-bold text-Dark-brown"
+                    >
+                      Name:
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      className="w-full rounded-round bg-white px-7 py-7 text-Dark-brown"
+                      placeholder="name"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <label
+                      htmlFor="email"
+                      className="block font-bold text-Dark-brown"
+                    >
+                      Email:
+                    </label>
+                    <input
+                      type="text"
+                      name="email"
+                      id="email"
+                      className="w-full rounded-round bg-white px-7 py-7 text-Dark-brown"
+                      placeholder="Email"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <label
+                      htmlFor="subject"
+                      className="block font-bold text-Dark-brown"
+                    >
+                      Subject:
+                    </label>
+                    <input
+                      type="text"
+                      id="subject"
+                      name="subject"
+                      className="w-full rounded-round bg-white px-7 py-7 text-Dark-brown"
+                      placeholder="Subject"
+                    />
+                  </div>
+                </div>
+                <div className="flex flex-col gap-10 tab:flex-row tab:gap-2">
+                  <div className="flex-1">
+                    <label
+                      htmlFor="message"
+                      className="block font-bold text-Dark-brown"
+                    >
+                      Message:
+                    </label>
+                    <textarea
+                      name="message"
+                      className="h-56 w-full resize-none rounded-round bg-white px-7 py-7 text-Dark-brown"
+                      placeholder="Message"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="flex cursor-pointer flex-col tab:mt-5 items-center justify-center gap-1 rounded-round bg-Light-brown px-20 py-5  text-white-text duration-500 hover:bg-Dark-brown"
+                  >
+                    <PaperAirplaneIcon className="w-8" />
+                    Send
+                  </button>
+                </div>
+              </div>
+            </form>
           </section>
         </section>
       </main>
