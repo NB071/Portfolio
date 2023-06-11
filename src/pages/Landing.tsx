@@ -69,6 +69,7 @@ import {
   DocumentArrowDownIcon,
   EyeIcon,
   PaperAirplaneIcon,
+  ExclamationCircleIcon,
 } from "@heroicons/react/24/outline";
 
 // Libs
@@ -76,9 +77,12 @@ import { Link } from "react-router-dom";
 import Particles from "react-particles";
 import type { Container, Engine } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
-import { useCallback, useState, useEffect, CSSProperties } from "react";
+import { useCallback, useState, useEffect, CSSProperties, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
+import emailjs from "@emailjs/browser";
+import { useFormik, FormikProvider } from "formik";
+import * as Yup from "yup";
 
 const Landing = () => {
   const [showReturnTopBtn, setShowReturnTopBtn] = useState(false);
@@ -112,6 +116,33 @@ const Landing = () => {
     },
     []
   );
+
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    },
+
+    validationSchema: Yup.object({
+      name: Yup.string()
+        .matches(/^[a-zA-Z]+$/, "Invalid name format")
+        .required("This field is required"),
+      email: Yup.string()
+        .matches(
+          /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+          "Invalid email format"
+        )
+        .required("This field is required"),
+      subject: Yup.string().required("This field is required"),
+      message: Yup.string().required("This field is required"),
+    }),
+
+    onSubmit: (values) => {
+      console.log(values);
+    },
+  });
 
   return (
     <>
@@ -1189,7 +1220,7 @@ const Landing = () => {
                     +1 (647) 291-6922
                   </Link>
                 </div>
-                <div className="flex justify-center gap-2 flex-wrap">
+                <div className="flex flex-wrap justify-center gap-2">
                   <Link
                     to="https://www.linkedin.com/in/nima-bargestan/"
                     className="rounded-round border border-Dark-brown px-7 py-2 text-base underline"
@@ -1211,79 +1242,137 @@ const Landing = () => {
                 </div>
               </div>
             </div>
-            <form action="">
-              <div className="mt-5 flex flex-col gap-10 tab:gap-14">
-                <div className="flex flex-col gap-10 tab:flex-row tab:gap-2">
-                  <div className="flex-1">
-                    <label
-                      htmlFor="name"
-                      className="block font-bold text-Dark-brown"
-                    >
-                      Name:
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      id="name"
-                      className="w-full rounded-round bg-white px-7 py-7 text-Dark-brown"
-                      placeholder="name"
-                    />
+            <FormikProvider value={formik}>
+              <form onSubmit={formik.handleSubmit}>
+                <div className="mt-5 flex flex-col gap-10 tab:gap-14">
+                  <div className="flex flex-col gap-10 tab:flex-row tab:gap-2">
+                    <div className="relative flex-1">
+                      <label
+                        htmlFor="name"
+                        className="block font-bold text-Dark-brown"
+                      >
+                        Name:
+                      </label>
+                      <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        className={`w-full rounded-round border bg-white px-7 py-7 text-Dark-brown ${
+                          formik.touched.name && formik.errors.name
+                            ? "border-red-600"
+                            : ""
+                        }`}
+                        placeholder="name"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                      />
+                      {formik.touched.name && formik.errors.name ? (
+                        <div className="absolute mt-2 flex items-center gap-2">
+                          <ExclamationCircleIcon className="h-7 w-7 text-red-600" />
+                          <span className="font-normal opacity-70 transition-all duration-300 hover:opacity-100">
+                            {formik.errors.name}
+                          </span>
+                        </div>
+                      ) : null}
+                    </div>
+                    <div className="relative flex-1">
+                      <label
+                        htmlFor="email"
+                        className="block font-bold text-Dark-brown"
+                      >
+                        Email:
+                      </label>
+                      <input
+                        type="text"
+                        name="email"
+                        id="email"
+                        className={`w-full rounded-round border bg-white px-7 py-7 text-Dark-brown ${
+                          formik.touched.email && formik.errors.email
+                            ? "border-red-600"
+                            : ""
+                        }`}
+                        placeholder="Email"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                      />
+                      {formik.touched.email && formik.errors.email ? (
+                        <div className="absolute mt-2 flex items-center gap-2">
+                          <ExclamationCircleIcon className="h-7 w-7 text-red-600" />
+                          <span className="font-normal opacity-70 transition-all duration-300 hover:opacity-100">
+                            {formik.errors.email}
+                          </span>
+                        </div>
+                      ) : null}
+                    </div>
+                    <div className="relative flex-1">
+                      <label
+                        htmlFor="subject"
+                        className="block font-bold text-Dark-brown"
+                      >
+                        Subject:
+                      </label>
+                      <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        className={`w-full rounded-round border bg-white px-7 py-7 text-Dark-brown ${
+                          formik.touched.subject && formik.errors.subject
+                            ? "border-red-600"
+                            : ""
+                        }`}
+                        placeholder="Subject"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                      />
+                      {formik.touched.subject && formik.errors.subject ? (
+                        <div className="absolute mt-2 flex items-center gap-2">
+                          <ExclamationCircleIcon className="h-7 w-7 text-red-600" />
+                          <span className="font-normal opacity-70 transition-all duration-300 hover:opacity-100">
+                            {formik.errors.subject}
+                          </span>
+                        </div>
+                      ) : null}
+                    </div>
                   </div>
-                  <div className="flex-1">
-                    <label
-                      htmlFor="email"
-                      className="block font-bold text-Dark-brown"
+                  <div className="flex flex-col gap-10 tab:flex-row tab:gap-2">
+                    <div className="relative flex-1">
+                      <label
+                        htmlFor="message"
+                        className="block font-bold text-Dark-brown"
+                      >
+                        Message:
+                      </label>
+                      <textarea
+                        name="message"
+                        className={`h-56 w-full resize-none rounded-round border bg-white px-7 py-7 text-Dark-brown ${
+                          formik.touched.message && formik.errors.message
+                            ? "border-red-600"
+                            : ""
+                        }`}
+                        placeholder="Message"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                      />
+                      {formik.touched.message && formik.errors.message ? (
+                        <div className="absolute mt-2 flex items-center gap-2">
+                          <ExclamationCircleIcon className="h-7 w-7 text-red-600" />
+                          <span className="font-normal opacity-70 transition-all duration-300 hover:opacity-100">
+                            {formik.errors.message}
+                          </span>
+                        </div>
+                      ) : null}
+                    </div>
+                    <button
+                      type="submit"
+                      className="flex cursor-pointer flex-col items-center justify-center gap-1 rounded-round bg-Light-brown px-20 py-5 text-white-text  duration-500 hover:bg-Dark-brown tab:mt-5"
                     >
-                      Email:
-                    </label>
-                    <input
-                      type="text"
-                      name="email"
-                      id="email"
-                      className="w-full rounded-round bg-white px-7 py-7 text-Dark-brown"
-                      placeholder="Email"
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <label
-                      htmlFor="subject"
-                      className="block font-bold text-Dark-brown"
-                    >
-                      Subject:
-                    </label>
-                    <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      className="w-full rounded-round bg-white px-7 py-7 text-Dark-brown"
-                      placeholder="Subject"
-                    />
+                      <PaperAirplaneIcon className="w-8" />
+                      Send
+                    </button>
                   </div>
                 </div>
-                <div className="flex flex-col gap-10 tab:flex-row tab:gap-2">
-                  <div className="flex-1">
-                    <label
-                      htmlFor="message"
-                      className="block font-bold text-Dark-brown"
-                    >
-                      Message:
-                    </label>
-                    <textarea
-                      name="message"
-                      className="h-56 w-full resize-none rounded-round bg-white px-7 py-7 text-Dark-brown"
-                      placeholder="Message"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="flex cursor-pointer flex-col tab:mt-5 items-center justify-center gap-1 rounded-round bg-Light-brown px-20 py-5  text-white-text duration-500 hover:bg-Dark-brown"
-                  >
-                    <PaperAirplaneIcon className="w-8" />
-                    Send
-                  </button>
-                </div>
-              </div>
-            </form>
+              </form>
+            </FormikProvider>
           </section>
         </section>
       </main>
