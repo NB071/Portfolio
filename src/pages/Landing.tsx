@@ -14,6 +14,37 @@ import DigiBookshelfLogo from "@/assets/projectsLogo/DigiBookshelfLogo.svg";
 import LyristLogo from "@/assets/projectsLogo/LyristLogo.svg";
 import DailyQuotesLogo from "@/assets/projectsLogo/DailyQuotesLogo.svg";
 
+// stack logos [front-end]
+import htmlLogo from "@/assets/StackLogos/front/HTML.svg";
+import cssLogo from "@/assets/StackLogos/front/CSS.svg";
+import scssLogo from "@/assets/StackLogos/front/SCSS.svg";
+import tailwindLogo from "@/assets/StackLogos/front/Tailwind.svg";
+import muiLogo from "@/assets/StackLogos/front/MUI.svg";
+import javascriptLogo from "@/assets/StackLogos/front/JS.svg";
+import typescriptLogo from "@/assets/StackLogos/front/TS.svg";
+import reactLogo from "@/assets/StackLogos/front/React.svg";
+import figmaLogo from "@/assets/StackLogos/front/Figma.svg";
+import angularLogo from "@/assets/StackLogos/front/Angular.svg";
+
+// stack logos [back-end]
+import nodejsLogo from "@/assets/StackLogos/back/Node js.svg";
+import expressjsLogo from "@/assets/StackLogos/back/Express Js.svg";
+import mysqlLogo from "@/assets/StackLogos/back/MySQL.svg";
+import jwtLogo from "@/assets/StackLogos/back/jwt.svg";
+import knexLogo from "@/assets/StackLogos/back/Knex.svg";
+import postmanLogo from "@/assets/StackLogos/back/Postman.svg";
+import socketioLogo from "@/assets/StackLogos/back/SocketIO.svg";
+import djangoLogo from "@/assets/StackLogos/back/Django.svg";
+
+// stack logos [development]
+import gitLogo from "@/assets/StackLogos/dev/Git.svg";
+import herokuIcon from "@/assets/StackLogos/dev/Heroku.svg";
+import jestIcon from "@/assets/StackLogos/dev/Jest.svg";
+import backstageioIcon from "@/assets/StackLogos/dev/BackstageIO.svg";
+import linuxIcon from "@/assets/StackLogos/dev/Linux.svg";
+import pythonIcon from "@/assets/StackLogos/dev/Python.svg";
+import dockerIcon from "@/assets/StackLogos/dev/Docker.svg";
+
 // Hero icons
 import {
   CommandLineIcon,
@@ -163,11 +194,11 @@ const Landing = () => {
             </div>
 
             <article
-              className="group relative h-[8rem] cursor-pointer overflow-hidden rounded-round border-none bg-[#69533E] duration-500 hover:scale-95 tab:h-[13rem] des:h-[24.5rem] "
+              className="group relative h-[8rem] flex-1 cursor-pointer overflow-hidden rounded-round border-none bg-[#69533E] duration-500 hover:scale-95 tab:h-[13rem] des:h-[24.5rem] "
               title="About me"
             >
               <div className="relative z-10 flex h-full flex-col justify-between px-9 py-5 des:px-12 des:py-9">
-                <div className="flex flex-1 items-center justify-between">
+                <div className="flex items-center justify-between">
                   <h3 className="align-bottom text-base text-white-text des:text-3xl">
                     Work
                   </h3>
@@ -262,6 +293,388 @@ const Landing = () => {
                 />
               </article>
             </Link>
+          </div>
+        </section>
+      </section>
+
+      {/* stack section */}
+      <section
+        className="relative z-[2] m-auto mt-20 max-w-[1920px] px-4"
+        id="stack"
+      >
+        <div className="flex items-center">
+          <div className=" flex-1 rounded-l-round rounded-r-round border-t-2 border-Light-brown tab:w-32"></div>
+          <h2 className="mx-4  text-2xl font-bold text-Dark-brown tab:text-4xl">
+            Stack
+          </h2>
+          <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-Light-brown"></div>
+        </div>
+        <section className="relative z-[2] m-auto mt-20 flex max-w-[1920px] flex-col gap-2 px-4 tab:flex-row des:px-36">
+          <article className="flex h-[24rem] w-full flex-col gap-10 rounded-round bg-Light-brown p-10 duration-500 hover:drop-shadow-2xl lgmob:h-[28rem] tab:order-2 tab:h-[35rem] tab:w-[30%] tab:gap-20 des:tab:h-[40rem]">
+            <h3 className="text-center font-bold text-white-text lgmob:text-xl des:text-2xl">
+              Front-end
+            </h3>
+            <div className="flex h-full flex-col justify-center gap-5 tab:gap-10 des:gap-12">
+              {/* first row */}
+              <div className="flex items-center justify-center gap-3 lgmob:gap-8 tab:gap-5 des:gap-8">
+                <Link
+                  to="https://html.spec.whatwg.org/multipage/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={htmlLogo}
+                    className="h-8 w-8 cursor-pointer duration-300 hover:scale-90 lgmob:h-12 lgmob:w-12 tab:h-9 tab:w-9 des:h-14 des:w-14"
+                    alt="HTML5 logo"
+                    title="HTML5"
+                  />
+                </Link>
+                <Link
+                  to="https://www.w3.org/Style/CSS/Overview.en.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={cssLogo}
+                    className="h-8 w-8 cursor-pointer duration-300 hover:scale-90 lgmob:h-12 lgmob:w-12 tab:h-9 tab:w-9 des:h-14 des:w-14"
+                    alt="CSS logo"
+                    title="CSS"
+                  />
+                </Link>
+                <Link
+                  to="https://www.figma.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={figmaLogo}
+                    className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
+                    alt="Figma logo"
+                    title="Figma"
+                  />
+                </Link>
+              </div>
+
+              {/* second row */}
+              <div className="flex items-center justify-center gap-3 lgmob:gap-8 tab:gap-5 des:gap-8">
+                <Link
+                  to="https://www.javascript.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={javascriptLogo}
+                    className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
+                    alt="JavaScript logo"
+                    title="JavaScript"
+                  />
+                </Link>
+                <Link
+                  to="https://www.typescriptlang.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={typescriptLogo}
+                    className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
+                    alt="TypeScript logo"
+                    title="TypeScript"
+                  />
+                </Link>
+                <Link
+                  to="https://www.react.dev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={reactLogo}
+                    className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
+                    alt="React logo"
+                    title="React"
+                  />
+                </Link>
+              </div>
+              {/* third row */}
+              <div className="flex items-center justify-center gap-3 lgmob:gap-8 tab:gap-5 des:gap-8">
+                <Link
+                  to="https://www.sass-lang.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={scssLogo}
+                    className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
+                    alt="SASS logo"
+                    title="SASS"
+                  />
+                </Link>
+                <Link
+                  to="https://www.tailwindcss.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={tailwindLogo}
+                    className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
+                    alt="TailWind logo"
+                    title="Tailwind"
+                  />
+                </Link>
+                <Link
+                  to="https://www.mui.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={muiLogo}
+                    className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
+                    alt="MUI Logo"
+                    title="MUI"
+                  />
+                </Link>
+              </div>
+              <div className="mt-auto flex flex-col items-center gap-3">
+                <h4 className="text-center text-sm font-light text-white-text lgmob:text-base">
+                  Experimenting...
+                </h4>
+                <Link
+                  to="https://www.angular.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={angularLogo}
+                    className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
+                    alt="Angular logo"
+                    title="Angular"
+                  />
+                </Link>
+              </div>
+            </div>
+          </article>
+          <div className="tab:flex-1 tab:perspective-1600 relative">
+            <article className="flex h-[24rem] w-full flex-col gap-10 rounded-round bg-Light-brown p-10 duration-500 hover:drop-shadow-2xl hover:rotate-y-0 lgmob:h-[28rem] tab:h-[35rem] tab:gap-20 tab:rotate-y-30 tab:transform des:tab:h-[40rem]">
+              <h3 className="text-center font-bold text-white-text lgmob:text-xl des:text-2xl">
+                Back-end
+              </h3>
+              <div className="flex h-full flex-col justify-center gap-5 tab:gap-10">
+                {/* first row */}
+                <div className="flex items-center justify-center gap-3 lgmob:gap-8 tab:gap-5 des:gap-8">
+                  <Link
+                    to="https://www.nodejs.org/en"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={nodejsLogo}
+                      className="h-8 w-8 cursor-pointer duration-300 hover:scale-90 lgmob:h-12 lgmob:w-12 tab:h-9 tab:w-9 des:h-14 des:w-14"
+                      alt="Node.js logo"
+                      title="Node.js"
+                    />
+                  </Link>
+                  <Link
+                    to="https://www.expressjs.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={expressjsLogo}
+                      className="h-8 w-8 cursor-pointer duration-300 hover:scale-90 lgmob:h-12 lgmob:w-12 tab:h-9 tab:w-9 des:h-14 des:w-14"
+                      alt="Express.js logo"
+                      title="Express.js"
+                    />
+                  </Link>
+                  <Link
+                    to="https://www.mysql.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={mysqlLogo}
+                      className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
+                      alt="MySQL Logo"
+                      title="MySQL"
+                    />
+                  </Link>
+                </div>
+                {/* second row */}
+                <div className="flex items-center justify-center gap-3 lgmob:gap-8 tab:gap-5 des:gap-8">
+                  <Link
+                    to="https://jwt.io/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={jwtLogo}
+                      className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-14 des:w-14"
+                      alt="JWT Logo"
+                      title="JWT"
+                    />
+                  </Link>
+                  <Link
+                    to="https://www.knexjs.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={knexLogo}
+                      className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
+                      alt="Knex logo"
+                      title="Knex"
+                    />
+                  </Link>
+                  <Link
+                    to="https://www.postman.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={postmanLogo}
+                      className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
+                      alt="Postman logo"
+                      title="Postman"
+                    />
+                  </Link>
+                </div>
+                {/* third row */}
+                <div className="flex items-center justify-center gap-3">
+                  <Link
+                    to="https://socket.io/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={socketioLogo}
+                      className="h-7 w-20 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 tab:h-8 des:h-12"
+                      alt="SocketIO logo"
+                      title="SocketIO"
+                    />
+                  </Link>
+                </div>
+                <div className="mt-auto flex flex-col items-center gap-3">
+                  <h4 className="text-center text-sm font-light text-white-text lgmob:text-base">
+                    Experimenting...
+                  </h4>
+                  <Link
+                    to="https://www.djangoproject.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={djangoLogo}
+                      className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:w-12 des:h-12"
+                      alt="Django logo"
+                      title="Django"
+                    />
+                  </Link>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div className="tab:order-3 tab:flex-1 tab:perspective-1600">
+            <article className="flex h-[24rem] w-full flex-col gap-10 rounded-round bg-Light-brown p-10 duration-500 hover:drop-shadow-2xl hover:rotate-y-0 lgmob:h-[28rem] tab:h-[35rem] tab:gap-20 tab:-rotate-y-30 tab:transform des:tab:h-[40rem]">
+              <h3 className="text-center font-bold text-white-text lgmob:text-xl des:text-2xl">
+                Development
+              </h3>
+              <div className="flex h-full flex-col justify-center gap-5 tab:gap-10">
+                {/* first row */}
+                <div className="flex items-center justify-center gap-3 lgmob:gap-8 tab:gap-5 des:gap-8">
+                  <Link
+                    to="https://www.heroku.com/about"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={herokuIcon}
+                      className="h-8 w-8 cursor-pointer duration-300 hover:scale-90 lgmob:h-12 lgmob:w-12 tab:h-9 tab:w-9 des:w-14 des:h-14"
+                      alt="Heroku logo"
+                      title="Heroku"
+                    />
+                  </Link>
+                  <Link
+                    to="https://github.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={gitLogo}
+                      className="h-8 w-8 cursor-pointer duration-300 hover:scale-90 lgmob:h-12 lgmob:w-12 tab:h-9 tab:w-9 des:w-14 des:h-14"
+                      alt="Git logo"
+                      title="Git"
+                    />
+                  </Link>
+                  <Link
+                    to="https://jestjs.io/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={jestIcon}
+                      className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:w-12 des:h-12"
+                      alt="Jest logo"
+                      title="Jest"
+                    />
+                  </Link>
+                  <Link
+                    to="https://backstage.io/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={backstageioIcon}
+                      className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:w-12 des:h-12"
+                      alt="Backstage logo"
+                      title="Backstage"
+                    />
+                  </Link>
+                </div>
+                {/* second row */}
+                <div className="flex items-center justify-center gap-3 lgmob:gap-8 tab:gap-5 des:gap-8">
+                  <Link
+                    to="https://www.linux.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={linuxIcon}
+                      className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:w-12 des:h-12"
+                      alt="Linux logo"
+                      title="Linux"
+                    />
+                  </Link>
+                  <Link
+                    to="https://www.python.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={pythonIcon}
+                      className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:w-12 des:h-12"
+                      alt="Python logo"
+                      title="Python"
+                    />
+                  </Link>
+                </div>
+
+                <div className="mt-auto flex flex-col items-center gap-3">
+                  <h4 className="text-center text-sm font-light text-white-text lgmob:text-base">
+                    Experimenting...
+                  </h4>
+                  <Link
+                    to="https://www.docker.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={dockerIcon}
+                      className="h-12 w-20 cursor-pointer duration-300 hover:scale-90 lgmob:h-14 tab:h-8 des:h-14 "
+                      alt="Docker logo"
+                      title="Docker"
+                    />
+                  </Link>
+                </div>
+              </div>
+            </article>
           </div>
         </section>
       </section>
