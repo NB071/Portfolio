@@ -70,6 +70,9 @@ import {
   EyeIcon,
   PaperAirplaneIcon,
   ExclamationCircleIcon,
+  ArrowPathIcon,
+  CheckBadgeIcon,
+  ShieldExclamationIcon
 } from "@heroicons/react/24/outline";
 
 // Libs
@@ -77,16 +80,16 @@ import { Link } from "react-router-dom";
 import Particles from "react-particles";
 import type { Container, Engine } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
-import { useCallback, useState, useEffect, CSSProperties, useRef } from "react";
+import { useCallback, useState, useEffect, CSSProperties } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
-import emailjs from "@emailjs/browser";
 import { useFormik, FormikProvider } from "formik";
 import * as Yup from "yup";
-
+import axios from "axios";
 const Landing = () => {
   const [showReturnTopBtn, setShowReturnTopBtn] = useState(false);
-
+  const [sendformInProgress, setSendformInProgress] = useState(false);
+  const [sendformSuccess, setSendFormSuccess] = useState<boolean | undefined>();
   const goToTop = () => {
     window.scrollTo({
       top: 0,
@@ -105,8 +108,6 @@ const Landing = () => {
   }, []);
 
   const particlesInit = useCallback(async (engine: Engine) => {
-    console.log(engine);
-
     await loadFull(engine);
   }, []);
 
@@ -139,8 +140,22 @@ const Landing = () => {
       message: Yup.string().required("This field is required"),
     }),
 
-    onSubmit: (values) => {
-      console.log(values);
+    onSubmit: async (values) => {
+      try {
+        setSendformInProgress(true);
+        await axios.post("https://api.emailjs.com/api/v1.0/email/send", {
+          service_id: import.meta.env.VITE_EmailJS_ServiceId,
+          template_id: import.meta.env.VITE_EmailJS_Template_id,
+          user_id: import.meta.env.VITE_EmailJS_user_id,
+          template_params: values,
+        });
+        setSendformInProgress(false);
+        setSendFormSuccess(true);
+      } catch (err) {
+        setSendformInProgress(false);
+        setSendFormSuccess(false);
+        console.log(err);
+      }
     },
   });
 
@@ -1362,13 +1377,36 @@ const Landing = () => {
                         </div>
                       ) : null}
                     </div>
-                    <button
-                      type="submit"
-                      className="flex cursor-pointer flex-col items-center justify-center gap-1 rounded-round bg-Light-brown px-20 py-5 text-white-text  duration-500 hover:bg-Dark-brown tab:mt-5"
-                    >
-                      <PaperAirplaneIcon className="w-8" />
-                      Send
-                    </button>
+                    {sendformSuccess === undefined ? (
+                      <button
+                        type="submit"
+                        className="flex cursor-pointer flex-col items-center justify-center gap-1 rounded-round bg-Light-brown px-20 py-5 text-white-text duration-500 hover:bg-Dark-brown tab:mt-5"
+                      >
+                        {!sendformInProgress ? (
+                          <>
+                            <PaperAirplaneIcon className="w-8" />
+                            Send
+                          </>
+                        ) : (
+                          <>
+                            <ArrowPathIcon className="w-8 animate-spin" />
+                            Sending
+                          </>
+                        )}
+                      </button>
+                    ) : sendformSuccess === true ? (
+                      <div className="bg-green-600 text-green-900 flex flex-col items-center justify-center gap-1 rounded-round px-20 py-5 duration-500  tab:mt-5">
+                        <CheckBadgeIcon className="w-8 animate-pulse"/>
+                        <p className="font-bold">Success</p>
+                        <p className="w-40 text-center">Thank you! I received your message. I will reply as soon as possible!</p>
+                      </div>
+                    ) : (
+                      <div className="bg-red-600 text-red-900 flex flex-col items-center justify-center gap-1 rounded-round px-20 py-5 duration-500 tab:mt-5">
+                        <ShieldExclamationIcon className="w-8 animate-pulse"/>
+                        <p className="font-bold">Failed - Please try again later</p>
+                        <p className="w-40 text-center">If the issue persists, contact me directly. Thank you!</p>
+                      </div>
+                    )}
                   </div>
                 </div>
               </form>
