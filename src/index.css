@@ -5,10 +5,10 @@
 
 @layer base {
   .font-outline-1 {
-    -webkit-text-stroke: 1px #69533E;
+    -webkit-text-stroke: 1px #69533e;
   }
   .font-outline-2 {
-    -webkit-text-stroke: 2px #69533E;
+    -webkit-text-stroke: 2px #69533e;
   }
 }
 
@@ -19,7 +19,19 @@ body,
   height: 100%;
   width: 100%;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #edebdf;
 }
- 
+
+.cert-slider {
+  width: 100%;
+  height: 100%;
+}
+.cert-slider .swiper-pagination-bullets {
+  right: 1rem;
+}

@@ -1,4 +1,8 @@
+import "swiper/css";
+import "swiper/css/pagination";
+
 import HeadshotLanding from "@/assets/Headshot-landing.svg";
+import HeadshotAboutMe from "@/assets/headhotAboutMe.png";
 
 // Svgs
 import shapes from "@/assets/WorksBgShapes.svg";
@@ -45,6 +49,12 @@ import linuxIcon from "@/assets/StackLogos/dev/Linux.svg";
 import pythonIcon from "@/assets/StackLogos/dev/Python.svg";
 import dockerIcon from "@/assets/StackLogos/dev/Docker.svg";
 
+// certificates
+import SecurityPlusIcon from "@/assets/certificationsLogos/SecurityPlus Logo Certified CE.png";
+import IBMCybersecurityFundamentals from "@/assets/certificationsLogos/IBM Cybersecurity Fundamentals.png"
+import eJPT from "@/assets/certificationsLogos/eJPT.png"
+import AnisaLogo from "@/assets/certificationsLogos/AnisaHouseLogo.png"
+
 // Hero icons
 import {
   CommandLineIcon,
@@ -54,6 +64,8 @@ import {
   PaperClipIcon,
   ArrowUpRightIcon,
   ArrowUpCircleIcon,
+  DocumentArrowDownIcon,
+  EyeIcon,
 } from "@heroicons/react/24/outline";
 
 // Libs
@@ -61,7 +73,9 @@ import { Link } from "react-router-dom";
 import Particles from "react-particles";
 import type { Container, Engine } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
-import { useCallback, useState, useEffect } from "react";
+import { useCallback, useState, useEffect, CSSProperties } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper";
 
 const Landing = () => {
   const [showReturnTopBtn, setShowReturnTopBtn] = useState(false);
@@ -253,8 +267,8 @@ const Landing = () => {
         {/* work section */}
         <section className="m-auto mt-32 max-w-[1920px] px-4" id="work">
           <div className="flex items-center">
-            <div className=" w-14 rounded-l-round rounded-r-round border-t-2 border-Light-brown tab:w-32"></div>
-            <h2 className="mx-4  text-2xl font-bold text-Dark-brown tab:text-4xl">
+            <div className="w-14 rounded-l-round rounded-r-round border-t-2 border-Light-brown tab:w-32"></div>
+            <h2 className="mx-4 text-2xl font-bold text-Dark-brown tab:text-4xl">
               Work
             </h2>
             <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-Light-brown"></div>
@@ -317,15 +331,15 @@ const Landing = () => {
         </section>
 
         {/* stack section */}
-        <section className=" m-auto mt-20 max-w-[1920px] px-4" id="stack">
+        <section className="m-auto mt-20 max-w-[1920px] px-4" id="stack">
           <div className="flex items-center">
-            <div className=" flex-1 rounded-l-round rounded-r-round border-t-2 border-Light-brown tab:w-32"></div>
+            <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-Light-brown tab:w-32"></div>
             <h2 className="mx-4  text-2xl font-bold text-Dark-brown tab:text-4xl">
               Stack
             </h2>
             <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-Light-brown"></div>
           </div>
-          <section className=" m-auto mt-20 flex max-w-[1920px] flex-col gap-2 px-4 tab:flex-row des:px-36">
+          <section className=" m-auto mt-20 flex max-w-[1920px] flex-col gap-2 px-4 tab:flex-row des:px-28">
             <article className="flex h-[24rem] w-full flex-col gap-10 rounded-round bg-Light-brown p-10 duration-500 hover:drop-shadow-2xl lgmob:h-[28rem] tab:order-2 tab:h-[35rem] tab:w-[30%] tab:gap-20 des:tab:h-[40rem]">
               <h3 className="text-center font-bold text-white-text lgmob:text-xl des:text-2xl">
                 Front-end
@@ -691,6 +705,210 @@ const Landing = () => {
                   </div>
                 </div>
               </article>
+            </div>
+          </section>
+        </section>
+
+        {/* about */}
+        <section className="m-auto mt-20 max-w-[1920px] px-4" id="about-me">
+          <div className="flex items-center">
+            <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-Light-brown tab:w-32"></div>
+            <h2 className="mx-4 text-2xl font-bold text-Dark-brown tab:text-4xl">
+              About me
+            </h2>
+            <div className="w-16 rounded-l-round rounded-r-round border-t-2 border-Light-brown tab:w-32"></div>
+          </div>
+          <section className="mt-20 px-4 tab:px-24">
+            <div className="flex flex-col items-center gap-20 des:flex-row">
+              <div className="flex flex-col gap-5 ">
+                <img
+                  src={HeadshotAboutMe}
+                  className="duration-500 hover:contrast-75"
+                  alt="my photo"
+                />
+                <button
+                  type="button"
+                  className="my-4 flex items-center justify-center gap-2 rounded-round bg-Dark-brown px-10 py-3 text-white-text duration-500 hover:border hover:border-Dark-brown hover:bg-transparent hover:text-Dark-brown"
+                  onClick={() => (window.location.href = "#intro")}
+                >
+                  <DocumentArrowDownIcon className="w-7" />
+                  Download Resume
+                </button>
+              </div>
+              <div className="flex-1 indent-12 font-medium leading-8 text-Dark-brown">
+                <p>
+                  I am a passionate full-stack JavaScript developer with a
+                  strong background in computer science and security. Since my
+                  early days in 5th grade, web development has been my true
+                  love, when I learned HTML and CSS. Although I officially
+                  started my web development journey about a year ago, external
+                  factors, including immigration to Canada, briefly interrupted
+                  my progress. However, my dedication to the craft led me to
+                  enroll in the highly regarded BrainStation Software
+                  Engineering Bootcamp three months ago, reigniting my passion
+                  and propelling me to acquire comprehensive skills as a
+                  full-stack developer.
+                </p>
+                <br />
+                <p>
+                  I have developed a strong skillset that will undoubtedly be
+                  valuable in my web development career. As part of my diploma
+                  program, I gained an in-depth understanding of computation and
+                  programming. Simultaneously, I’d been immensely interested in
+                  cybersecurity. Thus, I participated in individual courses to
+                  learn Linux, networking, etc., to broaden my knowledge. With
+                  my in-depth perception of cybersecurity, I could instantly
+                  notice potential flaws in the development process.
+                </p>
+              </div>
+            </div>
+          </section>
+          <section className="mt-20 flex flex-col items-center justify-center gap-8 px-4 des:flex-row des:gap-16 des:px-36">
+            <h3 className="text-3xl font-bold text-Dark-brown">
+              My Certifications:
+            </h3>
+            <div className="h-[24rem] w-full rounded-round bg-Light-brown tab:h-80 des:w-[37rem]">
+              <Swiper
+                style={
+                  {
+                    "--swiper-pagination-color": "#fff",
+                  } as CSSProperties
+                }
+                direction={"vertical"}
+                pagination={{
+                  dynamicBullets: true,
+                  clickable: true,
+                }}
+                className="cert-slider"
+                modules={[Pagination]}
+              >
+                <SwiperSlide className="p-9">
+                  <div className="flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                    <img
+                      src={SecurityPlusIcon}
+                      className="h-48 w-36 rounded-round bg-white p-5 contrast-[.8] tab:h-full tab:w-52"
+                      alt="Security+ logo"
+                    />
+                    <div className="flex flex-col items-center gap-5 text-white-text">
+                      <h3 className="text-lg font-medium">
+                        Title: <span className="underline">Security+</span>
+                      </h3>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          window.open(
+                            "https://www.credly.com/earner/earned/badge/21b63add-6fb6-4845-9077-f57b97085f36",
+                            "_blank",
+                            "noopener,noreferrer"
+                          )
+                        }
+                        className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
+                      >
+                        <EyeIcon className="w-5" />
+                        View Certification
+                      </button>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide className="p-9">
+                  <div className="flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                    <img
+                      src={IBMCybersecurityFundamentals}
+                      className="h-48 w-36 rounded-round bg-white contrast-[.8] tab:h-full tab:w-52"
+                      alt="Security+ logo"
+                    />
+                    <div className="flex flex-col items-center gap-5 text-white-text">
+                      <h3 className="w-48 text-center text-lg font-medium">
+                        Title:{" "}
+                        <span className="underline">
+                          Cybersecurity Fundamentals - IBM
+                        </span>
+                      </h3>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          window.open(
+                            "https://www.credly.com/badges/d91d7c20-aa28-4271-84b6-feeef47915b8",
+                            "_blank",
+                            "noopener,noreferrer"
+                          )
+                        }
+                        className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
+                      >
+                        <EyeIcon className="w-5" />
+                        View Certification
+                      </button>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide className="p-9">
+                  <div className="flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                    <img
+                      src={eJPT}
+                      className="h-48 w-36 rounded-round bg-white contrast-[.8] tab:h-full tab:w-52"
+                      alt="Security+ logo"
+                    />
+                    <div className="flex flex-col items-center gap-5 text-white-text">
+                      <h3 className="w-48 text-center text-lg font-medium">
+                        Title:{" "}
+                        <span className="underline">
+                        eJPT - eLearn Security Junior Penetration Tester
+                        </span>
+                      </h3>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          window.open(
+                            "https://verified.elearnsecurity.com/certificates/a6ce5477-0220-4b34-83e6-870e65da4686",
+                            "_blank",
+                            "noopener,noreferrer"
+                          )
+                        }
+                        className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
+                      >
+                        <EyeIcon className="w-5" />
+                        View Certification
+                      </button>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide className="p-9">
+                  <div className="flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                    <img
+                      src={AnisaLogo}
+                      className="h-auto w-14 rounded-round  contrast-[.8] tab:h-full tab:w-52"
+                      alt="Security+ logo"
+                    />
+                    <div className="flex flex-col items-center gap-5 text-white-text">
+                      <h3 className="w-48 text-center text-lg font-medium">
+                        Title:{" "}
+                        <span className="underline">
+                        CompTIA Network+ - Training Course [IRN]
+                        </span>
+                      </h3>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          window.open(
+                            "https://drive.google.com/file/d/12gForSZ2AZFgADb-BO5SkkdcOqsEQxOK/view?usp=sharing",
+                            "_blank",
+                            "noopener,noreferrer"
+                          )
+                        }
+                        className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
+                      >
+                        <EyeIcon className="w-5" />
+                        View Certification
+                      </button>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>Slide 5</SwiperSlide>
+                <SwiperSlide>Slide 6</SwiperSlide>
+                <SwiperSlide>Slide 7</SwiperSlide>
+                <SwiperSlide>Slide 8</SwiperSlide>
+                <SwiperSlide>Slide 9</SwiperSlide>
+              </Swiper>
             </div>
           </section>
         </section>
