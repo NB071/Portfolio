@@ -51,11 +51,11 @@ import dockerIcon from "@/assets/StackLogos/dev/Docker.svg";
 
 // certificates
 import SecurityPlusIcon from "@/assets/certificationsLogos/SecurityPlus Logo Certified CE.png";
-import IBMCybersecurityFundamentals from "@/assets/certificationsLogos/IBM Cybersecurity Fundamentals.png"
-import eJPT from "@/assets/certificationsLogos/eJPT.png"
-import AnisaLogo from "@/assets/certificationsLogos/AnisaHouseLogo.jpeg"
-import ArjangLogo from "@/assets/certificationsLogos/ArjangLogo.jpeg"
-import HubspotLogo from "@/assets/certificationsLogos/HubSpot-Academy-Logo.png"
+import IBMCybersecurityFundamentals from "@/assets/certificationsLogos/IBM Cybersecurity Fundamentals.png";
+import eJPT from "@/assets/certificationsLogos/eJPT.png";
+import AnisaLogo from "@/assets/certificationsLogos/AnisaHouseLogo.jpeg";
+import ArjangLogo from "@/assets/certificationsLogos/ArjangLogo.jpeg";
+import HubspotLogo from "@/assets/certificationsLogos/HubSpot-Academy-Logo.png";
 
 // Hero icons
 import {
@@ -765,7 +765,7 @@ const Landing = () => {
               </div>
             </div>
           </section>
-          <section className="mt-20 flex flex-col items-center justify-center gap-8 px-4 des:flex-row des:gap-16 des:px-36 cursor-grab active:cursor-grabbing">
+          <section className="mt-20 flex flex-col items-center justify-center gap-8 px-4 des:flex-row des:gap-16 des:px-36">
             <h3 className="text-3xl font-bold text-Dark-brown">
               My Certifications:
             </h3>
@@ -781,11 +781,11 @@ const Landing = () => {
                   dynamicBullets: true,
                   clickable: true,
                 }}
-                className="cert-slider"
+                className="cert-slider cursor-grab active:cursor-grabbing"
                 modules={[Pagination]}
               >
                 <SwiperSlide className="p-9">
-                  <div className="flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                  <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
                     <img
                       src={SecurityPlusIcon}
                       className="h-48 w-36 rounded-round bg-white p-5 contrast-[.8] tab:h-full tab:w-52"
@@ -811,13 +811,16 @@ const Landing = () => {
                       </button>
                     </div>
                   </div>
+                  <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
+                    <p className="text-xs">Achieved: 2022</p>
+                  </div>
                 </SwiperSlide>
                 <SwiperSlide className="p-9">
-                  <div className="flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                  <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
                     <img
                       src={IBMCybersecurityFundamentals}
                       className="h-48 w-36 rounded-round bg-white contrast-[.8] tab:h-full tab:w-52"
-                      alt="Security+ logo"
+                      alt="IBM Cybersecurity Fundamentals logo"
                     />
                     <div className="flex flex-col items-center gap-5 text-white-text">
                       <h3 className="w-48 text-center text-lg font-medium">
@@ -842,19 +845,22 @@ const Landing = () => {
                       </button>
                     </div>
                   </div>
+                  <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
+                    <p className="text-xs">Achieved: 2023</p>
+                  </div>
                 </SwiperSlide>
                 <SwiperSlide className="p-9">
-                  <div className="flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                  <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
                     <img
                       src={eJPT}
                       className="h-48 w-36 rounded-round bg-white contrast-[.8] tab:h-full tab:w-52"
-                      alt="Security+ logo"
+                      alt="eJPT logo"
                     />
                     <div className="flex flex-col items-center gap-5 text-white-text">
                       <h3 className="w-48 text-center text-lg font-medium">
                         Title:{" "}
                         <span className="underline">
-                        eJPT - eLearn Security Junior Penetration Tester
+                          eJPT - eLearn Security Junior Penetration Tester
                         </span>
                       </h3>
                       <button
@@ -873,19 +879,22 @@ const Landing = () => {
                       </button>
                     </div>
                   </div>
+                  <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
+                    <p className="text-xs">Achieved: 2020</p>
+                  </div>
                 </SwiperSlide>
                 <SwiperSlide className="p-9">
-                  <div className="flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                  <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
                     <img
                       src={ArjangLogo}
                       className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
-                      alt="Security+ logo"
+                      alt="Arjang logo"
                     />
                     <div className="flex flex-col items-center gap-5 text-white-text">
-                      <h3 className="w-48 tab:w-56 text-center text-lg font-medium">
+                      <h3 className="w-48 text-center text-lg font-medium tab:w-56">
                         Title:{" "}
                         <span className="underline">
-                        CEH - Training Course [IRN]
+                          CEH - Training Course [IRN]
                         </span>
                       </h3>
                       <button
@@ -904,19 +913,22 @@ const Landing = () => {
                       </button>
                     </div>
                   </div>
+                  <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
+                    <p className="text-xs">Achieved: 2020</p>
+                  </div>
                 </SwiperSlide>
                 <SwiperSlide className="p-9">
-                  <div className="flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                  <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
                     <img
                       src={ArjangLogo}
                       className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
-                      alt="Security+ logo"
+                      alt="Arjang logo"
                     />
                     <div className="flex flex-col items-center gap-5 text-white-text">
-                      <h3 className="tab:w-56 text-center text-lg font-medium">
+                      <h3 className="text-center text-lg font-medium tab:w-56">
                         Title:{" "}
                         <span className="underline">
-                        SANS PenTest Pack L1 ( SEC560 / SEC573 / SEC575 / SEC617 / SEC542 / SEC580 ) - Training Course [IRN]
+                          SANS PenTest Pack L1 - Training Course [IRN]
                         </span>
                       </h3>
                       <button
@@ -935,19 +947,22 @@ const Landing = () => {
                       </button>
                     </div>
                   </div>
+                  <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
+                    <p className="text-xs">Achieved: 2020</p>
+                  </div>
                 </SwiperSlide>
                 <SwiperSlide className="p-9">
-                  <div className="flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                  <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
                     <img
                       src={HubspotLogo}
                       className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
-                      alt="Security+ logo"
+                      alt="Hubspot logo"
                     />
                     <div className="flex flex-col items-center gap-5 text-white-text">
-                      <h3 className="w-48 tab:w-56 text-center text-lg font-medium">
+                      <h3 className="w-48 text-center text-lg font-medium tab:w-56">
                         Title:{" "}
                         <span className="underline">
-                        HubSpot Academy - Digital Marketing 
+                          HubSpot Academy - Digital Marketing
                         </span>
                       </h3>
                       <button
@@ -966,19 +981,22 @@ const Landing = () => {
                       </button>
                     </div>
                   </div>
+                  <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
+                    <p className="text-xs">Achieved: 2023</p>
+                  </div>
                 </SwiperSlide>
                 <SwiperSlide className="p-9">
-                  <div className="flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                  <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
                     <img
                       src={AnisaLogo}
                       className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
-                      alt="Security+ logo"
+                      alt="Anisa logo"
                     />
                     <div className="flex flex-col items-center gap-5 text-white-text">
                       <h3 className="w-48 text-center text-lg font-medium">
                         Title:{" "}
                         <span className="underline">
-                        CompTIA Network+ - Training Course [IRN]
+                          CompTIA Network+ - Training Course [IRN]
                         </span>
                       </h3>
                       <button
@@ -997,19 +1015,22 @@ const Landing = () => {
                       </button>
                     </div>
                   </div>
+                  <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
+                    <p className="text-xs">Achieved: 2020</p>
+                  </div>
                 </SwiperSlide>
                 <SwiperSlide className="p-9">
-                  <div className="flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                  <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
                     <img
                       src={ArjangLogo}
                       className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
-                      alt="Security+ logo"
+                      alt="Arjang logo"
                     />
                     <div className="flex flex-col items-center gap-5 text-white-text">
                       <h3 className="w-48 text-center text-lg font-medium">
                         Title:{" "}
                         <span className="underline">
-                        CCNA - Bootcamp Training Course [IRN]
+                          CCNA - Bootcamp Training Course [IRN]
                         </span>
                       </h3>
                       <button
@@ -1028,19 +1049,22 @@ const Landing = () => {
                       </button>
                     </div>
                   </div>
+                  <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
+                    <p className="text-xs">Achieved: 2021</p>
+                  </div>
                 </SwiperSlide>
                 <SwiperSlide className="p-9">
-                  <div className="flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                  <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
                     <img
                       src={AnisaLogo}
                       className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
-                      alt="Security+ logo"
+                      alt="Anisa logo"
                     />
                     <div className="flex flex-col items-center gap-5 text-white-text">
-                      <h3 className="w-48 tab:w-56 text-center text-lg font-medium">
+                      <h3 className="w-48 text-center text-lg font-medium tab:w-56">
                         Title:{" "}
                         <span className="underline">
-                        LPIC-1 - Training Course [IRN]
+                          LPIC-1 - Training Course [IRN]
                         </span>
                       </h3>
                       <button
@@ -1059,19 +1083,22 @@ const Landing = () => {
                       </button>
                     </div>
                   </div>
+                  <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
+                    <p className="text-xs">Achieved: 2020</p>
+                  </div>
                 </SwiperSlide>
                 <SwiperSlide className="p-9">
-                  <div className="flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                  <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
                     <img
                       src={AnisaLogo}
                       className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
-                      alt="Security+ logo"
+                      alt="Anisa logo"
                     />
                     <div className="flex flex-col items-center gap-5 text-white-text">
-                      <h3 className="w-48 tab:w-56 text-center text-lg font-medium">
+                      <h3 className="w-48 text-center text-lg font-medium tab:w-56">
                         Title:{" "}
                         <span className="underline">
-                        LPIC-2 - Training Course [IRN]
+                          LPIC-2 - Training Course [IRN]
                         </span>
                       </h3>
                       <button
@@ -1090,19 +1117,22 @@ const Landing = () => {
                       </button>
                     </div>
                   </div>
+                  <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
+                    <p className="text-xs">Achieved: 2020</p>
+                  </div>
                 </SwiperSlide>
                 <SwiperSlide className="p-9">
-                  <div className="flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                  <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
                     <img
                       src={AnisaLogo}
                       className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
                       alt="Security+ logo"
                     />
                     <div className="flex flex-col items-center gap-5 text-white-text">
-                      <h3 className="w-48 tab:w-56 text-center text-lg font-medium">
+                      <h3 className="w-48 text-center text-lg font-medium tab:w-56">
                         Title:{" "}
                         <span className="underline">
-                        Python Programming - Training Course [IRN]
+                          Python Programming - Training Course [IRN]
                         </span>
                       </h3>
                       <button
@@ -1121,10 +1151,10 @@ const Landing = () => {
                       </button>
                     </div>
                   </div>
+                  <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
+                    <p className="text-xs">Achieved: 2020</p>
+                  </div>
                 </SwiperSlide>
-                
-                <SwiperSlide>Slide 8</SwiperSlide>
-                <SwiperSlide>Slide 9</SwiperSlide>
               </Swiper>
             </div>
           </section>
