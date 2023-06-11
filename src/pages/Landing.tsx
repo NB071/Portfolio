@@ -730,7 +730,7 @@ const Landing = () => {
                 />
                 <button
                   type="button"
-                  className="my-4 flex items-center justify-center gap-2 rounded-round bg-Dark-brown px-10 py-3 text-white-text duration-500 hover:border hover:border-Dark-brown hover:bg-transparent hover:text-Dark-brown"
+                  className="my-4 flex items-center justify-center gap-2 rounded-round border border-transparent bg-Dark-brown px-10 py-3 text-white-text duration-500 hover:border hover:border-Dark-brown hover:bg-transparent hover:text-Dark-brown"
                   onClick={() => (window.location.href = "#intro")}
                 >
                   <DocumentArrowDownIcon className="w-7" />
