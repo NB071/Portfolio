@@ -245,6 +245,7 @@ const Landing = () => {
                   <article
                     className="h-[8rem] cursor-pointer rounded-round border-none bg-[#D58F6B] duration-500 hover:scale-95 tab:h-[11rem] tab:flex-1  des:h-[12rem]"
                     title="Stack"
+                    onClick={()=> window.location.href = "#stack"}
                   >
                     <div className="flex h-full items-end justify-between px-9 pb-5 des:px-10 des:py-8">
                       <h3 className=" align-bottom text-lg text-white-text">
@@ -256,6 +257,8 @@ const Landing = () => {
                   <article
                     className="h-[8rem] cursor-pointer rounded-round border-none bg-[#1B1716] duration-500 hover:scale-95  tab:h-[11rem] tab:flex-1  des:h-[12rem]"
                     title="About me"
+                    onClick={()=> window.location.href = "#about-me"}
+
                   >
                     <div className="flex h-full items-end justify-between px-9 pb-5 des:px-10 des:py-8">
                       <h3 className=" align-bottom text-lg text-white-text">
@@ -268,6 +271,8 @@ const Landing = () => {
                 <article
                   className="h-[8rem] cursor-pointer rounded-round border-none bg-[#3C2A20] duration-500 hover:scale-95  tab:h-[11rem] des:h-[12rem]"
                   title="Contact me"
+                  onClick={()=> window.location.href = "#contact-me"}
+
                 >
                   <div className="flex h-full items-end justify-between px-9 pb-5 des:px-10 des:py-8">
                     <h3 className=" align-bottom text-lg text-white-text">
@@ -281,6 +286,7 @@ const Landing = () => {
               <article
                 className="group relative h-[8rem] cursor-pointer overflow-hidden rounded-round border-none bg-[#69533E] duration-500 hover:scale-95 tab:h-[13rem] des:h-[24.5rem] des:flex-1"
                 title="Work"
+                onClick={()=> window.location.href = "#work"}
               >
                 <div className="relative z-10 flex h-full flex-col justify-between px-9 py-5 des:px-12 des:py-9">
                   <div className="flex items-center justify-between">
