@@ -10,55 +10,19 @@ import Header from "@/components/Header/Header";
 // Svgs
 import shapes from "@/assets/WorksBgShapes.svg";
 
-// Social icon svgs
-import LinkedInIcon from "@/assets/socialIcons/Linkedin.svg";
-import GitHubIcon from "@/assets/socialIcons/Github.svg";
-import TwitterIcon from "@/assets/socialIcons/Twitter.svg";
-import MailIcon from "@/assets/socialIcons/Mail.svg";
-
 // Projects Logo svgs
 import DigiBookshelfLogo from "@/assets/projectsLogo/DigiBookshelfLogo.svg";
 import LyristLogo from "@/assets/projectsLogo/LyristLogo.svg";
 import DailyQuotesLogo from "@/assets/projectsLogo/DailyQuotesLogo.svg";
 
-// stack logos [front-end]
-import htmlLogo from "@/assets/StackLogos/front/HTML.svg";
-import cssLogo from "@/assets/StackLogos/front/CSS.svg";
-import scssLogo from "@/assets/StackLogos/front/SCSS.svg";
-import tailwindLogo from "@/assets/StackLogos/front/Tailwind.svg";
-import muiLogo from "@/assets/StackLogos/front/MUI.svg";
-import javascriptLogo from "@/assets/StackLogos/front/JS.svg";
-import typescriptLogo from "@/assets/StackLogos/front/TS.svg";
-import reactLogo from "@/assets/StackLogos/front/React.svg";
-import figmaLogo from "@/assets/StackLogos/front/Figma.svg";
-import angularLogo from "@/assets/StackLogos/front/Angular.svg";
+// Stack logos
+import * as stackLogos from "@/utils/ImportStacksLogo";
 
-// stack logos [back-end]
-import nodejsLogo from "@/assets/StackLogos/back/Node js.svg";
-import expressjsLogo from "@/assets/StackLogos/back/Express Js.svg";
-import mysqlLogo from "@/assets/StackLogos/back/MySQL.svg";
-import jwtLogo from "@/assets/StackLogos/back/jwt.svg";
-import knexLogo from "@/assets/StackLogos/back/Knex.svg";
-import postmanLogo from "@/assets/StackLogos/back/Postman.svg";
-import socketioLogo from "@/assets/StackLogos/back/SocketIO.svg";
-import djangoLogo from "@/assets/StackLogos/back/Django.svg";
+// Certificate logos
+import * as certLogos from "@/utils/ImportCertificatesLogo";
 
-// stack logos [development]
-import gitLogo from "@/assets/StackLogos/dev/Git.svg";
-import herokuIcon from "@/assets/StackLogos/dev/Heroku.svg";
-import jestIcon from "@/assets/StackLogos/dev/Jest.svg";
-import backstageioIcon from "@/assets/StackLogos/dev/BackstageIO.svg";
-import linuxIcon from "@/assets/StackLogos/dev/Linux.svg";
-import pythonIcon from "@/assets/StackLogos/dev/Python.svg";
-import dockerIcon from "@/assets/StackLogos/dev/Docker.svg";
-
-// certificates
-import SecurityPlusIcon from "@/assets/certificationsLogos/SecurityPlus Logo Certified CE.png";
-import IBMCybersecurityFundamentals from "@/assets/certificationsLogos/IBM Cybersecurity Fundamentals.png";
-import eJPT from "@/assets/certificationsLogos/eJPT.png";
-import AnisaLogo from "@/assets/certificationsLogos/AnisaHouseLogo.jpeg";
-import ArjangLogo from "@/assets/certificationsLogos/ArjangLogo.jpeg";
-import HubspotLogo from "@/assets/certificationsLogos/HubSpot-Academy-Logo.png";
+// Social logos
+import * as socialLogos from "@/utils/ImportSocialLogos";
 
 // Hero icons
 import {
@@ -89,6 +53,7 @@ import { Pagination } from "swiper";
 import { useFormik, FormikProvider } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+
 const Landing = () => {
   const [showReturnTopBtn, setShowReturnTopBtn] = useState(false);
   const [showNav, setShowNav] = useState(false);
@@ -189,7 +154,7 @@ const Landing = () => {
                   >
                     <img
                       className="cursor-pointer transition-all duration-500 hover:scale-125 des:w-8"
-                      src={LinkedInIcon}
+                      src={socialLogos.LinkedInIcon}
                       title="LinkedIn - Nima Bargestan"
                       alt="LinkedIn Icon"
                     />
@@ -201,7 +166,7 @@ const Landing = () => {
                   >
                     <img
                       className="cursor-pointer transition-all duration-500 hover:scale-125 des:w-8"
-                      src={GitHubIcon}
+                      src={socialLogos.GitHubIcon}
                       title="Github - Nima Bargestan"
                       alt="Github Icon"
                     />
@@ -213,7 +178,7 @@ const Landing = () => {
                   >
                     <img
                       className="cursor-pointer transition-all duration-500 hover:scale-125 des:w-8"
-                      src={TwitterIcon}
+                      src={socialLogos.TwitterIcon}
                       title="Twitter - Nima Bargestan"
                       alt="Twitter Icon"
                     />
@@ -226,7 +191,7 @@ const Landing = () => {
                   >
                     <img
                       className="cursor-pointer transition-all duration-500 hover:scale-125 des:w-8"
-                      src={MailIcon}
+                      src={socialLogos.MailIcon}
                       title="Mail - Nima Bargestan"
                       alt="Mail Icon"
                     />
@@ -415,7 +380,7 @@ const Landing = () => {
                     rel="noopener noreferrer"
                   >
                     <img
-                      src={htmlLogo}
+                      src={stackLogos.htmlLogo}
                       className="h-8 w-8 cursor-pointer duration-300 hover:scale-90 lgmob:h-12 lgmob:w-12 tab:h-9 tab:w-9 des:h-14 des:w-14"
                       alt="HTML5 logo"
                       title="HTML5"
@@ -427,7 +392,7 @@ const Landing = () => {
                     rel="noopener noreferrer"
                   >
                     <img
-                      src={cssLogo}
+                      src={stackLogos.cssLogo}
                       className="h-8 w-8 cursor-pointer duration-300 hover:scale-90 lgmob:h-12 lgmob:w-12 tab:h-9 tab:w-9 des:h-14 des:w-14"
                       alt="CSS logo"
                       title="CSS"
@@ -439,7 +404,7 @@ const Landing = () => {
                     rel="noopener noreferrer"
                   >
                     <img
-                      src={figmaLogo}
+                      src={stackLogos.figmaLogo}
                       className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
                       alt="Figma logo"
                       title="Figma"
@@ -455,7 +420,7 @@ const Landing = () => {
                     rel="noopener noreferrer"
                   >
                     <img
-                      src={javascriptLogo}
+                      src={stackLogos.javascriptLogo}
                       className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
                       alt="JavaScript logo"
                       title="JavaScript"
@@ -467,7 +432,7 @@ const Landing = () => {
                     rel="noopener noreferrer"
                   >
                     <img
-                      src={typescriptLogo}
+                      src={stackLogos.typescriptLogo}
                       className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
                       alt="TypeScript logo"
                       title="TypeScript"
@@ -479,7 +444,7 @@ const Landing = () => {
                     rel="noopener noreferrer"
                   >
                     <img
-                      src={reactLogo}
+                      src={stackLogos.reactLogo}
                       className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
                       alt="React logo"
                       title="React"
@@ -494,7 +459,7 @@ const Landing = () => {
                     rel="noopener noreferrer"
                   >
                     <img
-                      src={scssLogo}
+                      src={stackLogos.scssLogo}
                       className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
                       alt="SASS logo"
                       title="SASS"
@@ -506,7 +471,7 @@ const Landing = () => {
                     rel="noopener noreferrer"
                   >
                     <img
-                      src={tailwindLogo}
+                      src={stackLogos.tailwindLogo}
                       className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
                       alt="TailWind logo"
                       title="Tailwind"
@@ -518,7 +483,7 @@ const Landing = () => {
                     rel="noopener noreferrer"
                   >
                     <img
-                      src={muiLogo}
+                      src={stackLogos.muiLogo}
                       className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
                       alt="MUI Logo"
                       title="MUI"
@@ -535,7 +500,7 @@ const Landing = () => {
                     rel="noopener noreferrer"
                   >
                     <img
-                      src={angularLogo}
+                      src={stackLogos.angularLogo}
                       className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
                       alt="Angular logo"
                       title="Angular"
@@ -558,7 +523,7 @@ const Landing = () => {
                       rel="noopener noreferrer"
                     >
                       <img
-                        src={nodejsLogo}
+                        src={stackLogos.nodejsLogo}
                         className="h-8 w-8 cursor-pointer duration-300 hover:scale-90 lgmob:h-12 lgmob:w-12 tab:h-9 tab:w-9 des:h-14 des:w-14"
                         alt="Node.js logo"
                         title="Node.js"
@@ -570,7 +535,7 @@ const Landing = () => {
                       rel="noopener noreferrer"
                     >
                       <img
-                        src={expressjsLogo}
+                        src={stackLogos.expressjsLogo}
                         className="h-8 w-8 cursor-pointer duration-300 hover:scale-90 lgmob:h-12 lgmob:w-12 tab:h-9 tab:w-9 des:h-14 des:w-14"
                         alt="Express.js logo"
                         title="Express.js"
@@ -582,7 +547,7 @@ const Landing = () => {
                       rel="noopener noreferrer"
                     >
                       <img
-                        src={mysqlLogo}
+                        src={stackLogos.mysqlLogo}
                         className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
                         alt="MySQL Logo"
                         title="MySQL"
@@ -597,7 +562,7 @@ const Landing = () => {
                       rel="noopener noreferrer"
                     >
                       <img
-                        src={jwtLogo}
+                        src={stackLogos.jwtLogo}
                         className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-14 des:w-14"
                         alt="JWT Logo"
                         title="JWT"
@@ -609,7 +574,7 @@ const Landing = () => {
                       rel="noopener noreferrer"
                     >
                       <img
-                        src={knexLogo}
+                        src={stackLogos.knexLogo}
                         className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
                         alt="Knex logo"
                         title="Knex"
@@ -621,7 +586,7 @@ const Landing = () => {
                       rel="noopener noreferrer"
                     >
                       <img
-                        src={postmanLogo}
+                        src={stackLogos.postmanLogo}
                         className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
                         alt="Postman logo"
                         title="Postman"
@@ -636,7 +601,7 @@ const Landing = () => {
                       rel="noopener noreferrer"
                     >
                       <img
-                        src={socketioLogo}
+                        src={stackLogos.socketioLogo}
                         className="h-7 w-20 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 tab:h-8 des:h-12"
                         alt="SocketIO logo"
                         title="SocketIO"
@@ -653,7 +618,7 @@ const Landing = () => {
                       rel="noopener noreferrer"
                     >
                       <img
-                        src={djangoLogo}
+                        src={stackLogos.djangoLogo}
                         className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
                         alt="Django logo"
                         title="Django"
@@ -677,7 +642,7 @@ const Landing = () => {
                       rel="noopener noreferrer"
                     >
                       <img
-                        src={herokuIcon}
+                        src={stackLogos.herokuIcon}
                         className="h-8 w-8 cursor-pointer duration-300 hover:scale-90 lgmob:h-12 lgmob:w-12 tab:h-9 tab:w-9 des:h-14 des:w-14"
                         alt="Heroku logo"
                         title="Heroku"
@@ -689,7 +654,7 @@ const Landing = () => {
                       rel="noopener noreferrer"
                     >
                       <img
-                        src={gitLogo}
+                        src={stackLogos.gitLogo}
                         className="h-8 w-8 cursor-pointer duration-300 hover:scale-90 lgmob:h-12 lgmob:w-12 tab:h-9 tab:w-9 des:h-14 des:w-14"
                         alt="Git logo"
                         title="Git"
@@ -701,7 +666,7 @@ const Landing = () => {
                       rel="noopener noreferrer"
                     >
                       <img
-                        src={jestIcon}
+                        src={stackLogos.jestIcon}
                         className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
                         alt="Jest logo"
                         title="Jest"
@@ -713,7 +678,7 @@ const Landing = () => {
                       rel="noopener noreferrer"
                     >
                       <img
-                        src={backstageioIcon}
+                        src={stackLogos.backstageioIcon}
                         className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
                         alt="Backstage logo"
                         title="Backstage"
@@ -728,7 +693,7 @@ const Landing = () => {
                       rel="noopener noreferrer"
                     >
                       <img
-                        src={linuxIcon}
+                        src={stackLogos.linuxIcon}
                         className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
                         alt="Linux logo"
                         title="Linux"
@@ -740,7 +705,7 @@ const Landing = () => {
                       rel="noopener noreferrer"
                     >
                       <img
-                        src={pythonIcon}
+                        src={stackLogos.pythonIcon}
                         className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
                         alt="Python logo"
                         title="Python"
@@ -758,7 +723,7 @@ const Landing = () => {
                       rel="noopener noreferrer"
                     >
                       <img
-                        src={dockerIcon}
+                        src={stackLogos.dockerIcon}
                         className="h-12 w-20 cursor-pointer duration-300 hover:scale-90 lgmob:h-14 tab:h-8 des:h-14 "
                         alt="Docker logo"
                         title="Docker"
@@ -847,7 +812,7 @@ const Landing = () => {
                 <SwiperSlide className="p-9">
                   <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
                     <img
-                      src={SecurityPlusIcon}
+                      src={certLogos.SecurityPlusIcon}
                       className="h-48 w-36 rounded-round bg-white p-5 contrast-[.8] tab:h-full tab:w-52"
                       alt="Security+ logo"
                     />
@@ -878,7 +843,7 @@ const Landing = () => {
                 <SwiperSlide className="p-9">
                   <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
                     <img
-                      src={IBMCybersecurityFundamentals}
+                      src={certLogos.IBMCybersecurityFundamentals}
                       className="h-48 w-36 rounded-round bg-white contrast-[.8] tab:h-full tab:w-52"
                       alt="IBM Cybersecurity Fundamentals logo"
                     />
@@ -912,7 +877,7 @@ const Landing = () => {
                 <SwiperSlide className="p-9">
                   <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
                     <img
-                      src={eJPT}
+                      src={certLogos.eJPT}
                       className="h-48 w-36 rounded-round bg-white contrast-[.8] tab:h-full tab:w-52"
                       alt="eJPT logo"
                     />
@@ -946,7 +911,7 @@ const Landing = () => {
                 <SwiperSlide className="p-9">
                   <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
                     <img
-                      src={ArjangLogo}
+                      src={certLogos.ArjangLogo}
                       className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
                       alt="Arjang logo"
                     />
@@ -980,7 +945,7 @@ const Landing = () => {
                 <SwiperSlide className="p-9">
                   <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
                     <img
-                      src={ArjangLogo}
+                      src={certLogos.ArjangLogo}
                       className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
                       alt="Arjang logo"
                     />
@@ -1014,7 +979,7 @@ const Landing = () => {
                 <SwiperSlide className="p-9">
                   <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
                     <img
-                      src={HubspotLogo}
+                      src={certLogos.HubspotLogo}
                       className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
                       alt="Hubspot logo"
                     />
@@ -1048,7 +1013,7 @@ const Landing = () => {
                 <SwiperSlide className="p-9">
                   <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
                     <img
-                      src={AnisaLogo}
+                      src={certLogos.AnisaLogo}
                       className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
                       alt="Anisa logo"
                     />
@@ -1082,7 +1047,7 @@ const Landing = () => {
                 <SwiperSlide className="p-9">
                   <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
                     <img
-                      src={ArjangLogo}
+                      src={certLogos.ArjangLogo}
                       className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
                       alt="Arjang logo"
                     />
@@ -1116,7 +1081,7 @@ const Landing = () => {
                 <SwiperSlide className="p-9">
                   <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
                     <img
-                      src={AnisaLogo}
+                      src={certLogos.AnisaLogo}
                       className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
                       alt="Anisa logo"
                     />
@@ -1150,7 +1115,7 @@ const Landing = () => {
                 <SwiperSlide className="p-9">
                   <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
                     <img
-                      src={AnisaLogo}
+                      src={certLogos.AnisaLogo}
                       className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
                       alt="Anisa logo"
                     />
@@ -1184,7 +1149,7 @@ const Landing = () => {
                 <SwiperSlide className="p-9">
                   <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
                     <img
-                      src={AnisaLogo}
+                      src={certLogos.AnisaLogo}
                       className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
                       alt="Anisa logo"
                     />
@@ -1237,7 +1202,7 @@ const Landing = () => {
                 <div className="flex flex-wrap justify-center gap-2">
                   <Link to="matilto:nimam700@gmail.com">
                     <div className="flex items-center gap-4 rounded-round border border-Dark-brown px-7 py-2 text-sm text-Dark-brown underline ">
-                      <img src={MailIcon} alt="Mail icon" className="w-6" />
+                      <img src={socialLogos.MailIcon} alt="Mail icon" className="w-6" />
                       Nimam700@gmail.com
                     </div>
                   </Link>
@@ -1254,7 +1219,7 @@ const Landing = () => {
                     className="group rounded-round border border-Dark-brown px-7 py-2 text-base underline"
                   >
                     <img
-                      src={LinkedInIcon}
+                      src={socialLogos.LinkedInIcon}
                       alt="LinkedIn Icon"
                       className="duration-500 group-hover:scale-90"
                     />
@@ -1264,7 +1229,7 @@ const Landing = () => {
                     className="group rounded-round border border-Dark-brown px-7 py-2 text-base underline"
                   >
                     <img
-                      src={GitHubIcon}
+                      src={socialLogos.GitHubIcon}
                       className="duration-500 group-hover:scale-90"
                       alt="Github Icon"
                     />
@@ -1274,7 +1239,7 @@ const Landing = () => {
                     className="group rounded-round border border-Dark-brown px-7 py-2 text-base underline"
                   >
                     <img
-                      src={TwitterIcon}
+                      src={socialLogos.TwitterIcon}
                       className="duration-500 group-hover:scale-90"
                       alt="Twitter Icon"
                     />
