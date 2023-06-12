@@ -4,6 +4,9 @@ import "swiper/css/pagination";
 import HeadshotLanding from "@/assets/Headshot-landing.svg";
 import HeadshotAboutMe from "@/assets/headhotAboutMe.png";
 
+// Components
+import Header from "@/components/Header/Header";
+
 // Svgs
 import shapes from "@/assets/WorksBgShapes.svg";
 
@@ -88,6 +91,7 @@ import * as Yup from "yup";
 import axios from "axios";
 const Landing = () => {
   const [showReturnTopBtn, setShowReturnTopBtn] = useState(false);
+  const [showNav, setShowNav] = useState(false);
   const [sendformInProgress, setSendformInProgress] = useState(false);
   const [sendformSuccess, setSendFormSuccess] = useState<boolean | undefined>();
   const goToTop = () => {
@@ -101,8 +105,12 @@ const Landing = () => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 400) {
         setShowReturnTopBtn(true);
+      }
+      if (window.scrollY > 500) {
+        setShowNav(true);
       } else {
         setShowReturnTopBtn(false);
+        setShowNav(false);
       }
     });
   }, []);
@@ -161,6 +169,7 @@ const Landing = () => {
 
   return (
     <>
+      {showNav && <Header variant="landing" />}
       <main className="relative z-[2] backdrop-blur-[2px]">
         <section id="intro" className="">
           <div className="flex flex-col tab:flex-row-reverse">
@@ -238,7 +247,7 @@ const Landing = () => {
           </div>
 
           {/* CTAs */}
-          <section className="m-auto max-w-[1920px] ">
+          <section className="m-auto max-w-[1920px]">
             <div className="mt-10 flex w-full flex-col gap-2 px-4 tab:mt-16 des:mt-24 des:flex-row-reverse">
               <div className="flex flex-1 flex-col gap-2">
                 <div className="flex w-full flex-col gap-2 tab:flex-row">
