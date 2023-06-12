@@ -1,5 +1,5 @@
 import Landing from "@/pages/Landing";
-import ProjectDigiBookShelf from "@/pages/projectDigiBookShelf";
+import ProjectDigiBookShelf from "@/pages/ProjectDigiBookShelf";
 
 import { Route, Routes } from "react-router-dom";
 function App() {
