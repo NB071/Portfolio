@@ -4,6 +4,8 @@ import "swiper/css/pagination";
 import HeadshotLanding from "@/assets/Headshot-landing.svg";
 import HeadshotAboutMe from "@/assets/headhotAboutMe.png";
 
+import { Reveal } from "@/utils/Reveal";
+
 // Components
 import Header from "@/components/Header/Header";
 
@@ -22,7 +24,12 @@ import * as stackLogos from "@/utils/ImportStacksLogo";
 import * as certLogos from "@/utils/ImportCertificatesLogo";
 
 // Social logos
-import * as socialLogos from "@/utils/ImportSocialLogos";
+import {
+  GithubIcon,
+  LinkedInIcon,
+  MailIcon,
+  TwitterIcon,
+} from "@/utils/ImportSocialLogos";
 
 // Hero icons
 import {
@@ -53,6 +60,7 @@ import { Pagination } from "swiper";
 import { useFormik, FormikProvider } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import { AnimatePresence } from "framer-motion";
 
 const Landing = () => {
   const [showReturnTopBtn, setShowReturnTopBtn] = useState(false);
@@ -134,162 +142,150 @@ const Landing = () => {
 
   return (
     <>
-      {showNav && <Header variant="landing" />}
+      <AnimatePresence>
+        {showNav && <Header variant="landing" />}
+      </AnimatePresence>
       <main className="relative z-[2] backdrop-blur-[2px]">
-        <section id="intro" className="">
-          <div className="flex flex-col tab:flex-row-reverse">
-            <img
-              src={HeadshotLanding}
-              className="relative -top-[4.2rem] left-14 z-10 m-auto h-[15rem] tab:left-0 tab:top-0 tab:m-0 tab:ml-auto tab:h-[20rem] des:h-[25rem]"
-              alt=""
-            />
+        <Reveal>
+          <section id="intro">
+            <div className="flex flex-col tab:flex-row-reverse">
+              <img
+                src={HeadshotLanding}
+                className="relative -top-[4.2rem] left-14 z-10 m-auto h-[15rem] tab:left-0 tab:top-0 tab:m-0 tab:ml-auto tab:h-[20rem] des:h-[25rem]"
+                alt=""
+              />
 
-            <div className="m-auto flex flex-col items-center gap-5 ">
-              <div className="flex w-full flex-col justify-between gap-5 tab:flex-row-reverse">
-                <div className="flex items-center justify-center gap-3">
-                  <Link
-                    to="https://www.linkedin.com/in/nima-bargestan/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      className="cursor-pointer transition-all duration-500 hover:scale-125 des:w-8"
-                      src={socialLogos.LinkedInIcon}
-                      title="LinkedIn - Nima Bargestan"
-                      alt="LinkedIn Icon"
-                    />
-                  </Link>
-                  <Link
-                    to="https://github.com/NB071"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      className="cursor-pointer transition-all duration-500 hover:scale-125 des:w-8"
-                      src={socialLogos.GitHubIcon}
-                      title="Github - Nima Bargestan"
-                      alt="Github Icon"
-                    />
-                  </Link>
-                  <Link
-                    to="https://twitter.com/nimdev071"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      className="cursor-pointer transition-all duration-500 hover:scale-125 des:w-8"
-                      src={socialLogos.TwitterIcon}
-                      title="Twitter - Nima Bargestan"
-                      alt="Twitter Icon"
-                    />
-                  </Link>
+              <div className="m-auto flex flex-col items-center gap-5 ">
+                <div className="flex w-full flex-col justify-between gap-5 tab:flex-row-reverse">
+                  <div className="flex items-center justify-center gap-3">
+                    <Link
+                      to="https://www.linkedin.com/in/nima-bargestan/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group"
+                    >
+                      <LinkedInIcon className="cursor-pointer tab:group-hover:mb-3 fill-Dark-brown transition-all duration-500 hover:scale-125 des:w-8" />
+                    </Link>
+                    <Link
+                      to="https://github.com/NB071"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group"
+                    >
+                      <GithubIcon className="cursor-pointer tab:group-hover:mb-3 fill-Dark-brown transition-all duration-500 hover:scale-125 des:w-8" />
+                    </Link>
+                    <Link
+                      to="https://twitter.com/nimdev071"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group"
+                    >
+                      <TwitterIcon className="cursor-pointer tab:group-hover:mb-3 fill-Dark-brown transition-all duration-500 hover:scale-125 des:w-8" />
+                    </Link>
 
-                  <Link
-                    to="mailto:nimam700@gmail.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      className="cursor-pointer transition-all duration-500 hover:scale-125 des:w-8"
-                      src={socialLogos.MailIcon}
-                      title="Mail - Nima Bargestan"
-                      alt="Mail Icon"
-                    />
-                  </Link>
+                    <Link
+                      to="mailto:nimam700@gmail.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group"
+                    >
+                      <MailIcon className="cursor-pointer tab:group-hover:mb-3 fill-Dark-brown transition-all duration-500 hover:scale-125 des:w-8" />
+                    </Link>
+                  </div>
+                  <h2 className="font-outline-1 text-center text-2xl font-bold text-transparent tab:text-start tab:text-3xl des:text-5xl">
+                    Hi there, I'm
+                  </h2>
                 </div>
-                <h2 className="font-outline-1 text-center text-2xl font-bold text-transparent tab:text-start tab:text-3xl des:text-5xl">
-                  Hi there, I'm
+
+                <h1 className="w-full text-center text-2xl font-bold text-Dark-brown tab:text-start tab:text-5xl des:text-6xl">
+                  Nima Bargestan
+                </h1>
+                <h2 className="font-outline-1 w-full text-center text-2xl font-bold text-transparent tab:text-start tab:text-3xl des:text-5xl">
+                  Full Stack Developer
                 </h2>
               </div>
-
-              <h1 className="w-full text-center text-2xl font-bold text-Dark-brown tab:text-start tab:text-5xl des:text-6xl">
-                Nima Bargestan
-              </h1>
-              <h2 className="font-outline-1 w-full text-center text-2xl font-bold text-transparent tab:text-start tab:text-3xl des:text-5xl">
-                Full Stack Developer
-              </h2>
             </div>
-          </div>
 
-          {/* CTAs */}
-          <section className="m-auto max-w-[1920px]">
-            <div className="mt-10 flex w-full flex-col gap-2 px-4 tab:mt-16 des:mt-24 des:flex-row-reverse">
-              <div className="flex flex-1 flex-col gap-2">
-                <div className="flex w-full flex-col gap-2 tab:flex-row">
+            {/* CTAs */}
+            <section className="m-auto max-w-[1920px]">
+              <div className="mt-10 flex w-full flex-col gap-2 px-4 tab:mt-16 des:mt-24 des:flex-row-reverse">
+                <div className="flex flex-1 flex-col gap-2">
+                  <div className="flex w-full flex-col gap-2 tab:flex-row">
+                    <article
+                      className="h-[8rem] cursor-pointer rounded-round border-none bg-[#D58F6B] duration-500 hover:scale-95 tab:h-[11rem] tab:flex-1  des:h-[12rem]"
+                      title="Stack"
+                      onClick={() => (window.location.href = "#stack")}
+                    >
+                      <div className="flex h-full items-end justify-between px-9 pb-5 des:px-10 des:py-8">
+                        <h3 className=" align-bottom text-lg text-white-text">
+                          Stack
+                        </h3>
+                        <CommandLineIcon className="mb-1 h-5 text-white-text tab:h-6" />
+                      </div>
+                    </article>
+                    <article
+                      className="h-[8rem] cursor-pointer rounded-round border-none bg-[#1B1716] duration-500 hover:scale-95  tab:h-[11rem] tab:flex-1  des:h-[12rem]"
+                      title="About me"
+                      onClick={() => (window.location.href = "#about-me")}
+                    >
+                      <div className="flex h-full items-end justify-between px-9 pb-5 des:px-10 des:py-8">
+                        <h3 className=" align-bottom text-lg text-white-text">
+                          About me
+                        </h3>
+                        <UserCircleIcon className="mb-1 h-5 text-white-text tab:h-6" />
+                      </div>
+                    </article>
+                  </div>
                   <article
-                    className="h-[8rem] cursor-pointer rounded-round border-none bg-[#D58F6B] duration-500 hover:scale-95 tab:h-[11rem] tab:flex-1  des:h-[12rem]"
-                    title="Stack"
-                    onClick={() => (window.location.href = "#stack")}
+                    className="h-[8rem] cursor-pointer rounded-round border-none bg-[#3C2A20] duration-500 hover:scale-95  tab:h-[11rem] des:h-[12rem]"
+                    title="Contact me"
+                    onClick={() => (window.location.href = "#contact-me")}
                   >
                     <div className="flex h-full items-end justify-between px-9 pb-5 des:px-10 des:py-8">
                       <h3 className=" align-bottom text-lg text-white-text">
-                        Stack
+                        Contact me
                       </h3>
-                      <CommandLineIcon className="mb-1 h-5 text-white-text tab:h-6" />
-                    </div>
-                  </article>
-                  <article
-                    className="h-[8rem] cursor-pointer rounded-round border-none bg-[#1B1716] duration-500 hover:scale-95  tab:h-[11rem] tab:flex-1  des:h-[12rem]"
-                    title="About me"
-                    onClick={() => (window.location.href = "#about-me")}
-                  >
-                    <div className="flex h-full items-end justify-between px-9 pb-5 des:px-10 des:py-8">
-                      <h3 className=" align-bottom text-lg text-white-text">
-                        About me
-                      </h3>
-                      <UserCircleIcon className="mb-1 h-5 text-white-text tab:h-6" />
+                      <PhoneIcon className="mb-1 h-5 text-white-text tab:h-6" />
                     </div>
                   </article>
                 </div>
+
                 <article
-                  className="h-[8rem] cursor-pointer rounded-round border-none bg-[#3C2A20] duration-500 hover:scale-95  tab:h-[11rem] des:h-[12rem]"
-                  title="Contact me"
-                  onClick={() => (window.location.href = "#contact-me")}
+                  className="group relative h-[8rem] cursor-pointer overflow-hidden rounded-round border-none bg-[#69533E] duration-500 hover:scale-95 tab:h-[13rem] des:h-[24.5rem] des:flex-1"
+                  title="Portfolio"
+                  onClick={() => (window.location.href = "#work")}
                 >
-                  <div className="flex h-full items-end justify-between px-9 pb-5 des:px-10 des:py-8">
-                    <h3 className=" align-bottom text-lg text-white-text">
-                      Contact me
-                    </h3>
-                    <PhoneIcon className="mb-1 h-5 text-white-text tab:h-6" />
+                  <div className="relative z-10 flex h-full flex-col justify-between px-9 py-5 des:px-12 des:py-9">
+                    <div className="flex items-center justify-between">
+                      <h3 className="align-bottom text-base text-white-text des:text-3xl">
+                        Portfolio
+                      </h3>
+                      <div className="flex h-9 w-9 items-center justify-center rounded-full bg-Light-brown tab:h-12 tab:w-12 des:h-14 des:w-14 ">
+                        <PaperClipIcon className=" w-7 p-2 text-white-text tab:w-8 des:w-9" />
+                      </div>
+                    </div>
+                    <div className=" animate-marqeeAnimation whitespace-nowrap">
+                      <h3 className="hidden font-medium text-white-text duration-300 group-hover:opacity-0 tab:block tab:text-4xl des:text-6xl">
+                        Visit and browse through my projects
+                      </h3>
+                    </div>
+                    <div className="flex w-full items-end justify-between">
+                      <h3 className=" align-bottom text-lg text-white-text">
+                        See my works
+                      </h3>
+                      <ArrowSmallDownIcon className="h-5 animate-bounce pr-[.35rem] text-white-text tab:h-6 des:h-8" />
+                    </div>
                   </div>
+                  <img
+                    src={shapes}
+                    className="absolute inset-0 z-[1] m-auto h-20 animate-rotate duration-300 group-hover:contrast-200 tab:h-24	des:h-28 "
+                    alt="rotating shapes"
+                  />
                 </article>
               </div>
-
-              <article
-                className="group relative h-[8rem] cursor-pointer overflow-hidden rounded-round border-none bg-[#69533E] duration-500 hover:scale-95 tab:h-[13rem] des:h-[24.5rem] des:flex-1"
-                title="Work"
-                onClick={() => (window.location.href = "#work")}
-              >
-                <div className="relative z-10 flex h-full flex-col justify-between px-9 py-5 des:px-12 des:py-9">
-                  <div className="flex items-center justify-between">
-                    <h3 className="align-bottom text-base text-white-text des:text-3xl">
-                      Work
-                    </h3>
-                    <div className="flex h-9 w-9 items-center justify-center rounded-full bg-Light-brown tab:h-12 tab:w-12 des:h-14 des:w-14 ">
-                      <PaperClipIcon className=" w-7 p-2 text-white-text tab:w-8 des:w-9" />
-                    </div>
-                  </div>
-                  <div className=" animate-marqeeAnimation whitespace-nowrap">
-                    <h3 className="hidden font-medium text-white-text duration-300 group-hover:opacity-0 tab:block tab:text-4xl des:text-6xl">
-                      Visit and browse through my projects
-                    </h3>
-                  </div>
-                  <div className="flex w-full items-end justify-between">
-                    <h3 className=" align-bottom text-lg text-white-text">
-                      See my works
-                    </h3>
-                    <ArrowSmallDownIcon className="h-5 animate-bounce pr-[.35rem] text-white-text tab:h-6 des:h-8" />
-                  </div>
-                </div>
-                <img
-                  src={shapes}
-                  className="absolute inset-0 z-[1] m-auto h-20 animate-rotate duration-300 group-hover:contrast-200 tab:h-24	des:h-28 "
-                  alt="rotating shapes"
-                />
-              </article>
-            </div>
+            </section>
           </section>
-        </section>
+        </Reveal>
 
         {/* work section */}
         <section className="m-auto mt-32 max-w-[1920px] px-4" id="work">
@@ -301,58 +297,65 @@ const Landing = () => {
             <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-Light-brown"></div>
           </div>
           <section className="mt-12 flex flex-col gap-2">
-            <Link to="/projects/Digibookshelf">
-              <article className="group relative flex h-[17.125rem] w-full cursor-pointer flex-col justify-between rounded-round bg-[#6936F5] p-10 duration-500 hover:scale-95 tab:h-[24rem]">
-                <div className="flex w-full justify-between font-medium text-white">
-                  <p>01.</p>
-                  <p>Featured</p>
-                </div>
-                <div className="flex w-full justify-between font-medium text-white">
-                  <p>Capstone Project</p>
-                  <ArrowUpRightIcon className="h-5 w-5 group-hover:animate-bounce" />
-                </div>
-                <img
-                  src={DigiBookshelfLogo}
-                  className="absolute inset-0 m-auto duration-500 group-hover:scale-125 tab:scale-150"
-                  alt="Digi Bookshelf logo"
-                />
-              </article>
-            </Link>
+            <Reveal>
+              <Link to="/projects/Digibookshelf">
+                <article className="group relative flex h-[17.125rem] w-full cursor-pointer flex-col justify-between rounded-round bg-[#6936F5] p-10 duration-500 hover:scale-95 tab:h-[24rem]">
+                  <div className="flex w-full justify-between font-medium text-white">
+                    <p>01.</p>
+                    <p>Featured</p>
+                  </div>
+                  <div className="flex w-full justify-between font-medium text-white">
+                    <p>Capstone Project</p>
+                    <ArrowUpRightIcon className="h-5 w-5 group-hover:animate-bounce" />
+                  </div>
+                  <img
+                    src={DigiBookshelfLogo}
+                    className="absolute inset-0 m-auto duration-500 group-hover:scale-125 tab:scale-150"
+                    alt="Digi Bookshelf logo"
+                  />
+                </article>
+              </Link>
+            </Reveal>
+
             <div className="flex flex-col gap-2 tab:flex-row">
-              <Link to="/projects/Lyrist" className="w-full">
-                <article className="group relative flex h-[17.125rem] w-full cursor-pointer flex-col justify-between rounded-round bg-[#5BAE95] p-10 duration-500 hover:scale-95">
-                  <div className="flex w-full justify-between font-medium text-[#186E54]">
-                    <p>02.</p>
-                    <p>Showcase</p>
-                  </div>
-                  <div className="flex w-full justify-between font-medium text-[#186E54]">
-                    <p>Project in Progress</p>
-                    <ArrowUpRightIcon className="h-5 w-5 group-hover:animate-bounce" />
-                  </div>
-                  <img
-                    src={LyristLogo}
-                    className="absolute inset-0 m-auto duration-500 group-hover:scale-125 tab:scale-150"
-                    alt="Digi Bookshelf logo"
-                  />
-                </article>
-              </Link>
-              <Link to="/projects/DailyQuotes" className="w-full">
-                <article className="group relative flex h-[17.125rem] w-full cursor-pointer flex-col justify-between rounded-round bg-[#FF59EE] p-10 duration-500 hover:scale-95">
-                  <div className="flex w-full justify-between font-medium text-[#99258D]">
-                    <p>03.</p>
-                    <p>Showcase</p>
-                  </div>
-                  <div className="flex w-full justify-between font-medium text-[#99258D]">
-                    <p>Project in Queue</p>
-                    <ArrowUpRightIcon className="h-5 w-5 group-hover:animate-bounce" />
-                  </div>
-                  <img
-                    src={DailyQuotesLogo}
-                    className="absolute inset-0 m-auto duration-500 group-hover:scale-125 tab:scale-150"
-                    alt="Digi Bookshelf logo"
-                  />
-                </article>
-              </Link>
+              <Reveal>
+                <Link to="/projects/Lyrist" className="w-full">
+                  <article className="group relative flex h-[17.125rem] w-full cursor-pointer flex-col justify-between rounded-round bg-[#5BAE95] p-10 duration-500 hover:scale-95">
+                    <div className="flex w-full justify-between font-medium text-[#186E54]">
+                      <p>02.</p>
+                      <p>Showcase</p>
+                    </div>
+                    <div className="flex w-full justify-between font-medium text-[#186E54]">
+                      <p>Project in Progress</p>
+                      <ArrowUpRightIcon className="h-5 w-5 group-hover:animate-bounce" />
+                    </div>
+                    <img
+                      src={LyristLogo}
+                      className="absolute inset-0 m-auto duration-500 group-hover:scale-125 tab:scale-150"
+                      alt="Digi Bookshelf logo"
+                    />
+                  </article>
+                </Link>
+              </Reveal>
+              <Reveal>
+                <Link to="/projects/DailyQuotes" className="w-full">
+                  <article className="group relative flex h-[17.125rem] w-full cursor-pointer flex-col justify-between rounded-round bg-[#FF59EE] p-10 duration-500 hover:scale-95">
+                    <div className="flex w-full justify-between font-medium text-[#99258D]">
+                      <p>03.</p>
+                      <p>Showcase</p>
+                    </div>
+                    <div className="flex w-full justify-between font-medium text-[#99258D]">
+                      <p>Project in Queue</p>
+                      <ArrowUpRightIcon className="h-5 w-5 group-hover:animate-bounce" />
+                    </div>
+                    <img
+                      src={DailyQuotesLogo}
+                      className="absolute inset-0 m-auto duration-500 group-hover:scale-125 tab:scale-150"
+                      alt="Digi Bookshelf logo"
+                    />
+                  </article>
+                </Link>
+              </Reveal>
             </div>
           </section>
         </section>
@@ -366,7 +369,7 @@ const Landing = () => {
             </h2>
             <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-Light-brown"></div>
           </div>
-          <section className=" m-auto mt-20 flex max-w-[1920px] flex-col gap-2 px-4 tab:flex-row des:px-28">
+          <section className=" m-auto mt-20 flex min-h-fit max-w-[1920px] flex-col gap-2 px-4 tab:flex-row des:px-28">
             <article className="flex h-[24rem] w-full flex-col gap-10 rounded-round bg-Light-brown p-10 duration-500 hover:drop-shadow-2xl lgmob:h-[28rem] tab:order-2 tab:h-[35rem] tab:w-[30%] tab:gap-20 des:tab:h-[40rem]">
               <h3 className="text-center font-bold text-white-text lgmob:text-xl des:text-2xl">
                 Front-end
@@ -746,673 +749,671 @@ const Landing = () => {
             <div className="w-16 rounded-l-round rounded-r-round border-t-2 border-Light-brown tab:w-32"></div>
           </div>
           <section className="mt-20 px-4 tab:px-24">
-            <div className="flex flex-col items-center gap-20 des:flex-row">
-              <div className="flex flex-col gap-5 ">
-                <img
-                  src={HeadshotAboutMe}
-                  className="duration-500 hover:contrast-75"
-                  alt="my photo"
-                />
-                <button
-                  type="button"
-                  className="my-4 flex items-center justify-center gap-2 rounded-round border border-transparent bg-Dark-brown px-10 py-3 text-white-text duration-500 hover:border hover:border-Dark-brown hover:bg-transparent hover:text-Dark-brown"
-                  onClick={() => (window.location.href = "#intro")}
+            <Reveal>
+              <div className="flex flex-col items-center gap-20 des:flex-row">
+                <div className="flex flex-col gap-5 ">
+                  <img
+                    src={HeadshotAboutMe}
+                    className="duration-500 hover:contrast-75"
+                    alt="my photo"
+                  />
+                  <button
+                    type="button"
+                    className="my-4 flex items-center justify-center gap-2 rounded-round border border-transparent bg-Dark-brown px-10 py-3 text-white-text duration-500 hover:border hover:border-Dark-brown hover:bg-transparent hover:text-Dark-brown"
+                    onClick={() => (window.location.href = "#intro")}
+                  >
+                    <DocumentArrowDownIcon className="w-7" />
+                    Download Resume
+                  </button>
+                </div>
+                <div className="flex-1 indent-12 font-medium leading-8 text-Dark-brown">
+                  <p>
+                    I am a passionate full-stack JavaScript developer with a
+                    strong background in computer science and security. Since my
+                    early days in 5th grade, web development has been my true
+                    love, when I learned HTML and CSS. Although I officially
+                    started my web development journey about a year ago,
+                    external factors, including immigration to Canada, briefly
+                    interrupted my progress. However, my dedication to the craft
+                    led me to enroll in the highly regarded BrainStation
+                    Software Engineering Bootcamp three months ago, reigniting
+                    my passion and propelling me to acquire comprehensive skills
+                    as a full-stack developer.
+                  </p>
+                  <br />
+                  <p>
+                    I have developed a strong skillset that will undoubtedly be
+                    valuable in my web development career. As part of my diploma
+                    program, I gained an in-depth understanding of computation
+                    and programming. Simultaneously, I’d been immensely
+                    interested in cybersecurity. Thus, I participated in
+                    individual courses to learn Linux, networking, etc., to
+                    broaden my knowledge. With my in-depth perception of
+                    cybersecurity, I could instantly notice potential flaws in
+                    the development process.
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+          </section>
+          <Reveal>
+            <section className="mt-20 flex flex-col items-center justify-center gap-8 px-4 des:flex-row des:gap-16 des:px-36">
+              <h3 className="text-3xl font-bold text-Dark-brown">
+                My Certifications:
+              </h3>
+              <div className="h-[24rem] w-full rounded-round bg-Light-brown tab:h-80 des:w-[37rem]">
+                <Swiper
+                  style={
+                    {
+                      "--swiper-pagination-color": "#fff",
+                    } as CSSProperties
+                  }
+                  direction={"vertical"}
+                  pagination={{
+                    dynamicBullets: true,
+                    clickable: true,
+                  }}
+                  className="cert-slider cursor-grab active:cursor-grabbing"
+                  modules={[Pagination]}
                 >
-                  <DocumentArrowDownIcon className="w-7" />
-                  Download Resume
-                </button>
+                  <SwiperSlide className="p-9">
+                    <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                      <img
+                        src={certLogos.SecurityPlusIcon}
+                        className="h-48 w-36 rounded-round bg-white p-5 contrast-[.8] tab:h-full tab:w-52"
+                        alt="Security+ logo"
+                      />
+                      <div className="flex flex-col items-center gap-5 text-white-text">
+                        <h3 className="text-lg font-medium">
+                          Title: <span className="underline">Security+</span>
+                        </h3>
+                        <button
+                          type="button"
+                          onClick={() =>
+                            window.open(
+                              "https://www.credly.com/earner/earned/badge/21b63add-6fb6-4845-9077-f57b97085f36",
+                              "_blank",
+                              "noopener,noreferrer"
+                            )
+                          }
+                          className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
+                        >
+                          <EyeIcon className="w-5" />
+                          View Certification
+                        </button>
+                      </div>
+                    </div>
+                    <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
+                      <p className="text-xs">Achieved: 2022</p>
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide className="p-9">
+                    <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                      <img
+                        src={certLogos.IBMCybersecurityFundamentals}
+                        className="h-48 w-36 rounded-round bg-white contrast-[.8] tab:h-full tab:w-52"
+                        alt="IBM Cybersecurity Fundamentals logo"
+                      />
+                      <div className="flex flex-col items-center gap-5 text-white-text">
+                        <h3 className="w-48 text-center text-lg font-medium">
+                          Title:{" "}
+                          <span className="underline">
+                            Cybersecurity Fundamentals - IBM
+                          </span>
+                        </h3>
+                        <button
+                          type="button"
+                          onClick={() =>
+                            window.open(
+                              "https://www.credly.com/badges/d91d7c20-aa28-4271-84b6-feeef47915b8",
+                              "_blank",
+                              "noopener,noreferrer"
+                            )
+                          }
+                          className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
+                        >
+                          <EyeIcon className="w-5" />
+                          View Certification
+                        </button>
+                      </div>
+                    </div>
+                    <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
+                      <p className="text-xs">Achieved: 2023</p>
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide className="p-9">
+                    <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                      <img
+                        src={certLogos.eJPT}
+                        className="h-48 w-36 rounded-round bg-white contrast-[.8] tab:h-full tab:w-52"
+                        alt="eJPT logo"
+                      />
+                      <div className="flex flex-col items-center gap-5 text-white-text">
+                        <h3 className="w-48 text-center text-lg font-medium">
+                          Title:{" "}
+                          <span className="underline">
+                            eJPT - eLearn Security Junior Penetration Tester
+                          </span>
+                        </h3>
+                        <button
+                          type="button"
+                          onClick={() =>
+                            window.open(
+                              "https://verified.elearnsecurity.com/certificates/a6ce5477-0220-4b34-83e6-870e65da4686",
+                              "_blank",
+                              "noopener,noreferrer"
+                            )
+                          }
+                          className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
+                        >
+                          <EyeIcon className="w-5" />
+                          View Certification
+                        </button>
+                      </div>
+                    </div>
+                    <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
+                      <p className="text-xs">Achieved: 2020</p>
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide className="p-9">
+                    <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                      <img
+                        src={certLogos.ArjangLogo}
+                        className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
+                        alt="Arjang logo"
+                      />
+                      <div className="flex flex-col items-center gap-5 text-white-text">
+                        <h3 className="w-48 text-center text-lg font-medium tab:w-56">
+                          Title:{" "}
+                          <span className="underline">
+                            CEH - Training Course [IRN]
+                          </span>
+                        </h3>
+                        <button
+                          type="button"
+                          onClick={() =>
+                            window.open(
+                              "https://drive.google.com/file/d/1HcgTc6xShKkpbZujw-4xNOWIJJ5Pa_V6/view?usp=drivesdk",
+                              "_blank",
+                              "noopener,noreferrer"
+                            )
+                          }
+                          className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
+                        >
+                          <EyeIcon className="w-5" />
+                          View Certification
+                        </button>
+                      </div>
+                    </div>
+                    <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
+                      <p className="text-xs">Achieved: 2020</p>
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide className="p-9">
+                    <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                      <img
+                        src={certLogos.ArjangLogo}
+                        className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
+                        alt="Arjang logo"
+                      />
+                      <div className="flex flex-col items-center gap-5 text-white-text">
+                        <h3 className="text-center text-lg font-medium tab:w-56">
+                          Title:{" "}
+                          <span className="underline">
+                            SANS PenTest Pack L1 - Training Course [IRN]
+                          </span>
+                        </h3>
+                        <button
+                          type="button"
+                          onClick={() =>
+                            window.open(
+                              "https://drive.google.com/file/d/1XWtNwHLBOzytbS9o0TaDLRYpUivZoLQ6/view?usp=drivesdk",
+                              "_blank",
+                              "noopener,noreferrer"
+                            )
+                          }
+                          className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
+                        >
+                          <EyeIcon className="w-5" />
+                          View Certification
+                        </button>
+                      </div>
+                    </div>
+                    <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
+                      <p className="text-xs">Achieved: 2020</p>
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide className="p-9">
+                    <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                      <img
+                        src={certLogos.HubspotLogo}
+                        className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
+                        alt="Hubspot logo"
+                      />
+                      <div className="flex flex-col items-center gap-5 text-white-text">
+                        <h3 className="w-48 text-center text-lg font-medium tab:w-56">
+                          Title:{" "}
+                          <span className="underline">
+                            HubSpot Academy - Digital Marketing
+                          </span>
+                        </h3>
+                        <button
+                          type="button"
+                          onClick={() =>
+                            window.open(
+                              "https://app.hubspot.com/academy/achievements/2zp710wl/en/1/nima-bargestan/digital-marketing",
+                              "_blank",
+                              "noopener,noreferrer"
+                            )
+                          }
+                          className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
+                        >
+                          <EyeIcon className="w-5" />
+                          View Certification
+                        </button>
+                      </div>
+                    </div>
+                    <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
+                      <p className="text-xs">Achieved: 2023</p>
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide className="p-9">
+                    <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                      <img
+                        src={certLogos.AnisaLogo}
+                        className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
+                        alt="Anisa logo"
+                      />
+                      <div className="flex flex-col items-center gap-5 text-white-text">
+                        <h3 className="w-48 text-center text-lg font-medium">
+                          Title:{" "}
+                          <span className="underline">
+                            CompTIA Network+ - Training Course [IRN]
+                          </span>
+                        </h3>
+                        <button
+                          type="button"
+                          onClick={() =>
+                            window.open(
+                              "https://drive.google.com/file/d/12gForSZ2AZFgADb-BO5SkkdcOqsEQxOK/view?usp=sharing",
+                              "_blank",
+                              "noopener,noreferrer"
+                            )
+                          }
+                          className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
+                        >
+                          <EyeIcon className="w-5" />
+                          View Certification
+                        </button>
+                      </div>
+                    </div>
+                    <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
+                      <p className="text-xs">Achieved: 2020</p>
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide className="p-9">
+                    <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                      <img
+                        src={certLogos.ArjangLogo}
+                        className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
+                        alt="Arjang logo"
+                      />
+                      <div className="flex flex-col items-center gap-5 text-white-text">
+                        <h3 className="w-48 text-center text-lg font-medium">
+                          Title:{" "}
+                          <span className="underline">
+                            CCNA - Bootcamp Training Course [IRN]
+                          </span>
+                        </h3>
+                        <button
+                          type="button"
+                          onClick={() =>
+                            window.open(
+                              "https://drive.google.com/file/d/1RjEqnJ4IAo-61zesspswOKcD0T13vdUs/view?usp=drivesdk",
+                              "_blank",
+                              "noopener,noreferrer"
+                            )
+                          }
+                          className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
+                        >
+                          <EyeIcon className="w-5" />
+                          View Certification
+                        </button>
+                      </div>
+                    </div>
+                    <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
+                      <p className="text-xs">Achieved: 2021</p>
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide className="p-9">
+                    <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                      <img
+                        src={certLogos.AnisaLogo}
+                        className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
+                        alt="Anisa logo"
+                      />
+                      <div className="flex flex-col items-center gap-5 text-white-text">
+                        <h3 className="w-48 text-center text-lg font-medium tab:w-56">
+                          Title:{" "}
+                          <span className="underline">
+                            LPIC-1 - Training Course [IRN]
+                          </span>
+                        </h3>
+                        <button
+                          type="button"
+                          onClick={() =>
+                            window.open(
+                              "https://drive.google.com/file/d/1ELQy6zUyYivzC2QcWUh8487cZC8ZAPcy/view?usp=sharing",
+                              "_blank",
+                              "noopener,noreferrer"
+                            )
+                          }
+                          className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
+                        >
+                          <EyeIcon className="w-5" />
+                          View Certification
+                        </button>
+                      </div>
+                    </div>
+                    <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
+                      <p className="text-xs">Achieved: 2020</p>
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide className="p-9">
+                    <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                      <img
+                        src={certLogos.AnisaLogo}
+                        className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
+                        alt="Anisa logo"
+                      />
+                      <div className="flex flex-col items-center gap-5 text-white-text">
+                        <h3 className="w-48 text-center text-lg font-medium tab:w-56">
+                          Title:{" "}
+                          <span className="underline">
+                            LPIC-2 - Training Course [IRN]
+                          </span>
+                        </h3>
+                        <button
+                          type="button"
+                          onClick={() =>
+                            window.open(
+                              "https://drive.google.com/file/d/1RiyGcxg7EJ3xZ8czmswEMFVw25S8cBKZ/view?usp=sharing",
+                              "_blank",
+                              "noopener,noreferrer"
+                            )
+                          }
+                          className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
+                        >
+                          <EyeIcon className="w-5" />
+                          View Certification
+                        </button>
+                      </div>
+                    </div>
+                    <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
+                      <p className="text-xs">Achieved: 2020</p>
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide className="p-9">
+                    <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                      <img
+                        src={certLogos.AnisaLogo}
+                        className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
+                        alt="Anisa logo"
+                      />
+                      <div className="flex flex-col items-center gap-5 text-white-text">
+                        <h3 className="w-48 text-center text-lg font-medium tab:w-56">
+                          Title:{" "}
+                          <span className="underline">
+                            Python Programming - Training Course [IRN]
+                          </span>
+                        </h3>
+                        <button
+                          type="button"
+                          onClick={() =>
+                            window.open(
+                              "https://drive.google.com/file/d/1a6CPf8ymXWb_PpagtzwkqDh4sgp1KCxB/view?usp=sharing",
+                              "_blank",
+                              "noopener,noreferrer"
+                            )
+                          }
+                          className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
+                        >
+                          <EyeIcon className="w-5" />
+                          View Certification
+                        </button>
+                      </div>
+                    </div>
+                    <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
+                      <p className="text-xs">Achieved: 2020</p>
+                    </div>
+                  </SwiperSlide>
+                </Swiper>
               </div>
-              <div className="flex-1 indent-12 font-medium leading-8 text-Dark-brown">
-                <p>
-                  I am a passionate full-stack JavaScript developer with a
-                  strong background in computer science and security. Since my
-                  early days in 5th grade, web development has been my true
-                  love, when I learned HTML and CSS. Although I officially
-                  started my web development journey about a year ago, external
-                  factors, including immigration to Canada, briefly interrupted
-                  my progress. However, my dedication to the craft led me to
-                  enroll in the highly regarded BrainStation Software
-                  Engineering Bootcamp three months ago, reigniting my passion
-                  and propelling me to acquire comprehensive skills as a
-                  full-stack developer.
-                </p>
-                <br />
-                <p>
-                  I have developed a strong skillset that will undoubtedly be
-                  valuable in my web development career. As part of my diploma
-                  program, I gained an in-depth understanding of computation and
-                  programming. Simultaneously, I’d been immensely interested in
-                  cybersecurity. Thus, I participated in individual courses to
-                  learn Linux, networking, etc., to broaden my knowledge. With
-                  my in-depth perception of cybersecurity, I could instantly
-                  notice potential flaws in the development process.
-                </p>
-              </div>
-            </div>
-          </section>
-          <section className="mt-20 flex flex-col items-center justify-center gap-8 px-4 des:flex-row des:gap-16 des:px-36">
-            <h3 className="text-3xl font-bold text-Dark-brown">
-              My Certifications:
-            </h3>
-            <div className="h-[24rem] w-full rounded-round bg-Light-brown tab:h-80 des:w-[37rem]">
-              <Swiper
-                style={
-                  {
-                    "--swiper-pagination-color": "#fff",
-                  } as CSSProperties
-                }
-                direction={"vertical"}
-                pagination={{
-                  dynamicBullets: true,
-                  clickable: true,
-                }}
-                className="cert-slider cursor-grab active:cursor-grabbing"
-                modules={[Pagination]}
-              >
-                <SwiperSlide className="p-9">
-                  <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
-                    <img
-                      src={certLogos.SecurityPlusIcon}
-                      className="h-48 w-36 rounded-round bg-white p-5 contrast-[.8] tab:h-full tab:w-52"
-                      alt="Security+ logo"
-                    />
-                    <div className="flex flex-col items-center gap-5 text-white-text">
-                      <h3 className="text-lg font-medium">
-                        Title: <span className="underline">Security+</span>
-                      </h3>
-                      <button
-                        type="button"
-                        onClick={() =>
-                          window.open(
-                            "https://www.credly.com/earner/earned/badge/21b63add-6fb6-4845-9077-f57b97085f36",
-                            "_blank",
-                            "noopener,noreferrer"
-                          )
-                        }
-                        className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
-                      >
-                        <EyeIcon className="w-5" />
-                        View Certification
-                      </button>
-                    </div>
-                  </div>
-                  <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
-                    <p className="text-xs">Achieved: 2022</p>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className="p-9">
-                  <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
-                    <img
-                      src={certLogos.IBMCybersecurityFundamentals}
-                      className="h-48 w-36 rounded-round bg-white contrast-[.8] tab:h-full tab:w-52"
-                      alt="IBM Cybersecurity Fundamentals logo"
-                    />
-                    <div className="flex flex-col items-center gap-5 text-white-text">
-                      <h3 className="w-48 text-center text-lg font-medium">
-                        Title:{" "}
-                        <span className="underline">
-                          Cybersecurity Fundamentals - IBM
-                        </span>
-                      </h3>
-                      <button
-                        type="button"
-                        onClick={() =>
-                          window.open(
-                            "https://www.credly.com/badges/d91d7c20-aa28-4271-84b6-feeef47915b8",
-                            "_blank",
-                            "noopener,noreferrer"
-                          )
-                        }
-                        className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
-                      >
-                        <EyeIcon className="w-5" />
-                        View Certification
-                      </button>
-                    </div>
-                  </div>
-                  <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
-                    <p className="text-xs">Achieved: 2023</p>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className="p-9">
-                  <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
-                    <img
-                      src={certLogos.eJPT}
-                      className="h-48 w-36 rounded-round bg-white contrast-[.8] tab:h-full tab:w-52"
-                      alt="eJPT logo"
-                    />
-                    <div className="flex flex-col items-center gap-5 text-white-text">
-                      <h3 className="w-48 text-center text-lg font-medium">
-                        Title:{" "}
-                        <span className="underline">
-                          eJPT - eLearn Security Junior Penetration Tester
-                        </span>
-                      </h3>
-                      <button
-                        type="button"
-                        onClick={() =>
-                          window.open(
-                            "https://verified.elearnsecurity.com/certificates/a6ce5477-0220-4b34-83e6-870e65da4686",
-                            "_blank",
-                            "noopener,noreferrer"
-                          )
-                        }
-                        className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
-                      >
-                        <EyeIcon className="w-5" />
-                        View Certification
-                      </button>
-                    </div>
-                  </div>
-                  <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
-                    <p className="text-xs">Achieved: 2020</p>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className="p-9">
-                  <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
-                    <img
-                      src={certLogos.ArjangLogo}
-                      className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
-                      alt="Arjang logo"
-                    />
-                    <div className="flex flex-col items-center gap-5 text-white-text">
-                      <h3 className="w-48 text-center text-lg font-medium tab:w-56">
-                        Title:{" "}
-                        <span className="underline">
-                          CEH - Training Course [IRN]
-                        </span>
-                      </h3>
-                      <button
-                        type="button"
-                        onClick={() =>
-                          window.open(
-                            "https://drive.google.com/file/d/1HcgTc6xShKkpbZujw-4xNOWIJJ5Pa_V6/view?usp=drivesdk",
-                            "_blank",
-                            "noopener,noreferrer"
-                          )
-                        }
-                        className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
-                      >
-                        <EyeIcon className="w-5" />
-                        View Certification
-                      </button>
-                    </div>
-                  </div>
-                  <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
-                    <p className="text-xs">Achieved: 2020</p>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className="p-9">
-                  <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
-                    <img
-                      src={certLogos.ArjangLogo}
-                      className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
-                      alt="Arjang logo"
-                    />
-                    <div className="flex flex-col items-center gap-5 text-white-text">
-                      <h3 className="text-center text-lg font-medium tab:w-56">
-                        Title:{" "}
-                        <span className="underline">
-                          SANS PenTest Pack L1 - Training Course [IRN]
-                        </span>
-                      </h3>
-                      <button
-                        type="button"
-                        onClick={() =>
-                          window.open(
-                            "https://drive.google.com/file/d/1XWtNwHLBOzytbS9o0TaDLRYpUivZoLQ6/view?usp=drivesdk",
-                            "_blank",
-                            "noopener,noreferrer"
-                          )
-                        }
-                        className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
-                      >
-                        <EyeIcon className="w-5" />
-                        View Certification
-                      </button>
-                    </div>
-                  </div>
-                  <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
-                    <p className="text-xs">Achieved: 2020</p>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className="p-9">
-                  <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
-                    <img
-                      src={certLogos.HubspotLogo}
-                      className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
-                      alt="Hubspot logo"
-                    />
-                    <div className="flex flex-col items-center gap-5 text-white-text">
-                      <h3 className="w-48 text-center text-lg font-medium tab:w-56">
-                        Title:{" "}
-                        <span className="underline">
-                          HubSpot Academy - Digital Marketing
-                        </span>
-                      </h3>
-                      <button
-                        type="button"
-                        onClick={() =>
-                          window.open(
-                            "https://app.hubspot.com/academy/achievements/2zp710wl/en/1/nima-bargestan/digital-marketing",
-                            "_blank",
-                            "noopener,noreferrer"
-                          )
-                        }
-                        className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
-                      >
-                        <EyeIcon className="w-5" />
-                        View Certification
-                      </button>
-                    </div>
-                  </div>
-                  <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
-                    <p className="text-xs">Achieved: 2023</p>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className="p-9">
-                  <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
-                    <img
-                      src={certLogos.AnisaLogo}
-                      className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
-                      alt="Anisa logo"
-                    />
-                    <div className="flex flex-col items-center gap-5 text-white-text">
-                      <h3 className="w-48 text-center text-lg font-medium">
-                        Title:{" "}
-                        <span className="underline">
-                          CompTIA Network+ - Training Course [IRN]
-                        </span>
-                      </h3>
-                      <button
-                        type="button"
-                        onClick={() =>
-                          window.open(
-                            "https://drive.google.com/file/d/12gForSZ2AZFgADb-BO5SkkdcOqsEQxOK/view?usp=sharing",
-                            "_blank",
-                            "noopener,noreferrer"
-                          )
-                        }
-                        className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
-                      >
-                        <EyeIcon className="w-5" />
-                        View Certification
-                      </button>
-                    </div>
-                  </div>
-                  <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
-                    <p className="text-xs">Achieved: 2020</p>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className="p-9">
-                  <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
-                    <img
-                      src={certLogos.ArjangLogo}
-                      className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
-                      alt="Arjang logo"
-                    />
-                    <div className="flex flex-col items-center gap-5 text-white-text">
-                      <h3 className="w-48 text-center text-lg font-medium">
-                        Title:{" "}
-                        <span className="underline">
-                          CCNA - Bootcamp Training Course [IRN]
-                        </span>
-                      </h3>
-                      <button
-                        type="button"
-                        onClick={() =>
-                          window.open(
-                            "https://drive.google.com/file/d/1RjEqnJ4IAo-61zesspswOKcD0T13vdUs/view?usp=drivesdk",
-                            "_blank",
-                            "noopener,noreferrer"
-                          )
-                        }
-                        className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
-                      >
-                        <EyeIcon className="w-5" />
-                        View Certification
-                      </button>
-                    </div>
-                  </div>
-                  <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
-                    <p className="text-xs">Achieved: 2021</p>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className="p-9">
-                  <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
-                    <img
-                      src={certLogos.AnisaLogo}
-                      className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
-                      alt="Anisa logo"
-                    />
-                    <div className="flex flex-col items-center gap-5 text-white-text">
-                      <h3 className="w-48 text-center text-lg font-medium tab:w-56">
-                        Title:{" "}
-                        <span className="underline">
-                          LPIC-1 - Training Course [IRN]
-                        </span>
-                      </h3>
-                      <button
-                        type="button"
-                        onClick={() =>
-                          window.open(
-                            "https://drive.google.com/file/d/1ELQy6zUyYivzC2QcWUh8487cZC8ZAPcy/view?usp=sharing",
-                            "_blank",
-                            "noopener,noreferrer"
-                          )
-                        }
-                        className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
-                      >
-                        <EyeIcon className="w-5" />
-                        View Certification
-                      </button>
-                    </div>
-                  </div>
-                  <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
-                    <p className="text-xs">Achieved: 2020</p>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className="p-9">
-                  <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
-                    <img
-                      src={certLogos.AnisaLogo}
-                      className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
-                      alt="Anisa logo"
-                    />
-                    <div className="flex flex-col items-center gap-5 text-white-text">
-                      <h3 className="w-48 text-center text-lg font-medium tab:w-56">
-                        Title:{" "}
-                        <span className="underline">
-                          LPIC-2 - Training Course [IRN]
-                        </span>
-                      </h3>
-                      <button
-                        type="button"
-                        onClick={() =>
-                          window.open(
-                            "https://drive.google.com/file/d/1RiyGcxg7EJ3xZ8czmswEMFVw25S8cBKZ/view?usp=sharing",
-                            "_blank",
-                            "noopener,noreferrer"
-                          )
-                        }
-                        className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
-                      >
-                        <EyeIcon className="w-5" />
-                        View Certification
-                      </button>
-                    </div>
-                  </div>
-                  <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
-                    <p className="text-xs">Achieved: 2020</p>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className="p-9">
-                  <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
-                    <img
-                      src={certLogos.AnisaLogo}
-                      className="h-48 w-36 rounded-round  contrast-[.8] tab:h-full tab:w-52"
-                      alt="Anisa logo"
-                    />
-                    <div className="flex flex-col items-center gap-5 text-white-text">
-                      <h3 className="w-48 text-center text-lg font-medium tab:w-56">
-                        Title:{" "}
-                        <span className="underline">
-                          Python Programming - Training Course [IRN]
-                        </span>
-                      </h3>
-                      <button
-                        type="button"
-                        onClick={() =>
-                          window.open(
-                            "https://drive.google.com/file/d/1a6CPf8ymXWb_PpagtzwkqDh4sgp1KCxB/view?usp=sharing",
-                            "_blank",
-                            "noopener,noreferrer"
-                          )
-                        }
-                        className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
-                      >
-                        <EyeIcon className="w-5" />
-                        View Certification
-                      </button>
-                    </div>
-                  </div>
-                  <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
-                    <p className="text-xs">Achieved: 2020</p>
-                  </div>
-                </SwiperSlide>
-              </Swiper>
-            </div>
-          </section>
+            </section>
+          </Reveal>
         </section>
         <section className="m-auto mt-20 max-w-[1920px] px-4" id="contact-me">
-          <div className="flex items-center">
-            <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-Light-brown tab:w-32"></div>
-            <h2 className="mx-4 text-2xl font-bold text-Dark-brown tab:text-4xl">
-              Contact me
-            </h2>
-            <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-Light-brown tab:w-32"></div>
-          </div>
-          <section className="mt-20 flex flex-col gap-5  px-4 tab:px-24">
-            <div className="flex flex-col gap-10 text-center text-2xl font-medium text-Dark-brown tab:flex-row tab:items-center tab:justify-between tab:text-left">
-              <p className="flex-1">
-                Do you have a question, an idea, or a project you need help
-                with? Contact me!
-              </p>
-              <div className="flex flex-1 flex-col gap-2">
-                <div className="flex flex-wrap justify-center gap-2">
-                  <Link to="matilto:nimam700@gmail.com">
-                    <div className="flex items-center gap-4 rounded-round border border-Dark-brown px-7 py-2 text-sm text-Dark-brown underline ">
-                      <img src={socialLogos.MailIcon} alt="Mail icon" className="w-6" />
-                      Nimam700@gmail.com
-                    </div>
-                  </Link>
-                  <Link to="tel:+16472916922">
-                    <div className="flex items-center gap-4 rounded-round border border-Dark-brown px-7 py-2 text-sm text-Dark-brown underline">
-                      <PhoneIcon className="w-6" />
-                      +1 (647) 291-6922
-                    </div>
-                  </Link>
-                </div>
-                <div className="flex flex-wrap justify-center gap-2">
-                  <Link
-                    to="https://www.linkedin.com/in/nima-bargestan/"
-                    className="group rounded-round border border-Dark-brown px-7 py-2 text-base underline"
-                  >
-                    <img
-                      src={socialLogos.LinkedInIcon}
-                      alt="LinkedIn Icon"
-                      className="duration-500 group-hover:scale-90"
-                    />
-                  </Link>
-                  <Link
-                    to="https://github.com/NB071"
-                    className="group rounded-round border border-Dark-brown px-7 py-2 text-base underline"
-                  >
-                    <img
-                      src={socialLogos.GitHubIcon}
-                      className="duration-500 group-hover:scale-90"
-                      alt="Github Icon"
-                    />
-                  </Link>
-                  <Link
-                    to="https://twitter.com/nimdev071"
-                    className="group rounded-round border border-Dark-brown px-7 py-2 text-base underline"
-                  >
-                    <img
-                      src={socialLogos.TwitterIcon}
-                      className="duration-500 group-hover:scale-90"
-                      alt="Twitter Icon"
-                    />
-                  </Link>
-                </div>
+          <Reveal>
+            <>
+              <div className="flex items-center">
+                <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-Light-brown tab:w-32"></div>
+                <h2 className="mx-4 text-2xl font-bold text-Dark-brown tab:text-4xl">
+                  Contact me
+                </h2>
+                <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-Light-brown tab:w-32"></div>
               </div>
-            </div>
-            <FormikProvider value={formik}>
-              <form onSubmit={formik.handleSubmit}>
-                <div className="mt-5 flex flex-col gap-10 tab:gap-12">
-                  <div className="flex flex-col gap-10 tab:flex-row tab:gap-2">
-                    <div className="relative flex-1">
-                      <label
-                        htmlFor="name"
-                        className="block font-bold text-Dark-brown"
-                      >
-                        Name:
-                      </label>
-                      <input
-                        type="text"
-                        name="name"
-                        id="name"
-                        className={`w-full rounded-round border bg-white px-7 py-7 text-Dark-brown duration-500 hover:border-Light-brown focus:outline-Dark-brown ${
-                          formik.touched.name && formik.errors.name
-                            ? "border-red-600"
-                            : ""
-                        }`}
-                        placeholder="name"
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                      />
-                      {formik.touched.name && formik.errors.name ? (
-                        <div className="absolute mt-2 flex items-center gap-2">
-                          <ExclamationCircleIcon className="h-7 w-7 text-red-600" />
-                          <span className="font-normal opacity-70 transition-all duration-300 hover:opacity-100">
-                            {formik.errors.name}
-                          </span>
+              <section className="mt-20 flex flex-col gap-5  px-4 tab:px-24">
+                <div className="flex flex-col gap-10 text-center text-2xl font-medium text-Dark-brown tab:flex-row tab:items-center tab:justify-between tab:text-left">
+                  <p className="flex-1">
+                    Do you have a question, an idea, or a project you need help
+                    with? Contact me!
+                  </p>
+                  <div className="flex flex-1 flex-col gap-2">
+                    <div className="flex flex-wrap justify-center gap-2">
+                      <Link to="matilto:nimam700@gmail.com">
+                        <div className="group flex items-center gap-4 rounded-round border border-Dark-brown px-7 py-2 text-sm text-Dark-brown underline duration-500 hover:bg-Dark-brown hover:text-white-text">
+                          <MailIcon className=" w-6 fill-Dark-brown duration-500 group-hover:fill-white-text" />
+                          Nimam700@gmail.com
                         </div>
-                      ) : null}
-                    </div>
-                    <div className="relative flex-1">
-                      <label
-                        htmlFor="email"
-                        className="block font-bold text-Dark-brown"
-                      >
-                        Email:
-                      </label>
-                      <input
-                        type="text"
-                        name="email"
-                        id="email"
-                        className={`w-full rounded-round border bg-white px-7 py-7 text-Dark-brown duration-500 hover:border-Light-brown focus:outline-Dark-brown ${
-                          formik.touched.email && formik.errors.email
-                            ? "border-red-600"
-                            : ""
-                        }`}
-                        placeholder="Email"
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                      />
-                      {formik.touched.email && formik.errors.email ? (
-                        <div className="absolute mt-2 flex items-center gap-2">
-                          <ExclamationCircleIcon className="h-7 w-7 text-red-600" />
-                          <span className="font-normal opacity-70 transition-all duration-300 hover:opacity-100">
-                            {formik.errors.email}
-                          </span>
+                      </Link>
+                      <Link to="tel:+16472916922">
+                        <div className="group flex items-center gap-4 rounded-round border border-Dark-brown px-7 py-2 text-sm text-Dark-brown underline duration-500 hover:bg-Dark-brown hover:text-white-text">
+                          <PhoneIcon className="w-6" />
+                          +1 (647) 291-6922
                         </div>
-                      ) : null}
+                      </Link>
                     </div>
-                    <div className="relative flex-1">
-                      <label
-                        htmlFor="subject"
-                        className="block font-bold text-Dark-brown"
+                    <div className="flex flex-wrap justify-center gap-2">
+                      <Link
+                        to="https://www.linkedin.com/in/nima-bargestan/"
+                        className="group rounded-round border border-Dark-brown px-7 py-2 duration-500 hover:bg-Dark-brown hover:text-white-text"
                       >
-                        Subject:
-                      </label>
-                      <input
-                        type="text"
-                        id="subject"
-                        name="subject"
-                        className={`w-full rounded-round border bg-white px-7 py-7 text-Dark-brown duration-500 hover:border-Light-brown focus:outline-Dark-brown ${
-                          formik.touched.subject && formik.errors.subject
-                            ? "border-red-600"
-                            : ""
-                        }`}
-                        placeholder="Subject"
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                      />
-                      {formik.touched.subject && formik.errors.subject ? (
-                        <div className="absolute mt-2 flex items-center gap-2">
-                          <ExclamationCircleIcon className="h-7 w-7 text-red-600" />
-                          <span className="font-normal opacity-70 transition-all duration-300 hover:opacity-100">
-                            {formik.errors.subject}
-                          </span>
-                        </div>
-                      ) : null}
+                        <LinkedInIcon className="fill-Dark-brown duration-500 group-hover:scale-90 group-hover:fill-white-text" />
+                      </Link>
+                      <Link
+                        to="https://github.com/NB071"
+                        className="group rounded-round border border-Dark-brown px-7 py-2 duration-500 hover:bg-Dark-brown hover:text-white-text"
+                      >
+                        <GithubIcon className="fill-Dark-brown duration-500 group-hover:scale-90 group-hover:fill-white-text" />
+                      </Link>
+                      <Link
+                        to="https://twitter.com/nimdev071"
+                        className="group rounded-round border border-Dark-brown px-7 py-2 duration-500 hover:bg-Dark-brown "
+                      >
+                        <TwitterIcon className="fill-Dark-brown duration-500 group-hover:scale-90 group-hover:fill-white-text" />
+                      </Link>
                     </div>
-                  </div>
-                  <div className="flex flex-col gap-10 tab:flex-row tab:gap-2">
-                    <div className="relative flex-1">
-                      <label
-                        htmlFor="message"
-                        className="block font-bold text-Dark-brown"
-                      >
-                        Message:
-                      </label>
-                      <textarea
-                        name="message"
-                        className={`h-56 w-full resize-none rounded-round border bg-white px-7 py-7 text-Dark-brown duration-500 hover:border-Light-brown focus:outline-Dark-brown ${
-                          formik.touched.message && formik.errors.message
-                            ? "border-red-600"
-                            : ""
-                        }`}
-                        placeholder="Message"
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                      />
-                      {formik.touched.message && formik.errors.message ? (
-                        <div className="absolute mt-2 flex items-center gap-2">
-                          <ExclamationCircleIcon className="h-7 w-7 text-red-600" />
-                          <span className="font-normal opacity-70 transition-all duration-300 hover:opacity-100">
-                            {formik.errors.message}
-                          </span>
-                        </div>
-                      ) : null}
-                    </div>
-                    {sendformSuccess === undefined ? (
-                      <button
-                        type="submit"
-                        className="flex cursor-pointer flex-col items-center justify-center gap-1 rounded-round bg-Light-brown px-20 py-5 text-white-text duration-500 hover:bg-Dark-brown tab:mt-5"
-                      >
-                        {!sendformInProgress ? (
-                          <>
-                            <PaperAirplaneIcon className="w-8" />
-                            Send
-                          </>
-                        ) : (
-                          <>
-                            <ArrowPathIcon className="w-8 animate-spin" />
-                            Sending
-                          </>
-                        )}
-                      </button>
-                    ) : sendformSuccess === true ? (
-                      <div className="flex flex-col items-center justify-center gap-1 rounded-round bg-green-600 px-20 py-5 text-green-900 duration-500  tab:mt-5">
-                        <CheckBadgeIcon className="w-8 animate-pulse" />
-                        <p className="font-bold">Success</p>
-                        <p className="w-40 text-center">
-                          Thank you! I received your message. I will reply as
-                          soon as possible!
-                        </p>
-                      </div>
-                    ) : (
-                      <div className="flex flex-col items-center justify-center gap-1 rounded-round bg-red-600 px-20 py-5 text-red-900 duration-500 tab:mt-5">
-                        <ShieldExclamationIcon className="w-8 animate-pulse" />
-                        <p className="font-bold">
-                          Failed - Please try again later
-                        </p>
-                        <p className="w-40 text-center">
-                          If the issue persists, contact me directly. Thank you!
-                        </p>
-                      </div>
-                    )}
                   </div>
                 </div>
-              </form>
-            </FormikProvider>
-          </section>
+                <FormikProvider value={formik}>
+                  <form onSubmit={formik.handleSubmit}>
+                    <div className="mt-5 flex flex-col gap-10 tab:gap-12">
+                      <div className="flex flex-col gap-10 tab:flex-row tab:gap-2">
+                        <div className="relative flex-1">
+                          <label
+                            htmlFor="name"
+                            className="block font-bold text-Dark-brown"
+                          >
+                            Name:
+                          </label>
+                          <input
+                            type="text"
+                            name="name"
+                            id="name"
+                            className={`w-full rounded-round border bg-white px-7 py-7 text-Dark-brown duration-500 hover:border-Light-brown focus:outline-Dark-brown ${
+                              formik.touched.name && formik.errors.name
+                                ? "border-red-600"
+                                : ""
+                            }`}
+                            placeholder="name"
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                          />
+                          {formik.touched.name && formik.errors.name ? (
+                            <div className="absolute mt-2 flex items-center gap-2">
+                              <ExclamationCircleIcon className="h-7 w-7 text-red-600" />
+                              <span className="font-normal opacity-70 transition-all duration-300 hover:opacity-100">
+                                {formik.errors.name}
+                              </span>
+                            </div>
+                          ) : null}
+                        </div>
+                        <div className="relative flex-1">
+                          <label
+                            htmlFor="email"
+                            className="block font-bold text-Dark-brown"
+                          >
+                            Email:
+                          </label>
+                          <input
+                            type="text"
+                            name="email"
+                            id="email"
+                            className={`w-full rounded-round border bg-white px-7 py-7 text-Dark-brown duration-500 hover:border-Light-brown focus:outline-Dark-brown ${
+                              formik.touched.email && formik.errors.email
+                                ? "border-red-600"
+                                : ""
+                            }`}
+                            placeholder="Email"
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                          />
+                          {formik.touched.email && formik.errors.email ? (
+                            <div className="absolute mt-2 flex items-center gap-2">
+                              <ExclamationCircleIcon className="h-7 w-7 text-red-600" />
+                              <span className="font-normal opacity-70 transition-all duration-300 hover:opacity-100">
+                                {formik.errors.email}
+                              </span>
+                            </div>
+                          ) : null}
+                        </div>
+                        <div className="relative flex-1">
+                          <label
+                            htmlFor="subject"
+                            className="block font-bold text-Dark-brown"
+                          >
+                            Subject:
+                          </label>
+                          <input
+                            type="text"
+                            id="subject"
+                            name="subject"
+                            className={`w-full rounded-round border bg-white px-7 py-7 text-Dark-brown duration-500 hover:border-Light-brown focus:outline-Dark-brown ${
+                              formik.touched.subject && formik.errors.subject
+                                ? "border-red-600"
+                                : ""
+                            }`}
+                            placeholder="Subject"
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                          />
+                          {formik.touched.subject && formik.errors.subject ? (
+                            <div className="absolute mt-2 flex items-center gap-2">
+                              <ExclamationCircleIcon className="h-7 w-7 text-red-600" />
+                              <span className="font-normal opacity-70 transition-all duration-300 hover:opacity-100">
+                                {formik.errors.subject}
+                              </span>
+                            </div>
+                          ) : null}
+                        </div>
+                      </div>
+                      <div className="flex flex-col gap-10 tab:flex-row tab:gap-2">
+                        <div className="relative flex-1">
+                          <label
+                            htmlFor="message"
+                            className="block font-bold text-Dark-brown"
+                          >
+                            Message:
+                          </label>
+                          <textarea
+                            name="message"
+                            className={`h-56 w-full resize-none rounded-round border bg-white px-7 py-7 text-Dark-brown duration-500 hover:border-Light-brown focus:outline-Dark-brown ${
+                              formik.touched.message && formik.errors.message
+                                ? "border-red-600"
+                                : ""
+                            }`}
+                            placeholder="Message"
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                          />
+                          {formik.touched.message && formik.errors.message ? (
+                            <div className="absolute mt-2 flex items-center gap-2">
+                              <ExclamationCircleIcon className="h-7 w-7 text-red-600" />
+                              <span className="font-normal opacity-70 transition-all duration-300 hover:opacity-100">
+                                {formik.errors.message}
+                              </span>
+                            </div>
+                          ) : null}
+                        </div>
+                        {sendformSuccess === undefined ? (
+                          <button
+                            type="submit"
+                            className="flex cursor-pointer flex-col items-center justify-center gap-1 rounded-round bg-Light-brown px-20 py-5 text-white-text duration-500 hover:bg-Dark-brown tab:mt-5"
+                          >
+                            {!sendformInProgress ? (
+                              <>
+                                <PaperAirplaneIcon className="w-8" />
+                                Send
+                              </>
+                            ) : (
+                              <>
+                                <ArrowPathIcon className="w-8 animate-spin" />
+                                Sending
+                              </>
+                            )}
+                          </button>
+                        ) : sendformSuccess === true ? (
+                          <div className="flex flex-col items-center justify-center gap-1 rounded-round bg-green-600 px-20 py-5 text-green-900 duration-500  tab:mt-5">
+                            <CheckBadgeIcon className="w-8 animate-pulse" />
+                            <p className="font-bold">Success</p>
+                            <p className="w-40 text-center">
+                              Thank you! I received your message. I will reply
+                              as soon as possible!
+                            </p>
+                          </div>
+                        ) : (
+                          <div className="flex flex-col items-center justify-center gap-1 rounded-round bg-red-600 px-20 py-5 text-red-900 duration-500 tab:mt-5">
+                            <ShieldExclamationIcon className="w-8 animate-pulse" />
+                            <p className="font-bold">
+                              Failed - Please try again later
+                            </p>
+                            <p className="w-40 text-center">
+                              If the issue persists, contact me directly. Thank
+                              you!
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </form>
+                </FormikProvider>
+              </section>
+            </>
+          </Reveal>
         </section>
       </main>
-      <footer className="mt-20 flex h-52 items-center justify-center font-medium text-Dark-brown">
-        <p>Copyright © 2023 Nima Bargestan</p>
+      <footer className="relative z-[2] flex items-center justify-center py-16 font-medium text-Dark-brown backdrop-blur-[2px]">
+        <p className="">Copyright © 2023 Nima Bargestan</p>
       </footer>
       <Particles
         className="absolute z-[0]"

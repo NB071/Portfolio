@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import PersonalLogoWhite from "@/assets/personalLogo/personalLogoWhite.svg";
 import PersonalLogoPrimary from "@/assets/personalLogo/personalLogoPrimary.svg";
+import { motion } from "framer-motion";
 
 type Props = {
   variant: "projectPages" | "landing";
@@ -12,10 +13,18 @@ type Props = {
 
 const Header = (props: Props) => {
   return (
-    <header
+    <motion.header
+      variants={{
+        hidden: { opacity: 0, y: -75 },
+        visible: { opacity: 1, y: 0 },
+      }}
+      initial="hidden"
+      animate="visible"
+      exit="hidden"
+      transition={{ duration: 0.2, delay: 0.2 }}
       className={`fixed top-0 z-[3] w-full ${
-        props.variant === "landing" ? "bg-Dark-brown" : `bg-[${props.bg}]`
-      } py-8 drop-shadow-2xl`}
+        props.variant === "landing" ? `bg-[#69533ec8]` : `bg-[${props.bg}]`
+      } py-8 drop-shadow-2xl backdrop-blur-sm`}
     >
       <div
         className={`flex h-full w-full max-w-[1920px] flex-col items-center justify-center gap-5 font-light ${
@@ -91,7 +100,7 @@ const Header = (props: Props) => {
           </span>
         </Link>
       </div>
-    </header>
+    </motion.header>
   );
 };
 

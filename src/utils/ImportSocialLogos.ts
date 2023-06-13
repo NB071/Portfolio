@@ -1,7 +1,4 @@
 // Social icon svgs
-import LinkedInIcon from "@/assets/socialIcons/Linkedin.svg";
-import GitHubIcon from "@/assets/socialIcons/Github.svg";
-import TwitterIcon from "@/assets/socialIcons/Twitter.svg";
-import MailIcon from "@/assets/socialIcons/Mail.svg";
+import { LinkedInIcon, GithubIcon, MailIcon, TwitterIcon } from "@/assets/socialIcons/SocialIcons"; 
 
-export { LinkedInIcon, GitHubIcon, TwitterIcon, MailIcon };
+export { LinkedInIcon, GithubIcon, TwitterIcon, MailIcon };
