@@ -210,6 +210,7 @@ const Landing = () => {
                 <h2 className="font-outline-1 w-full text-center text-2xl font-bold text-transparent tab:text-start tab:text-3xl des:text-5xl">
                   Full Stack Developer
                 </h2>
+                
               </div>
             </div>
 

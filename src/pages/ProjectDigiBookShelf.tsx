@@ -105,7 +105,7 @@ const ProjectDigiBookShelf = () => {
         {/* Description */}
         <section
           id="description"
-          className="mx-4 mt-20 max-w-[1920px] tab:mx-10 des:mx-auto"
+          className="mx-4 mt-20 max-w-[1920px] px-4 tab:mx-10 des:mx-auto"
         >
           <div className="flex items-center">
             <div className="w-14 rounded-l-round rounded-r-round border-t-2 border-DigiBookshelfPrimary tab:w-32"></div>
@@ -146,7 +146,7 @@ const ProjectDigiBookShelf = () => {
         {/* Demo */}
         <section
           id="demo"
-          className="mx-4 mt-20 max-w-[1920px] tab:mx-10 des:mx-auto"
+          className="mx-4 mt-20 max-w-[1920px] px-4 tab:mx-10 des:mx-auto"
         >
           <div className="flex items-center">
             <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-DigiBookshelfPrimary tab:w-32"></div>
@@ -197,7 +197,7 @@ const ProjectDigiBookShelf = () => {
         {/* Features */}
         <section
           id="features"
-          className="mx-4 mt-20 max-w-[1920px] tab:mx-10 des:mx-auto"
+          className="mx-4 mt-20 max-w-[1920px] px-4 tab:mx-10 des:mx-auto"
         >
           <div className="flex items-center">
             <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-DigiBookshelfPrimary tab:w-32"></div>
@@ -238,7 +238,7 @@ const ProjectDigiBookShelf = () => {
         {/* Screenshots */}
         <section
           id="screenshots"
-          className="mx-4 mt-20 max-w-[1920px] tab:mx-10 des:mx-auto"
+          className="mt-20 max-w-[1920px] px-4 tab:mx-10 des:mx-auto"
         >
           <div className="flex items-center">
             <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-DigiBookshelfPrimary tab:w-32"></div>
@@ -288,7 +288,7 @@ const ProjectDigiBookShelf = () => {
         {/* Technologies */}
         <section
           id="technologies"
-          className="mx-4 mt-20 max-w-[1920px] tab:mx-10 des:mx-auto"
+          className="mt-20 max-w-[1920px] px-4 tab:mx-10 des:mx-auto"
         >
           <div className="flex items-center">
             <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-DigiBookshelfPrimary tab:w-32"></div>
@@ -520,7 +520,7 @@ const ProjectDigiBookShelf = () => {
           </Reveal>
         </section>
       </main>
-      <footer className="relative z-[2] flex items-center justify-center py-16 font-medium text-DigiBookshelfPrimary backdrop-blur-[2px]">
+      <footer className="relative z-[2] px-4 flex items-center justify-center py-16 font-medium text-DigiBookshelfPrimary backdrop-blur-[2px]">
         <p className="">Copyright © 2023 Nima Bargestan</p>
       </footer>
 
