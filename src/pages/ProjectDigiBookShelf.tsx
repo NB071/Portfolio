@@ -14,8 +14,9 @@ import DigiBookshelfManage from "@/assets/projectScreenshots/DigiBookshelf/digiB
 import DigiBookshelfMyShelf from "@/assets/projectScreenshots/DigiBookshelf/digiBookshelf-shelf.png";
 import DigiBookshelfUserProfile from "@/assets/projectScreenshots/DigiBookshelf/digiBookshelf-userprofile.png";
 import DigiBookshelfSignleBook from "@/assets/projectScreenshots/DigiBookshelf/digiBookshelf-SingleBook.png";
-import DigiBookshelfAddFriend from "@/assets/projectScreenshots/DigiBookshelf/digiBookshelf-AddFriend.png";
 import DigiBookshelfUserModal from "@/assets/projectScreenshots/DigiBookshelf/digiBookshelf-UserModal.png";
+
+import * as stackLogos from "@/utils/ImportStacksLogo";
 
 // Components
 import Header from "@/components/Header/Header";
@@ -101,6 +102,7 @@ const ProjectDigiBookShelf = () => {
           </Reveal>
         </section>
 
+        {/* Description */}
         <section
           id="description"
           className="mx-4 mt-20 max-w-[1920px] tab:mx-10 des:mx-auto"
@@ -141,6 +143,7 @@ const ProjectDigiBookShelf = () => {
           </Reveal>
         </section>
 
+        {/* Demo */}
         <section
           id="demo"
           className="mx-4 mt-20 max-w-[1920px] tab:mx-10 des:mx-auto"
@@ -191,6 +194,7 @@ const ProjectDigiBookShelf = () => {
           </Reveal>
         </section>
 
+        {/* Features */}
         <section
           id="features"
           className="mx-4 mt-20 max-w-[1920px] tab:mx-10 des:mx-auto"
@@ -231,32 +235,290 @@ const ProjectDigiBookShelf = () => {
           </Reveal>
         </section>
 
-          <section
-            id="screenshots"
-            className="mx-4 mt-20 max-w-[1920px] tab:mx-10 des:mx-auto"
-          >
-            <div className="flex items-center">
-              <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-DigiBookshelfPrimary tab:w-32"></div>
-              <h2 className="mx-4 text-2xl font-bold text-DigiBookshelfPrimary tab:text-4xl">
-                Screenshots
-              </h2>
-              <div className="w-16 rounded-l-round rounded-r-round border-t-2 border-DigiBookshelfPrimary tab:w-32"></div>
-            </div>
-            <Reveal>
-
+        {/* Screenshots */}
+        <section
+          id="screenshots"
+          className="mx-4 mt-20 max-w-[1920px] tab:mx-10 des:mx-auto"
+        >
+          <div className="flex items-center">
+            <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-DigiBookshelfPrimary tab:w-32"></div>
+            <h2 className="mx-4 text-2xl font-bold text-DigiBookshelfPrimary tab:text-4xl">
+              Screenshots
+            </h2>
+            <div className="w-16 rounded-l-round rounded-r-round border-t-2 border-DigiBookshelfPrimary tab:w-32"></div>
+          </div>
+          <Reveal>
             <section className="m-auto mt-20 px-4 des:px-28">
-              <div className="flex flex-wrap gap-2 justify-center">
-                <img src={DigiBookshelfDashboard} className="w-[45rem] rounded-round hover:drop-shadow-2xl duration-500 " alt="Digi Bookshelf `dashboard` screenshot" />
-                <img src={DigiBookshelfManage} className="w-[45rem] rounded-round hover:drop-shadow-2xl duration-500 " alt="Digi Bookshelf `Manage` screenshot" />
-                <img src={DigiBookshelfMyShelf} className="w-[45rem] rounded-round hover:drop-shadow-2xl duration-500 " alt="Digi Bookshelf `My Shelf` screenshot" />
-                <img src={DigiBookshelfSignleBook} className="w-[45rem] rounded-round hover:drop-shadow-2xl duration-500 " alt="Digi Bookshelf `Book Information` screenshot" />
-                <img src={DigiBookshelfUserModal} className="w-[45rem] rounded-round hover:drop-shadow-2xl duration-500 " alt="Digi Bookshelf `User Modal` screenshot" />
-                <img src={DigiBookshelfUserProfile} className="w-[45rem] rounded-round hover:drop-shadow-2xl duration-500 " alt="Digi Bookshelf `User Profile` screenshot" />
+              <div className="flex flex-wrap justify-center gap-2">
+                <img
+                  src={DigiBookshelfDashboard}
+                  className="w-[45rem] rounded-round duration-500 hover:drop-shadow-2xl "
+                  alt="Digi Bookshelf `dashboard` screenshot"
+                />
+                <img
+                  src={DigiBookshelfManage}
+                  className="w-[45rem] rounded-round duration-500 hover:drop-shadow-2xl "
+                  alt="Digi Bookshelf `Manage` screenshot"
+                />
+                <img
+                  src={DigiBookshelfMyShelf}
+                  className="w-[45rem] rounded-round duration-500 hover:drop-shadow-2xl "
+                  alt="Digi Bookshelf `My Shelf` screenshot"
+                />
+                <img
+                  src={DigiBookshelfSignleBook}
+                  className="w-[45rem] rounded-round duration-500 hover:drop-shadow-2xl "
+                  alt="Digi Bookshelf `Book Information` screenshot"
+                />
+                <img
+                  src={DigiBookshelfUserModal}
+                  className="w-[45rem] rounded-round duration-500 hover:drop-shadow-2xl "
+                  alt="Digi Bookshelf `User Modal` screenshot"
+                />
+                <img
+                  src={DigiBookshelfUserProfile}
+                  className="w-[45rem] rounded-round duration-500 hover:drop-shadow-2xl "
+                  alt="Digi Bookshelf `User Profile` screenshot"
+                />
               </div>
             </section>
-            </Reveal>
-          </section>
-        
+          </Reveal>
+        </section>
+
+        {/* Technologies */}
+        <section
+          id="technologies"
+          className="mx-4 mt-20 max-w-[1920px] tab:mx-10 des:mx-auto"
+        >
+          <div className="flex items-center">
+            <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-DigiBookshelfPrimary tab:w-32"></div>
+            <h2 className="mx-4 text-2xl font-bold text-DigiBookshelfPrimary tab:text-4xl">
+              Technologies
+            </h2>
+            <div className="w-16 rounded-l-round rounded-r-round border-t-2 border-DigiBookshelfPrimary tab:w-32"></div>
+          </div>
+          <Reveal>
+            <section className=" m-auto mt-20 flex min-h-fit max-w-[1920px] flex-col gap-2 px-4 tab:flex-row des:px-28">
+              <article className="flex h-[24rem] w-full flex-col gap-10 rounded-round bg-DigiBookshelfPrimary p-10 duration-500 hover:drop-shadow-2xl lgmob:h-[28rem] tab:order-2 tab:h-[35rem] tab:w-[30%] tab:gap-20 des:tab:h-[40rem]">
+                <h3 className="text-center font-bold text-white-text lgmob:text-xl des:text-2xl">
+                  Front-end
+                </h3>
+                <div className="flex h-full flex-col justify-center gap-5 tab:gap-10 des:gap-12">
+                  {/* first row */}
+                  <div className="flex items-center justify-center gap-3 lgmob:gap-8 tab:gap-5 des:gap-8">
+                    <Link
+                      to="https://html.spec.whatwg.org/multipage/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={stackLogos.htmlLogo}
+                        className="h-8 w-8 cursor-pointer duration-300 hover:scale-90 lgmob:h-12 lgmob:w-12 tab:h-9 tab:w-9 des:h-14 des:w-14"
+                        alt="HTML5 logo"
+                        title="HTML5"
+                      />
+                    </Link>
+                    <Link
+                      to="https://www.w3.org/Style/CSS/Overview.en.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={stackLogos.cssLogo}
+                        className="h-8 w-8 cursor-pointer duration-300 hover:scale-90 lgmob:h-12 lgmob:w-12 tab:h-9 tab:w-9 des:h-14 des:w-14"
+                        alt="CSS logo"
+                        title="CSS"
+                      />
+                    </Link>
+
+                    <Link
+                      to="https://www.sass-lang.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={stackLogos.scssLogo}
+                        className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
+                        alt="SASS logo"
+                        title="SASS"
+                      />
+                    </Link>
+                  </div>
+
+                  {/* second row */}
+                  <div className="flex items-center justify-center gap-3 lgmob:gap-8 tab:gap-5 des:gap-8">
+                    <Link
+                      to="https://www.javascript.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={stackLogos.javascriptLogo}
+                        className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
+                        alt="JavaScript logo"
+                        title="JavaScript"
+                      />
+                    </Link>
+                    <Link
+                      to="https://www.react.dev/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={stackLogos.reactLogo}
+                        className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
+                        alt="React logo"
+                        title="React"
+                      />
+                    </Link>
+                  </div>
+                  {/* third row */}
+                  <div className="flex items-center justify-center gap-3 lgmob:gap-8 tab:gap-5 des:gap-8">
+                    <Link
+                      to="https://www.figma.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={stackLogos.figmaLogo}
+                        className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
+                        alt="Figma logo"
+                        title="Figma"
+                      />
+                    </Link>
+                  </div>
+                </div>
+              </article>
+              <div className="relative tab:flex-1 tab:perspective-1600">
+                <article className="flex h-[24rem] w-full flex-col gap-10 rounded-round bg-DigiBookshelfPrimary p-10 duration-500 hover:drop-shadow-2xl hover:rotate-y-0 lgmob:h-[28rem] tab:h-[35rem] tab:gap-20 tab:rotate-y-30 tab:transform des:tab:h-[40rem]">
+                  <h3 className="text-center font-bold text-white-text lgmob:text-xl des:text-2xl">
+                    Back-end
+                  </h3>
+                  <div className="flex h-full flex-col justify-center gap-5 tab:gap-10">
+                    {/* first row */}
+                    <div className="flex items-center justify-center gap-3 lgmob:gap-8 tab:gap-5 des:gap-8">
+                      <Link
+                        to="https://www.nodejs.org/en"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          src={stackLogos.nodejsLogo}
+                          className="h-8 w-8 cursor-pointer duration-300 hover:scale-90 lgmob:h-12 lgmob:w-12 tab:h-9 tab:w-9 des:h-14 des:w-14"
+                          alt="Node.js logo"
+                          title="Node.js"
+                        />
+                      </Link>
+                      <Link
+                        to="https://www.expressjs.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          src={stackLogos.expressjsLogo}
+                          className="h-8 w-8 cursor-pointer duration-300 hover:scale-90 lgmob:h-12 lgmob:w-12 tab:h-9 tab:w-9 des:h-14 des:w-14"
+                          alt="Express.js logo"
+                          title="Express.js"
+                        />
+                      </Link>
+                      <Link
+                        to="https://www.mysql.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          src={stackLogos.mysqlLogo}
+                          className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
+                          alt="MySQL Logo"
+                          title="MySQL"
+                        />
+                      </Link>
+                    </div>
+                    {/* second row */}
+                    <div className="flex items-center justify-center gap-3 lgmob:gap-8 tab:gap-5 des:gap-8">
+                      <Link
+                        to="https://jwt.io/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          src={stackLogos.jwtLogo}
+                          className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-14 des:w-14"
+                          alt="JWT Logo"
+                          title="JWT"
+                        />
+                      </Link>
+                      <Link
+                        to="https://www.knexjs.org/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          src={stackLogos.knexLogo}
+                          className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
+                          alt="Knex logo"
+                          title="Knex"
+                        />
+                      </Link>
+                    </div>
+                    {/* third row */}
+                    <div className="flex items-center justify-center gap-3">
+                      <Link
+                        to="https://socket.io/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          src={stackLogos.socketioLogo}
+                          className="h-7 w-20 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 tab:h-8 des:h-12"
+                          alt="SocketIO logo"
+                          title="SocketIO"
+                        />
+                      </Link>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div className="tab:order-3 tab:flex-1 tab:perspective-1600">
+                <article className="flex h-[24rem] w-full flex-col gap-10 rounded-round bg-DigiBookshelfPrimary p-10 duration-500 hover:drop-shadow-2xl hover:rotate-y-0 lgmob:h-[28rem] tab:h-[35rem] tab:gap-20 tab:-rotate-y-30 tab:transform des:tab:h-[40rem]">
+                  <h3 className="text-center font-bold text-white-text lgmob:text-xl des:text-2xl">
+                    Development
+                  </h3>
+                  <div className="flex h-full flex-col justify-center gap-5 tab:gap-10">
+                    {/* first row */}
+                    <div className="flex items-center justify-center gap-3 lgmob:gap-8 tab:gap-5 des:gap-8">
+                      <Link
+                        to="https://www.heroku.com/about"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          src={stackLogos.herokuIcon}
+                          className="h-8 w-8 cursor-pointer duration-300 hover:scale-90 lgmob:h-12 lgmob:w-12 tab:h-9 tab:w-9 des:h-14 des:w-14"
+                          alt="Heroku logo"
+                          title="Heroku"
+                        />
+                      </Link>
+                      <Link
+                        to="https://github.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          src={stackLogos.gitLogo}
+                          className="h-8 w-8 cursor-pointer duration-300 hover:scale-90 lgmob:h-12 lgmob:w-12 tab:h-9 tab:w-9 des:h-14 des:w-14"
+                          alt="Git logo"
+                          title="Git"
+                        />
+                      </Link>
+                    </div>
+                    {/* second row */}
+                  </div>
+                </article>
+              </div>
+            </section>
+          </Reveal>
+        </section>
       </main>
 
       <Particles
