@@ -61,6 +61,7 @@ import { useFormik, FormikProvider } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import { AnimatePresence } from "framer-motion";
+import { scroller } from "react-scroll";
 
 const Landing = () => {
   const [showReturnTopBtn, setShowReturnTopBtn] = useState(false);
@@ -164,7 +165,7 @@ const Landing = () => {
                       rel="noopener noreferrer"
                       className="group"
                     >
-                      <LinkedInIcon className="cursor-pointer tab:group-hover:mb-3 fill-Dark-brown transition-all duration-500 hover:scale-125 des:w-8" />
+                      <LinkedInIcon className="cursor-pointer fill-Dark-brown transition-all duration-500 hover:scale-125 tab:group-hover:mb-3 des:w-8" />
                     </Link>
                     <Link
                       to="https://github.com/NB071"
@@ -172,7 +173,7 @@ const Landing = () => {
                       rel="noopener noreferrer"
                       className="group"
                     >
-                      <GithubIcon className="cursor-pointer tab:group-hover:mb-3 fill-Dark-brown transition-all duration-500 hover:scale-125 des:w-8" />
+                      <GithubIcon className="cursor-pointer fill-Dark-brown transition-all duration-500 hover:scale-125 tab:group-hover:mb-3 des:w-8" />
                     </Link>
                     <Link
                       to="https://twitter.com/nimdev071"
@@ -180,7 +181,7 @@ const Landing = () => {
                       rel="noopener noreferrer"
                       className="group"
                     >
-                      <TwitterIcon className="cursor-pointer tab:group-hover:mb-3 fill-Dark-brown transition-all duration-500 hover:scale-125 des:w-8" />
+                      <TwitterIcon className="cursor-pointer fill-Dark-brown transition-all duration-500 hover:scale-125 tab:group-hover:mb-3 des:w-8" />
                     </Link>
 
                     <Link
@@ -189,7 +190,7 @@ const Landing = () => {
                       rel="noopener noreferrer"
                       className="group"
                     >
-                      <MailIcon className="cursor-pointer tab:group-hover:mb-3 fill-Dark-brown transition-all duration-500 hover:scale-125 des:w-8" />
+                      <MailIcon className="cursor-pointer fill-Dark-brown transition-all duration-500 hover:scale-125 tab:group-hover:mb-3 des:w-8" />
                     </Link>
                   </div>
                   <h2 className="font-outline-1 text-center text-2xl font-bold text-transparent tab:text-start tab:text-3xl des:text-5xl">
@@ -214,7 +215,13 @@ const Landing = () => {
                     <article
                       className="h-[8rem] cursor-pointer rounded-round border-none bg-[#D58F6B] duration-500 hover:scale-95 tab:h-[11rem] tab:flex-1  des:h-[12rem]"
                       title="Stack"
-                      onClick={() => (window.location.href = "#stack")}
+                      onClick={() =>
+                        scroller.scrollTo("stack", {
+                          duration: 0,
+                          smooth: "easeInOut",
+                          offset: -130,
+                        })
+                      }
                     >
                       <div className="flex h-full items-end justify-between px-9 pb-5 des:px-10 des:py-8">
                         <h3 className=" align-bottom text-lg text-white-text">
@@ -226,7 +233,13 @@ const Landing = () => {
                     <article
                       className="h-[8rem] cursor-pointer rounded-round border-none bg-[#1B1716] duration-500 hover:scale-95  tab:h-[11rem] tab:flex-1  des:h-[12rem]"
                       title="About me"
-                      onClick={() => (window.location.href = "#about-me")}
+                      onClick={() =>
+                        scroller.scrollTo("about-me", {
+                          duration: 0,
+                          smooth: "easeInOut",
+                          offset: -130,
+                        })
+                      }
                     >
                       <div className="flex h-full items-end justify-between px-9 pb-5 des:px-10 des:py-8">
                         <h3 className=" align-bottom text-lg text-white-text">
@@ -239,7 +252,13 @@ const Landing = () => {
                   <article
                     className="h-[8rem] cursor-pointer rounded-round border-none bg-[#3C2A20] duration-500 hover:scale-95  tab:h-[11rem] des:h-[12rem]"
                     title="Contact me"
-                    onClick={() => (window.location.href = "#contact-me")}
+                    onClick={() =>
+                      scroller.scrollTo("contact-me", {
+                        duration: 0,
+                        smooth: "easeInOut",
+                        offset: -130,
+                      })
+                    }
                   >
                     <div className="flex h-full items-end justify-between px-9 pb-5 des:px-10 des:py-8">
                       <h3 className=" align-bottom text-lg text-white-text">
@@ -253,7 +272,13 @@ const Landing = () => {
                 <article
                   className="group relative h-[8rem] cursor-pointer overflow-hidden rounded-round border-none bg-[#69533E] duration-500 hover:scale-95 tab:h-[13rem] des:h-[24.5rem] des:flex-1"
                   title="Portfolio"
-                  onClick={() => (window.location.href = "#portfolio")}
+                  onClick={() =>
+                    scroller.scrollTo("portfolio", {
+                      duration: 0,
+                      smooth: "easeInOut",
+                      offset: -130,
+                    })
+                  }
                 >
                   <div className="relative z-10 flex h-full flex-col justify-between px-9 py-5 des:px-12 des:py-9">
                     <div className="flex items-center justify-between">
@@ -292,7 +317,7 @@ const Landing = () => {
           <div className="flex items-center">
             <div className="w-14 rounded-l-round rounded-r-round border-t-2 border-Light-brown tab:w-32"></div>
             <h2 className="mx-4 text-2xl font-bold text-Dark-brown tab:text-4xl">
-            Portfolio
+              Portfolio
             </h2>
             <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-Light-brown"></div>
           </div>
