@@ -48,6 +48,7 @@ const Header = (props: Props) => {
               : PersonalLogoWhite
           }
           alt="Personal logo"
+          className="cursor-pointer"
         />
 
         <Bars3Icon
@@ -153,6 +154,98 @@ const Header = (props: Props) => {
           </motion.div>
         )}
       </AnimatePresence>
+      <div
+        className={`hidden h-full w-full max-w-[1920px] items-center justify-center gap-10 font-light tab:flex ${
+          props.variant === "landing"
+            ? "text-white-text"
+            : `text-${props.textColor}`
+        }`}
+      >
+        <Link
+          duration={100}
+          offset={-130}
+          smooth
+          spy
+          to={props.variant === "landing" ? "portfolio" : "description"}
+        >
+          <span
+            onClick={() => setIsMobileMenuOpen(false)}
+            className={`cursor-pointer bg-gradient-to-r ${
+              props.variant === "landing"
+                ? "from-white-text to-white-text"
+                : `from-${props.textColor} to-${props.textColor}`
+            } bg-[length:0%_2px] bg-left-bottom bg-no-repeat no-underline transition-all duration-500 ease-in-out hover:bg-[length:100%_2px]`}
+          >
+            {props.variant === "landing" ? "Portfolio" : "Description"}
+          </span>
+        </Link>
+        <Link
+          duration={100}
+          offset={-130}
+          smooth
+          spy
+          to={props.variant === "landing" ? "stack" : "demo"}
+        >
+          <span
+            onClick={() => setIsMobileMenuOpen(false)}
+            className={`cursor-pointer bg-gradient-to-r ${
+              props.variant === "landing"
+                ? "from-white-text to-white-text"
+                : `from-${props.textColor} to-${props.textColor}`
+            } bg-[length:0%_2px] bg-left-bottom bg-no-repeat no-underline transition-all duration-500 ease-in-out hover:bg-[length:100%_2px]`}
+          >
+            {props.variant === "landing" ? "Stack" : "Demo"}
+          </span>
+        </Link>
+        <img
+          onClick={() => {
+            navigate("/");
+          }}
+          src={
+            props.variant === "landing"
+              ? PersonalLogoPrimary
+              : PersonalLogoWhite
+          }
+          alt="Personal logo"
+          className="px-5 cursor-pointer hover:-translate-y-1 hover:px-10 duration-500 hover:drop-shadow-2xl"
+        />
+        <Link
+          duration={100}
+          offset={-130}
+          smooth
+          spy
+          to={props.variant === "landing" ? "about-me" : "features"}
+        >
+          <span
+            onClick={() => setIsMobileMenuOpen(false)}
+            className={`cursor-pointer bg-gradient-to-r ${
+              props.variant === "landing"
+                ? "from-white-text to-white-text"
+                : `from-${props.textColor} to-${props.textColor}`
+            } bg-[length:0%_2px] bg-left-bottom bg-no-repeat no-underline transition-all duration-500 ease-in-out hover:bg-[length:100%_2px]`}
+          >
+            {props.variant === "landing" ? "About Me" : "features"}
+          </span>
+        </Link>
+        <Link
+          duration={100}
+          offset={-130}
+          smooth
+          spy
+          to={props.variant === "landing" ? "contact-me" : "technologies"}
+        >
+          <span
+            onClick={() => setIsMobileMenuOpen(false)}
+            className={`cursor-pointer bg-gradient-to-r ${
+              props.variant === "landing"
+                ? "from-white-text to-white-text"
+                : `from-${props.textColor} to-${props.textColor}`
+            } bg-[length:0%_2px] bg-left-bottom bg-no-repeat no-underline transition-all duration-500 ease-in-out hover:bg-[length:100%_2px]`}
+          >
+            {props.variant === "landing" ? "Contact me" : "Technologies"}
+          </span>
+        </Link>
+      </div>
     </motion.header>
   );
 };
