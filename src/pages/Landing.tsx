@@ -324,7 +324,7 @@ const Landing = () => {
           <section className="mt-12 flex flex-col gap-2">
             <Reveal>
               <Link to="/projects/Digibookshelf">
-                <article className="group relative flex h-[17.125rem] w-full cursor-pointer flex-col justify-between rounded-round bg-[#6936F5] p-10 duration-500 hover:scale-95 tab:h-[24rem]">
+                <article className="group relative flex h-[17.125rem] w-full cursor-pointer flex-col justify-between rounded-round bg-DigiBookshelfPrimary p-10 duration-500 hover:scale-95 tab:h-[24rem]">
                   <div className="flex w-full justify-between font-medium text-white">
                     <p>01.</p>
                     <p>Featured</p>

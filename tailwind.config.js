@@ -17,6 +17,7 @@ export default {
         "Dark-brown": "#69533E",
         "Light-brown": "#8C7A69",
         "white-text": "#EDEBDF",
+        "DigiBookshelfPrimary": "#6936F5"
       },
       fontFamily: ["Poppins", "sans-serif"],
       keyframes: {
