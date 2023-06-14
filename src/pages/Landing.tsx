@@ -12,6 +12,9 @@ import Header from "@/components/Header/Header";
 // Svgs
 import shapes from "@/assets/WorksBgShapes.svg";
 
+// resume
+import ResumePDF from "@/assets/resume/Nima_Bargestan_resume.pdf";
+
 // Projects Logo svgs
 import DigiBookshelfLogo from "@/assets/projectsLogo/DigiBookshelfLogo.svg";
 import LyristLogo from "@/assets/projectsLogo/LyristLogo.svg";
@@ -47,6 +50,8 @@ import {
   ArrowPathIcon,
   CheckBadgeIcon,
   ShieldExclamationIcon,
+  MagnifyingGlassIcon
+
 } from "@heroicons/react/24/outline";
 
 // Libs
@@ -77,7 +82,6 @@ const Landing = () => {
 
   document.body.style.backgroundColor = "#edebdf";
   useEffect(() => {
-
     window.addEventListener("scroll", () => {
       if (window.scrollY > 400) {
         setShowReturnTopBtn(true);
@@ -784,14 +788,25 @@ const Landing = () => {
                     className="duration-500 hover:contrast-75"
                     alt="my photo"
                   />
-                  <button
-                    type="button"
-                    className="my-4 flex items-center justify-center gap-2 rounded-round border border-transparent bg-Dark-brown px-10 py-3 text-white-text duration-500 hover:border hover:border-Dark-brown hover:bg-transparent hover:text-Dark-brown"
-                    onClick={() => (window.location.href = "#intro")}
-                  >
-                    <DocumentArrowDownIcon className="w-7" />
-                    Download Resume
-                  </button>
+                  <div>
+                    <Link
+                      target="_blank"
+                      className="my-4 flex items-center justify-center gap-2 rounded-round border border-transparent bg-Dark-brown px-10 py-3 text-white-text duration-500 hover:border hover:border-Dark-brown hover:bg-transparent hover:text-Dark-brown"
+                      download
+                      to={ResumePDF}
+                    >
+                      <DocumentArrowDownIcon className="w-7" />
+                      Download Resume
+                    </Link>
+                    <Link
+                      target="_blank"
+                      className="my-4 flex items-center justify-center gap-2 rounded-round border border-transparent bg-Dark-brown px-10 py-3 text-white-text duration-500 hover:border hover:border-Dark-brown hover:bg-transparent hover:text-Dark-brown"
+                      to={ResumePDF}
+                    >
+                      <MagnifyingGlassIcon className="w-6" />
+                      View Resume
+                    </Link>
+                  </div>
                 </div>
                 <div className="flex-1 indent-12 font-medium leading-8 text-Dark-brown">
                   <p>
