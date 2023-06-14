@@ -1290,12 +1290,12 @@ const Landing = () => {
                 </div>
                 <FormikProvider value={formik}>
                   <form onSubmit={formik.handleSubmit}>
-                    <div className="mt-5 flex flex-col gap-10 tab:gap-12">
+                    <div className="mt-5 flex flex-col gap-6 tab:gap-2">
                       <div className="flex flex-col gap-10 tab:flex-row tab:gap-2">
                         <div className="relative flex-1">
                           <label
                             htmlFor="name"
-                            className="block font-bold text-Dark-brown"
+                            className="block mb-1 font-bold text-Dark-brown"
                           >
                             Name:
                           </label>
@@ -1313,8 +1313,8 @@ const Landing = () => {
                             onBlur={formik.handleBlur}
                           />
                           {formik.touched.name && formik.errors.name ? (
-                            <div className="absolute mt-2 flex items-center gap-2">
-                              <ExclamationCircleIcon className="h-7 w-7 text-red-600" />
+                            <div className="mt-2 flex items-center gap-2 text-sm">
+                              <ExclamationCircleIcon className="h-6 w-6 text-red-600" />
                               <span className="font-normal opacity-70 transition-all duration-300 hover:opacity-100">
                                 {formik.errors.name}
                               </span>
@@ -1324,7 +1324,7 @@ const Landing = () => {
                         <div className="relative flex-1">
                           <label
                             htmlFor="email"
-                            className="block font-bold text-Dark-brown"
+                            className="block mb-1 font-bold text-Dark-brown"
                           >
                             Email:
                           </label>
@@ -1341,9 +1341,9 @@ const Landing = () => {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                           />
-                          {formik.touched.email && formik.errors.email ? (
-                            <div className="absolute mt-2 flex items-center gap-2">
-                              <ExclamationCircleIcon className="h-7 w-7 text-red-600" />
+                           {formik.touched.email && formik.errors.email ? (
+                            <div className="mt-2 flex items-center gap-2 text-sm">
+                              <ExclamationCircleIcon className="h-6 w-6 text-red-600" />
                               <span className="font-normal opacity-70 transition-all duration-300 hover:opacity-100">
                                 {formik.errors.email}
                               </span>
@@ -1353,7 +1353,7 @@ const Landing = () => {
                         <div className="relative flex-1">
                           <label
                             htmlFor="subject"
-                            className="block font-bold text-Dark-brown"
+                            className="block mb-1 font-bold text-Dark-brown"
                           >
                             Subject:
                           </label>
@@ -1371,8 +1371,8 @@ const Landing = () => {
                             onBlur={formik.handleBlur}
                           />
                           {formik.touched.subject && formik.errors.subject ? (
-                            <div className="absolute mt-2 flex items-center gap-2">
-                              <ExclamationCircleIcon className="h-7 w-7 text-red-600" />
+                            <div className="mt-2 flex items-center gap-2 text-sm">
+                              <ExclamationCircleIcon className="h-6 w-6 text-red-600" />
                               <span className="font-normal opacity-70 transition-all duration-300 hover:opacity-100">
                                 {formik.errors.subject}
                               </span>
@@ -1384,7 +1384,7 @@ const Landing = () => {
                         <div className="relative flex-1">
                           <label
                             htmlFor="message"
-                            className="block font-bold text-Dark-brown"
+                            className="block mb-1 font-bold text-Dark-brown"
                           >
                             Message:
                           </label>
@@ -1400,8 +1400,8 @@ const Landing = () => {
                             onBlur={formik.handleBlur}
                           />
                           {formik.touched.message && formik.errors.message ? (
-                            <div className="absolute mt-2 flex items-center gap-2">
-                              <ExclamationCircleIcon className="h-7 w-7 text-red-600" />
+                            <div className="mt-2 flex items-center gap-2 text-sm">
+                              <ExclamationCircleIcon className="h-6 w-6 text-red-600" />
                               <span className="font-normal opacity-70 transition-all duration-300 hover:opacity-100">
                                 {formik.errors.message}
                               </span>
