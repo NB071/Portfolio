@@ -75,7 +75,9 @@ const Landing = () => {
     });
   };
 
+  document.body.style.backgroundColor = "#edebdf";
   useEffect(() => {
+
     window.addEventListener("scroll", () => {
       if (window.scrollY > 400) {
         setShowReturnTopBtn(true);

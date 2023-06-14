@@ -33,17 +33,18 @@ const ProjectDigiBookShelf = () => {
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadFull(engine);
   }, []);
+  document.body.style.backgroundColor = "#F1F2F9";
 
   return (
     <>
       <Header variant="projectPages" bg="#6936f5e8" />
 
       <main className="relative z-[1] backdrop-blur-[3px]">
-        <Reveal>
-          <section
-            id="intro"
-            className="mx-4 mt-36 max-w-[1920px] duration-500 hover:scale-95 des:mx-auto"
-          >
+        <section
+          id="intro"
+          className="mx-4 mt-36 max-w-[1920px] duration-500 hover:scale-95 des:mx-auto"
+        >
+          <Reveal>
             <div className="flex justify-center">
               <div className="flex h-[20rem] w-full flex-col items-center justify-center gap-8 rounded-round bg-DigiBookshelfPrimary p-16 tab:w-[40rem]">
                 <img
@@ -97,20 +98,21 @@ const ProjectDigiBookShelf = () => {
                 </div>
               </div>
             </div>
-          </section>
-        </Reveal>
-        <Reveal>
-          <section
-            id="description"
-            className="mx-4 mt-20 max-w-[1920px] tab:mx-10 des:mx-auto"
-          >
-            <div className="flex items-center">
-              <div className="w-14 rounded-l-round rounded-r-round border-t-2 border-DigiBookshelfPrimary tab:w-32"></div>
-              <h2 className="mx-4 text-2xl font-bold text-DigiBookshelfPrimary tab:text-4xl">
-                Description
-              </h2>
-              <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-DigiBookshelfPrimary"></div>
-            </div>
+          </Reveal>
+        </section>
+
+        <section
+          id="description"
+          className="mx-4 mt-20 max-w-[1920px] tab:mx-10 des:mx-auto"
+        >
+          <div className="flex items-center">
+            <div className="w-14 rounded-l-round rounded-r-round border-t-2 border-DigiBookshelfPrimary tab:w-32"></div>
+            <h2 className="mx-4 text-2xl font-bold text-DigiBookshelfPrimary tab:text-4xl">
+              Description
+            </h2>
+            <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-DigiBookshelfPrimary"></div>
+          </div>
+          <Reveal>
             <section className="m-auto mt-20 des:px-28">
               <img
                 src={DigiBookshelfBG}
@@ -136,20 +138,21 @@ const ProjectDigiBookShelf = () => {
                 </p>
               </div>
             </section>
-          </section>
-        </Reveal>
-        <Reveal>
-          <section
-            id="demo"
-            className="mx-4 mt-20 max-w-[1920px] tab:mx-10 des:mx-auto"
-          >
-            <div className="flex items-center">
-              <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-DigiBookshelfPrimary tab:w-32"></div>
-              <h2 className="mx-4  text-2xl font-bold text-DigiBookshelfPrimary tab:text-4xl">
-                Demo
-              </h2>
-              <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-DigiBookshelfPrimary"></div>
-            </div>
+          </Reveal>
+        </section>
+
+        <section
+          id="demo"
+          className="mx-4 mt-20 max-w-[1920px] tab:mx-10 des:mx-auto"
+        >
+          <div className="flex items-center">
+            <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-DigiBookshelfPrimary tab:w-32"></div>
+            <h2 className="mx-4  text-2xl font-bold text-DigiBookshelfPrimary tab:text-4xl">
+              Demo
+            </h2>
+            <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-DigiBookshelfPrimary"></div>
+          </div>
+          <Reveal>
             <section className="m-auto mt-20 px-4 des:px-28">
               <div className="relative z-[4] m-auto w-fit rounded-round bg-DigiBookshelfPrimary px-10 py-10 drop-shadow-2xl">
                 <RocketLaunchIcon className="m-auto w-9 text-white" />
@@ -185,20 +188,21 @@ const ProjectDigiBookShelf = () => {
                 </div>
               </div>
             </section>
-          </section>
-        </Reveal>
-        <Reveal>
-          <section
-            id="features"
-            className="mx-4 mt-20 max-w-[1920px] tab:mx-10 des:mx-auto"
-          >
-            <div className="flex items-center">
-              <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-DigiBookshelfPrimary tab:w-32"></div>
-              <h2 className="mx-4 text-2xl font-bold text-DigiBookshelfPrimary tab:text-4xl">
-                Features
-              </h2>
-              <div className="w-16 rounded-l-round rounded-r-round border-t-2 border-DigiBookshelfPrimary tab:w-32"></div>
-            </div>
+          </Reveal>
+        </section>
+
+        <section
+          id="features"
+          className="mx-4 mt-20 max-w-[1920px] tab:mx-10 des:mx-auto"
+        >
+          <div className="flex items-center">
+            <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-DigiBookshelfPrimary tab:w-32"></div>
+            <h2 className="mx-4 text-2xl font-bold text-DigiBookshelfPrimary tab:text-4xl">
+              Features
+            </h2>
+            <div className="w-16 rounded-l-round rounded-r-round border-t-2 border-DigiBookshelfPrimary tab:w-32"></div>
+          </div>
+          <Reveal>
             <section className="m-auto mt-20 px-4 des:px-28">
               <div className="relative z-[4] m-auto w-fit rounded-round bg-DigiBookshelfPrimary px-10 py-10 drop-shadow-2xl">
                 <InformationCircleIcon className="m-auto w-9 text-white" />
@@ -224,8 +228,35 @@ const ProjectDigiBookShelf = () => {
                 </ul>
               </div>
             </section>
+          </Reveal>
+        </section>
+
+          <section
+            id="screenshots"
+            className="mx-4 mt-20 max-w-[1920px] tab:mx-10 des:mx-auto"
+          >
+            <div className="flex items-center">
+              <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-DigiBookshelfPrimary tab:w-32"></div>
+              <h2 className="mx-4 text-2xl font-bold text-DigiBookshelfPrimary tab:text-4xl">
+                Screenshots
+              </h2>
+              <div className="w-16 rounded-l-round rounded-r-round border-t-2 border-DigiBookshelfPrimary tab:w-32"></div>
+            </div>
+            <Reveal>
+
+            <section className="m-auto mt-20 px-4 des:px-28">
+              <div className="flex flex-wrap gap-2 justify-center">
+                <img src={DigiBookshelfDashboard} className="w-[45rem] rounded-round hover:drop-shadow-2xl duration-500 " alt="Digi Bookshelf `dashboard` screenshot" />
+                <img src={DigiBookshelfManage} className="w-[45rem] rounded-round hover:drop-shadow-2xl duration-500 " alt="Digi Bookshelf `Manage` screenshot" />
+                <img src={DigiBookshelfMyShelf} className="w-[45rem] rounded-round hover:drop-shadow-2xl duration-500 " alt="Digi Bookshelf `My Shelf` screenshot" />
+                <img src={DigiBookshelfSignleBook} className="w-[45rem] rounded-round hover:drop-shadow-2xl duration-500 " alt="Digi Bookshelf `Book Information` screenshot" />
+                <img src={DigiBookshelfUserModal} className="w-[45rem] rounded-round hover:drop-shadow-2xl duration-500 " alt="Digi Bookshelf `User Modal` screenshot" />
+                <img src={DigiBookshelfUserProfile} className="w-[45rem] rounded-round hover:drop-shadow-2xl duration-500 " alt="Digi Bookshelf `User Profile` screenshot" />
+              </div>
+            </section>
+            </Reveal>
           </section>
-        </Reveal>
+        
       </main>
 
       <Particles
