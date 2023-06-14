@@ -253,7 +253,7 @@ const Landing = () => {
                 <article
                   className="group relative h-[8rem] cursor-pointer overflow-hidden rounded-round border-none bg-[#69533E] duration-500 hover:scale-95 tab:h-[13rem] des:h-[24.5rem] des:flex-1"
                   title="Portfolio"
-                  onClick={() => (window.location.href = "#work")}
+                  onClick={() => (window.location.href = "#portfolio")}
                 >
                   <div className="relative z-10 flex h-full flex-col justify-between px-9 py-5 des:px-12 des:py-9">
                     <div className="flex items-center justify-between">
@@ -288,11 +288,11 @@ const Landing = () => {
         </Reveal>
 
         {/* work section */}
-        <section className="m-auto mt-32 max-w-[1920px] px-4" id="work">
+        <section className="m-auto mt-32 max-w-[1920px] px-4" id="portfolio">
           <div className="flex items-center">
             <div className="w-14 rounded-l-round rounded-r-round border-t-2 border-Light-brown tab:w-32"></div>
             <h2 className="mx-4 text-2xl font-bold text-Dark-brown tab:text-4xl">
-              Work
+            Portfolio
             </h2>
             <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-Light-brown"></div>
           </div>

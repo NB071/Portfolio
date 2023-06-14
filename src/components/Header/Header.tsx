@@ -1,9 +1,11 @@
-import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-scroll";
 
 import PersonalLogoWhite from "@/assets/personalLogo/personalLogoWhite.svg";
 import PersonalLogoPrimary from "@/assets/personalLogo/personalLogoPrimary.svg";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 type Props = {
   variant: "projectPages" | "landing";
@@ -12,6 +14,9 @@ type Props = {
 };
 
 const Header = (props: Props) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
   return (
     <motion.header
       variants={{
@@ -27,79 +32,127 @@ const Header = (props: Props) => {
       } py-8 drop-shadow-2xl backdrop-blur-sm`}
     >
       <div
-        className={`flex h-full w-full max-w-[1920px] flex-col items-center justify-center gap-5 font-light ${
+        className={`flex h-full w-full max-w-[1920px] items-center justify-between gap-5 px-7 font-light tab:hidden ${
           props.variant === "landing"
             ? "text-white-text"
             : `text-${props.textColor}`
-        } tab:flex-row tab:gap-10 tab:text-base`}
+        }`}
       >
-        <Link
-          to={props.variant === "landing" ? "#portfolio" : "#description"}
-          className="group order-2 no-underline transition-all duration-500 ease-in-out tab:order-1"
-        >
-          <span
-            className={`bg-gradient-to-r ${
-              props.variant === "landing"
-                ? "from-white-text to-white-text"
-                : `from-${props.textColor} to-${props.textColor}`
-            } bg-[length:0%_2px] bg-left-bottom bg-no-repeat transition-all duration-500 ease-out group-hover:bg-[length:100%_2px]`}
-          >
-            {props.variant === "landing" ? "Portfolio" : "Description"}
-          </span>
-        </Link>
-        <Link
-          to={props.variant === "landing" ? "#stack" : "#demo"}
-          className="group order-3 no-underline transition-all duration-500 ease-in-out tab:order-2"
-        >
-          <span
-            className={`bg-gradient-to-r ${
-              props.variant === "landing"
-                ? "from-white-text to-white-text"
-                : `from-${props.textColor} to-${props.textColor}`
-            }  bg-[length:0%_2px] bg-left-bottom bg-no-repeat transition-all duration-500 ease-out group-hover:bg-[length:100%_2px]`}
-          >
-            {props.variant === "landing" ? "Stack" : "Demo"}
-          </span>
-        </Link>
-        <Link to="/" className="order-1 px-5 tab:order-3">
-          <img
-            src={
-              props.variant === "landing"
-                ? PersonalLogoPrimary
-                : PersonalLogoWhite
-            }
-            alt="Personal logo"
-          />
-        </Link>
-        <Link
-          to={props.variant === "landing" ? "#about-me" : "#features"}
-          className="group order-3 no-underline transition-all duration-500 ease-in-out tab:order-4"
-        >
-          <span
-            className={`bg-gradient-to-r ${
-              props.variant === "landing"
-                ? "from-white-text to-white-text"
-                : `from-${props.textColor} to-${props.textColor}`
-            }  bg-[length:0%_2px] bg-left-bottom bg-no-repeat transition-all duration-500 ease-out group-hover:bg-[length:100%_2px]`}
-          >
-            {props.variant === "landing" ? "About me" : "Features"}
-          </span>
-        </Link>
-        <Link
-          to={props.variant === "landing" ? "#contact-me" : "#technologies"}
-          className="group order-4 no-underline transition-all duration-500 ease-in-out tab:order-4"
-        >
-          <span
-            className={`bg-gradient-to-r ${
-              props.variant === "landing"
-                ? "from-white-text to-white-text"
-                : `from-${props.textColor} to-${props.textColor}`
-            }  bg-[length:0%_2px] bg-left-bottom bg-no-repeat transition-all duration-500 ease-out group-hover:bg-[length:100%_2px]`}
-          >
-            {props.variant === "landing" ? "Contact me" : "Technologies"}
-          </span>
-        </Link>
+        <img
+          onClick={() => {
+            navigate("/");
+          }}
+          src={
+            props.variant === "landing"
+              ? PersonalLogoPrimary
+              : PersonalLogoWhite
+          }
+          alt="Personal logo"
+        />
+
+        <Bars3Icon
+          className={`w-8 ${
+            isMobileMenuOpen ? "hidden" : "block"
+          } duration-500`}
+          onClick={() => setIsMobileMenuOpen(true)}
+        />
+        <XMarkIcon
+          className={`w-8 ${isMobileMenuOpen ? "block" : "hidden"}`}
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
       </div>
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: -75, height: "0" },
+              visible: { opacity: 1, y: 0, height: "auto" },
+            }}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            transition={{ duration: 0.2 }}
+            className={`flex flex-col items-center gap-5 opacity-100 ${
+              props.variant === "landing"
+                ? "text-white-text"
+                : `text-${props.textColor}`
+            }`}
+          >
+            <Link
+              duration={100}
+              offset={-130}
+              smooth
+              spy
+              to={props.variant === "landing" ? "portfolio" : "description"}
+            >
+              <span
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`cursor-pointer bg-gradient-to-r ${
+                  props.variant === "landing"
+                    ? "from-white-text to-white-text"
+                    : `from-${props.textColor} to-${props.textColor}`
+                } bg-[length:0%_2px] bg-left-bottom bg-no-repeat no-underline transition-all duration-500 ease-in-out hover:bg-[length:100%_2px]`}
+              >
+                {props.variant === "landing" ? "Portfolio" : "Description"}
+              </span>
+            </Link>
+            <Link
+              duration={100}
+              offset={-130}
+              smooth
+              spy
+              to={props.variant === "landing" ? "stack" : "demo"}
+            >
+              <span
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`cursor-pointer bg-gradient-to-r ${
+                  props.variant === "landing"
+                    ? "from-white-text to-white-text"
+                    : `from-${props.textColor} to-${props.textColor}`
+                } bg-[length:0%_2px] bg-left-bottom bg-no-repeat no-underline transition-all duration-500 ease-in-out hover:bg-[length:100%_2px]`}
+              >
+                {props.variant === "landing" ? "Stack" : "Demo"}
+              </span>
+            </Link>
+            <Link
+              duration={100}
+              offset={-130}
+              smooth
+              spy
+              to={props.variant === "landing" ? "about-me" : "features"}
+            >
+              <span
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`cursor-pointer bg-gradient-to-r ${
+                  props.variant === "landing"
+                    ? "from-white-text to-white-text"
+                    : `from-${props.textColor} to-${props.textColor}`
+                } bg-[length:0%_2px] bg-left-bottom bg-no-repeat no-underline transition-all duration-500 ease-in-out hover:bg-[length:100%_2px]`}
+              >
+                {props.variant === "landing" ? "About Me" : "features"}
+              </span>
+            </Link>
+            <Link
+              duration={100}
+              offset={-130}
+              smooth
+              spy
+              to={props.variant === "landing" ? "contact-me" : "technologies"}
+            >
+              <span
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`cursor-pointer bg-gradient-to-r ${
+                  props.variant === "landing"
+                    ? "from-white-text to-white-text"
+                    : `from-${props.textColor} to-${props.textColor}`
+                } bg-[length:0%_2px] bg-left-bottom bg-no-repeat no-underline transition-all duration-500 ease-in-out hover:bg-[length:100%_2px]`}
+              >
+                {props.variant === "landing" ? "Contact me" : "Technologies"}
+              </span>
+            </Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 };
