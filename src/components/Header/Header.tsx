@@ -9,14 +9,12 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 type Props = {
   variant: "projectPages" | "landing";
-  bg?: string;
-  textColor?: string;
+  bg: string;
 };
 
 const Header = (props: Props) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
-
   return (
     <motion.header
       variants={{
@@ -27,16 +25,12 @@ const Header = (props: Props) => {
       animate="visible"
       exit="hidden"
       transition={{ duration: 0.2, delay: 0.2 }}
-      className={`fixed top-0 z-[3] w-full ${
-        props.variant === "landing" ? `bg-[#69533ec8]` : `bg-[${props.bg}]`
-      } py-8 drop-shadow-2xl backdrop-blur-sm`}
+      className={`fixed top-0 z-[3] w-full 
+        py-8 drop-shadow-2xl backdrop-blur-sm`}
+      style={{ backgroundColor: props.bg }}
     >
       <div
-        className={`flex h-full w-full max-w-[1920px] items-center justify-between gap-5 px-7 font-light tab:hidden ${
-          props.variant === "landing"
-            ? "text-white-text"
-            : `text-${props.textColor}`
-        }`}
+        className={`text-white flex  h-full items-center justify-between gap-5 px-7 font-light tab:hidden`}
       >
         <img
           onClick={() => {
@@ -73,11 +67,7 @@ const Header = (props: Props) => {
             animate="visible"
             exit="hidden"
             transition={{ duration: 0.2 }}
-            className={`flex flex-col items-center gap-5 opacity-100 ${
-              props.variant === "landing"
-                ? "text-white-text"
-                : `text-${props.textColor}`
-            }`}
+            className={`flex flex-col items-center gap-5 text-white opacity-100`}
           >
             <Link
               duration={100}
@@ -88,11 +78,8 @@ const Header = (props: Props) => {
             >
               <span
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`cursor-pointer bg-gradient-to-r ${
-                  props.variant === "landing"
-                    ? "from-white-text to-white-text"
-                    : `from-${props.textColor} to-${props.textColor}`
-                } bg-[length:0%_2px] bg-left-bottom bg-no-repeat no-underline transition-all duration-500 ease-in-out hover:bg-[length:100%_2px]`}
+                className={`cursor-pointer bg-gradient-to-r from-white to-white bg-[length:0%_2px] bg-left-bottom bg-no-repeat no-underline transition-all duration-500 ease-in-out hover:bg-[length:100%_2px]`}
+                style={{}}
               >
                 {props.variant === "landing" ? "Portfolio" : "Description"}
               </span>
@@ -106,11 +93,7 @@ const Header = (props: Props) => {
             >
               <span
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`cursor-pointer bg-gradient-to-r ${
-                  props.variant === "landing"
-                    ? "from-white-text to-white-text"
-                    : `from-${props.textColor} to-${props.textColor}`
-                } bg-[length:0%_2px] bg-left-bottom bg-no-repeat no-underline transition-all duration-500 ease-in-out hover:bg-[length:100%_2px]`}
+                className={`cursor-pointer bg-gradient-to-r from-white to-white bg-[length:0%_2px] bg-left-bottom bg-no-repeat no-underline transition-all duration-500 ease-in-out hover:bg-[length:100%_2px]`}
               >
                 {props.variant === "landing" ? "Stack" : "Demo"}
               </span>
@@ -124,11 +107,7 @@ const Header = (props: Props) => {
             >
               <span
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`cursor-pointer bg-gradient-to-r ${
-                  props.variant === "landing"
-                    ? "from-white-text to-white-text"
-                    : `from-${props.textColor} to-${props.textColor}`
-                } bg-[length:0%_2px] bg-left-bottom bg-no-repeat no-underline transition-all duration-500 ease-in-out hover:bg-[length:100%_2px]`}
+                className={`cursor-pointer bg-gradient-to-r from-white to-white bg-[length:0%_2px] bg-left-bottom bg-no-repeat no-underline transition-all duration-500 ease-in-out hover:bg-[length:100%_2px]`}
               >
                 {props.variant === "landing" ? "About Me" : "features"}
               </span>
@@ -142,11 +121,7 @@ const Header = (props: Props) => {
             >
               <span
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`cursor-pointer bg-gradient-to-r ${
-                  props.variant === "landing"
-                    ? "from-white-text to-white-text"
-                    : `from-${props.textColor} to-${props.textColor}`
-                } bg-[length:0%_2px] bg-left-bottom bg-no-repeat no-underline transition-all duration-500 ease-in-out hover:bg-[length:100%_2px]`}
+                className={`cursor-pointer bg-gradient-to-r from-white to-white bg-[length:0%_2px] bg-left-bottom bg-no-repeat no-underline transition-all duration-500 ease-in-out hover:bg-[length:100%_2px]`}
               >
                 {props.variant === "landing" ? "Contact me" : "Technologies"}
               </span>
@@ -155,11 +130,7 @@ const Header = (props: Props) => {
         )}
       </AnimatePresence>
       <div
-        className={`hidden h-full w-full max-w-[1920px] items-center justify-center gap-10 font-light tab:flex ${
-          props.variant === "landing"
-            ? "text-white-text"
-            : `text-${props.textColor}`
-        }`}
+        className={`hidden h-full w-full items-center justify-center gap-10 font-light text-white tab:flex`}
       >
         <Link
           duration={100}
@@ -170,11 +141,7 @@ const Header = (props: Props) => {
         >
           <span
             onClick={() => setIsMobileMenuOpen(false)}
-            className={`cursor-pointer bg-gradient-to-r ${
-              props.variant === "landing"
-                ? "from-white-text to-white-text"
-                : `from-${props.textColor} to-${props.textColor}`
-            } bg-[length:0%_2px] bg-left-bottom bg-no-repeat no-underline transition-all duration-500 ease-in-out hover:bg-[length:100%_2px]`}
+            className={`cursor-pointer bg-gradient-to-r from-white to-white bg-[length:0%_2px] bg-left-bottom bg-no-repeat no-underline transition-all duration-500 ease-in-out hover:bg-[length:100%_2px]`}
           >
             {props.variant === "landing" ? "Portfolio" : "Description"}
           </span>
@@ -188,11 +155,7 @@ const Header = (props: Props) => {
         >
           <span
             onClick={() => setIsMobileMenuOpen(false)}
-            className={`cursor-pointer bg-gradient-to-r ${
-              props.variant === "landing"
-                ? "from-white-text to-white-text"
-                : `from-${props.textColor} to-${props.textColor}`
-            } bg-[length:0%_2px] bg-left-bottom bg-no-repeat no-underline transition-all duration-500 ease-in-out hover:bg-[length:100%_2px]`}
+            className={`cursor-pointer bg-gradient-to-r from-white to-white bg-[length:0%_2px] bg-left-bottom bg-no-repeat no-underline transition-all duration-500 ease-in-out hover:bg-[length:100%_2px]`}
           >
             {props.variant === "landing" ? "Stack" : "Demo"}
           </span>
@@ -207,7 +170,7 @@ const Header = (props: Props) => {
               : PersonalLogoWhite
           }
           alt="Personal logo"
-          className="px-5 cursor-pointer hover:-translate-y-1 hover:px-10 duration-500 hover:drop-shadow-2xl"
+          className="cursor-pointer px-5 duration-500 hover:-translate-y-1 hover:px-10 hover:drop-shadow-2xl"
         />
         <Link
           duration={100}
@@ -218,11 +181,7 @@ const Header = (props: Props) => {
         >
           <span
             onClick={() => setIsMobileMenuOpen(false)}
-            className={`cursor-pointer bg-gradient-to-r ${
-              props.variant === "landing"
-                ? "from-white-text to-white-text"
-                : `from-${props.textColor} to-${props.textColor}`
-            } bg-[length:0%_2px] bg-left-bottom bg-no-repeat no-underline transition-all duration-500 ease-in-out hover:bg-[length:100%_2px]`}
+            className={`cursor-pointer bg-gradient-to-r from-white to-white bg-[length:0%_2px] bg-left-bottom bg-no-repeat no-underline transition-all duration-500 ease-in-out hover:bg-[length:100%_2px]`}
           >
             {props.variant === "landing" ? "About Me" : "features"}
           </span>
@@ -236,11 +195,7 @@ const Header = (props: Props) => {
         >
           <span
             onClick={() => setIsMobileMenuOpen(false)}
-            className={`cursor-pointer bg-gradient-to-r ${
-              props.variant === "landing"
-                ? "from-white-text to-white-text"
-                : `from-${props.textColor} to-${props.textColor}`
-            } bg-[length:0%_2px] bg-left-bottom bg-no-repeat no-underline transition-all duration-500 ease-in-out hover:bg-[length:100%_2px]`}
+            className={`cursor-pointer bg-gradient-to-r from-white to-white bg-[length:0%_2px] bg-left-bottom bg-no-repeat no-underline transition-all duration-500 ease-in-out hover:bg-[length:100%_2px]`}
           >
             {props.variant === "landing" ? "Contact me" : "Technologies"}
           </span>

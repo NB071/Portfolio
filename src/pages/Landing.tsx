@@ -144,9 +144,9 @@ const Landing = () => {
   return (
     <>
       <AnimatePresence>
-        {showNav && <Header variant="landing" />}
+        {showNav && <Header bg="#69533ec8" variant="landing" />}
       </AnimatePresence>
-      <main className="relative z-[2] backdrop-blur-[2px]">
+      <main className="relative z-[2] backdrop-blur-[3px]">
         <Reveal>
           <section id="intro">
             <div className="flex flex-col tab:flex-row-reverse">
