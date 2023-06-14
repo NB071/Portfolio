@@ -24,7 +24,10 @@ import { Reveal } from "@/utils/Reveal";
 
 // icons
 import { GithubIcon } from "@/utils/ImportSocialLogos";
-import { RocketLaunchIcon } from "@heroicons/react/24/outline";
+import {
+  RocketLaunchIcon,
+  InformationCircleIcon,
+} from "@heroicons/react/24/outline";
 
 const ProjectDigiBookShelf = () => {
   const particlesInit = useCallback(async (engine: Engine) => {
@@ -33,17 +36,13 @@ const ProjectDigiBookShelf = () => {
 
   return (
     <>
-      <Header
-        variant="projectPages"
-        bg="#6936f5e8"
-  
-      />
+      <Header variant="projectPages" bg="#6936f5e8" />
 
       <main className="relative z-[1] backdrop-blur-[3px]">
         <Reveal>
           <section
             id="intro"
-            className="max-w-[1920px] des:mx-auto mx-4 mt-36 duration-500 hover:scale-95"
+            className="mx-4 mt-36 max-w-[1920px] duration-500 hover:scale-95 des:mx-auto"
           >
             <div className="flex justify-center">
               <div className="flex h-[20rem] w-full flex-col items-center justify-center gap-8 rounded-round bg-DigiBookshelfPrimary p-16 tab:w-[40rem]">
@@ -101,7 +100,10 @@ const ProjectDigiBookShelf = () => {
           </section>
         </Reveal>
         <Reveal>
-          <section id="description" className="mt-20 max-w-[1920px] des:mx-auto mx-4 tab:mx-10">
+          <section
+            id="description"
+            className="mx-4 mt-20 max-w-[1920px] tab:mx-10 des:mx-auto"
+          >
             <div className="flex items-center">
               <div className="w-14 rounded-l-round rounded-r-round border-t-2 border-DigiBookshelfPrimary tab:w-32"></div>
               <h2 className="mx-4 text-2xl font-bold text-DigiBookshelfPrimary tab:text-4xl">
@@ -137,7 +139,10 @@ const ProjectDigiBookShelf = () => {
           </section>
         </Reveal>
         <Reveal>
-          <section id="demo" className="mt-20 max-w-[1920px] des:mx-auto mx-4 tab:mx-10">
+          <section
+            id="demo"
+            className="mx-4 mt-20 max-w-[1920px] tab:mx-10 des:mx-auto"
+          >
             <div className="flex items-center">
               <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-DigiBookshelfPrimary tab:w-32"></div>
               <h2 className="mx-4  text-2xl font-bold text-DigiBookshelfPrimary tab:text-4xl">
@@ -178,6 +183,45 @@ const ProjectDigiBookShelf = () => {
                     password
                   </p>
                 </div>
+              </div>
+            </section>
+          </section>
+        </Reveal>
+        <Reveal>
+          <section
+            id="features"
+            className="mx-4 mt-20 max-w-[1920px] tab:mx-10 des:mx-auto"
+          >
+            <div className="flex items-center">
+              <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-DigiBookshelfPrimary tab:w-32"></div>
+              <h2 className="mx-4 text-2xl font-bold text-DigiBookshelfPrimary tab:text-4xl">
+                Features
+              </h2>
+              <div className="w-16 rounded-l-round rounded-r-round border-t-2 border-DigiBookshelfPrimary tab:w-32"></div>
+            </div>
+            <section className="m-auto mt-20 px-4 des:px-28">
+              <div className="relative z-[4] m-auto w-fit rounded-round bg-DigiBookshelfPrimary px-10 py-10 drop-shadow-2xl">
+                <InformationCircleIcon className="m-auto w-9 text-white" />
+              </div>
+              <div className="relative -top-9 z-[3] rounded-round bg-[#6535e8] px-16 py-20 text-center tab:px-44">
+                <ul className="list-disc text-left text-white">
+                  <li className="py-4">
+                    Central platform to store and manage books being read or
+                    read previously.
+                  </li>
+                  <li className="py-4">
+                    Trending books from NYT to help users discover popular
+                    books.
+                  </li>
+                  <li className="py-4">
+                    Goal-setting feature to motivate users to read a certain
+                    number of books.
+                  </li>
+                  <li className="py-4">
+                    Ability to see what books and progress friends have made to
+                    facilitate discussions and recommendations.
+                  </li>
+                </ul>
               </div>
             </section>
           </section>
