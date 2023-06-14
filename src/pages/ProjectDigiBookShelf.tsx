@@ -298,7 +298,7 @@ const ProjectDigiBookShelf = () => {
             <div className="w-16 rounded-l-round rounded-r-round border-t-2 border-DigiBookshelfPrimary tab:w-32"></div>
           </div>
           <Reveal>
-            <section className=" m-auto mt-20 flex min-h-fit max-w-[1920px] flex-col gap-2 px-4 tab:flex-row des:px-28">
+            <section className=" m-auto mt-20 flex min-h-fit flex-col gap-2 px-4 tab:flex-row des:px-28">
               <article className="flex h-[24rem] w-full flex-col gap-10 rounded-round bg-DigiBookshelfPrimary p-10 duration-500 hover:drop-shadow-2xl lgmob:h-[28rem] tab:order-2 tab:h-[35rem] tab:w-[30%] tab:gap-20 des:tab:h-[40rem]">
                 <h3 className="text-center font-bold text-white-text lgmob:text-xl des:text-2xl">
                   Front-end
@@ -520,6 +520,9 @@ const ProjectDigiBookShelf = () => {
           </Reveal>
         </section>
       </main>
+      <footer className="relative z-[2] flex items-center justify-center py-16 font-medium text-DigiBookshelfPrimary backdrop-blur-[2px]">
+        <p className="">Copyright © 2023 Nima Bargestan</p>
+      </footer>
 
       <Particles
         className="absolute z-[0]"

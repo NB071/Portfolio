@@ -30,7 +30,7 @@ const Header = (props: Props) => {
       style={{ backgroundColor: props.bg }}
     >
       <div
-        className={`text-white flex  h-full items-center justify-between gap-5 px-7 font-light tab:hidden`}
+        className={`flex h-full  items-center justify-between gap-5 px-7 font-light text-white tab:hidden`}
       >
         <img
           onClick={() => {
@@ -56,6 +56,8 @@ const Header = (props: Props) => {
           onClick={() => setIsMobileMenuOpen(false)}
         />
       </div>
+
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -112,6 +114,16 @@ const Header = (props: Props) => {
                 {props.variant === "landing" ? "About Me" : "features"}
               </span>
             </Link>
+            {props.variant === "projectPages" && (
+              <Link duration={100} offset={-130} smooth spy to={"screenshots"}>
+                <span
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`cursor-pointer bg-gradient-to-r from-white to-white bg-[length:0%_2px] bg-left-bottom bg-no-repeat no-underline transition-all duration-500 ease-in-out hover:bg-[length:100%_2px]`}
+                >
+                  Screenshots
+                </span>
+              </Link>
+            )}
             <Link
               duration={100}
               offset={-130}
@@ -129,6 +141,8 @@ const Header = (props: Props) => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Tablet/Desktop Menu */}
       <div
         className={`hidden h-full w-full items-center justify-center gap-10 font-light text-white tab:flex`}
       >
@@ -186,6 +200,17 @@ const Header = (props: Props) => {
             {props.variant === "landing" ? "About Me" : "features"}
           </span>
         </Link>
+        {props.variant === "projectPages" && (
+          <Link duration={100} offset={-130} smooth spy to={"screenshots"}>
+            <span
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`cursor-pointer bg-gradient-to-r from-white to-white bg-[length:0%_2px] bg-left-bottom bg-no-repeat no-underline transition-all duration-500 ease-in-out hover:bg-[length:100%_2px]`}
+            >
+              Screenshots
+            </span>
+          </Link>
+        )}
+
         <Link
           duration={100}
           offset={-130}
