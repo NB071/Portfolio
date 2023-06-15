@@ -50,8 +50,7 @@ import {
   ArrowPathIcon,
   CheckBadgeIcon,
   ShieldExclamationIcon,
-  MagnifyingGlassIcon
-
+  MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
 
 // Libs
@@ -210,13 +209,12 @@ const Landing = () => {
                 <h2 className="font-outline-1 w-full text-center text-2xl font-bold text-transparent tab:text-start tab:text-3xl des:text-5xl">
                   Full Stack Developer
                 </h2>
-                
               </div>
             </div>
 
             {/* CTAs */}
             <section className="m-auto max-w-[1920px]">
-              <div className="mt-10 flex w-full flex-col gap-2 px-4 tab:mt-16 des:mt-24 des:flex-row-reverse tab:px-8 des:px-28">
+              <div className="mt-10 flex w-full flex-col gap-2 px-4 tab:mt-16 tab:px-8 des:mt-24 des:flex-row-reverse des:px-28">
                 <div className="flex flex-1 flex-col gap-2 ">
                   <div className="flex w-full flex-col gap-2 tab:flex-row">
                     <article
@@ -816,7 +814,15 @@ const Landing = () => {
                     started my web development journey about a year ago,
                     external factors, including immigration to Canada, briefly
                     interrupted my progress. However, my dedication to the craft
-                    led me to enroll in the highly regarded BrainStation
+                    led me to enroll in the highly regarded{" "}
+                    <Link
+                      className="text-slate-600 underline duration-500 hover:text-slate-400"
+                      to="https://brainstation.io/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      BrainStation's
+                    </Link>{" "}
                     Software Engineering Bootcamp three months ago, reigniting
                     my passion and propelling me to acquire comprehensive skills
                     as a full-stack developer.
@@ -1251,13 +1257,21 @@ const Landing = () => {
                   </p>
                   <div className="flex flex-1 flex-col gap-2">
                     <div className="flex flex-wrap justify-center gap-2">
-                      <Link to="matilto:nimam700@gmail.com">
+                      <Link
+                        to="matilto:nimam700@gmail.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <div className="group flex items-center gap-4 rounded-round border border-Dark-brown px-7 py-2 text-sm text-Dark-brown underline duration-500 hover:bg-Dark-brown hover:text-white-text">
                           <MailIcon className=" w-6 fill-Dark-brown duration-500 group-hover:fill-white-text" />
                           Nimam700@gmail.com
                         </div>
                       </Link>
-                      <Link to="tel:+16472916922">
+                      <Link
+                        to="tel:+16472916922"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <div className="group flex items-center gap-4 rounded-round border border-Dark-brown px-7 py-2 text-sm text-Dark-brown underline duration-500 hover:bg-Dark-brown hover:text-white-text">
                           <PhoneIcon className="w-6" />
                           +1 (647) 291-6922
@@ -1267,18 +1281,24 @@ const Landing = () => {
                     <div className="flex flex-wrap justify-center gap-2">
                       <Link
                         to="https://www.linkedin.com/in/nima-bargestan/"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="group rounded-round border border-Dark-brown px-7 py-2 duration-500 hover:bg-Dark-brown hover:text-white-text"
                       >
                         <LinkedInIcon className="fill-Dark-brown duration-500 group-hover:scale-90 group-hover:fill-white-text" />
                       </Link>
                       <Link
                         to="https://github.com/NB071"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="group rounded-round border border-Dark-brown px-7 py-2 duration-500 hover:bg-Dark-brown hover:text-white-text"
                       >
                         <GithubIcon className="fill-Dark-brown duration-500 group-hover:scale-90 group-hover:fill-white-text" />
                       </Link>
                       <Link
                         to="https://twitter.com/nimdev071"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="group rounded-round border border-Dark-brown px-7 py-2 duration-500 hover:bg-Dark-brown "
                       >
                         <TwitterIcon className="fill-Dark-brown duration-500 group-hover:scale-90 group-hover:fill-white-text" />
@@ -1293,7 +1313,7 @@ const Landing = () => {
                         <div className="relative flex-1">
                           <label
                             htmlFor="name"
-                            className="block mb-1 font-bold text-Dark-brown"
+                            className="mb-1 block font-bold text-Dark-brown"
                           >
                             Name:
                           </label>
@@ -1322,7 +1342,7 @@ const Landing = () => {
                         <div className="relative flex-1">
                           <label
                             htmlFor="email"
-                            className="block mb-1 font-bold text-Dark-brown"
+                            className="mb-1 block font-bold text-Dark-brown"
                           >
                             Email:
                           </label>
@@ -1339,7 +1359,7 @@ const Landing = () => {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                           />
-                           {formik.touched.email && formik.errors.email ? (
+                          {formik.touched.email && formik.errors.email ? (
                             <div className="mt-2 flex items-center gap-2 text-sm">
                               <ExclamationCircleIcon className="h-6 w-6 text-red-600" />
                               <span className="font-normal opacity-70 transition-all duration-300 hover:opacity-100">
@@ -1351,7 +1371,7 @@ const Landing = () => {
                         <div className="relative flex-1">
                           <label
                             htmlFor="subject"
-                            className="block mb-1 font-bold text-Dark-brown"
+                            className="mb-1 block font-bold text-Dark-brown"
                           >
                             Subject:
                           </label>
@@ -1382,7 +1402,7 @@ const Landing = () => {
                         <div className="relative flex-1">
                           <label
                             htmlFor="message"
-                            className="block mb-1 font-bold text-Dark-brown"
+                            className="mb-1 block font-bold text-Dark-brown"
                           >
                             Message:
                           </label>

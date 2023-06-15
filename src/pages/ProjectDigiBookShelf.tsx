@@ -70,12 +70,7 @@ const ProjectDigiBookShelf = () => {
                 />
                 <div className="flex h-full w-full justify-center gap-5 tab:gap-10 ">
                   <div className="flex items-center gap-4 text-white">
-                    <div className="w-min">
-                      <h3 className="text-xs tab:text-base">Demo: </h3>
-                      <p className="mt-2 text-[.6rem] underline tab:w-20">
-                        Sample credenials
-                      </p>
-                    </div>
+                    <h3 className="text-xs tab:text-base">Demo: </h3>
                     <span className="w-7 cursor-pointer">
                       <Link
                         to="https://digi-bookshelf.herokuapp.com/"
@@ -189,7 +184,7 @@ const ProjectDigiBookShelf = () => {
                 </span>
                 <div className="mt-10 flex items-center justify-center">
                   <div className="tab:mx m-auto  w-1/2 flex-1 rounded-round border-t-2 opacity-50"></div>
-                  <h3 className="flex-1 font-bold text-white">
+                  <h3 className="flex-1 text-[.6rem] font-bold text-white tab:text-sm des:text-base">
                     Sample credenial
                   </h3>
                   <div className="tab:mx  m-auto my-10 w-1/2 flex-1 rounded-round border-t-2 opacity-50"></div>
@@ -495,7 +490,7 @@ const ProjectDigiBookShelf = () => {
                 </article>
               </div>
               <div className="tab:order-3 tab:flex-1 tab:perspective-1600">
-                <article className="flex h-[24rem] w-full flex-col gap-10 rounded-round bg-DigiBookshelfPrimary p-10 duration-500 hover:drop-shadow-2xl hover:rotate-y-0 lgmob:h-[28rem] tab:h-[35rem] tab:gap-20 tab:-rotate-y-30 tab:transform des:tab:h-[40rem]">
+                <article className="flex h-[24rem] w-full flex-col gap-5 rounded-round bg-DigiBookshelfPrimary p-10 duration-500 hover:drop-shadow-2xl hover:rotate-y-0 lgmob:h-[28rem] tab:h-[35rem] tab:-rotate-y-30 tab:transform des:tab:h-[40rem]">
                   <h3 className="text-center font-bold text-white-text lgmob:text-xl des:text-2xl">
                     Development
                   </h3>
