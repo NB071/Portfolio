@@ -1,9 +1,65 @@
-<h1 align="center" id="title">My Portfolio Website (Work in Progress...)</h1>
+<h1 align="center" id="title">My Portfolio Website </h1>
 
-<h2>💻 Built with (Currently):</h2>
+<p align="center"><img src="https://socialify.git.ci/NB071/DigiBookShelf/image?font=Inter&amp;language=1&amp;logo=https%3A%2F%2Fi.ibb.co%2FyFfk1z4%2FLogo.png&amp;name=1&amp;owner=1&amp;pattern=Plus&amp;stargazers=1&amp;theme=Light" alt="project-image"></p>
+
+<p id="description">This repository is dedicated to my portfolio website. After Days of research and arguing with myself, I decided to develop my portfolio.</p>
+
+<h2>🚀 Demo</h2>
+
+[https://NimaBargestan.dev](https://NimaBargestan.dev)<br><br>
+
+
+<h2>🛠️ Installation Steps:</h2>
+
+<p>1. Clone the repo</p>
+
+```
+$ git clone https://github.com/NB071/Portfolio
+```
+
+<p>2. Navigate to the project's folder</p>
+
+```
+$ cd Portfolio
+```
+
+<p>3. Install dep packages</p>
+
+```
+$ npm i
+```
+
+<p>4. Register for <a href="https://www.emailjs.com/">EmailJS</a> service and edit .env-sample (for contact form section)</p>
+
+```
+VITE_EmailJS_ServiceId=<EmailJS Service ID>
+VITE_EmailJS_Template_id=<EmailJS Template ID>
+VITE_EmailJS_user_id=<EmailJS User ID>
+```
+
+<p>5. Run</p>
+
+```
+$ npm start
+```
+
+<h2>🍰 Contribution Guidelines:</h2>
+
+1\. Fork the repository\. <br>
+2\. Create a new branch: ```git checkout -b feature-name``` <br>
+3\. Make your changes\. <br>
+4\. Commit your changes: ```git commit -m 'Add some feature'```  <br>
+5\. Push to the branch: ```git push origin feature-name``` <br>
+6\. Submit a pull request <br>
+
+  
+  
+<h2>💻 Built with :</h2>
 
 Technologies used in the project:
 
-*   vite / React-TypeScript
-*   Tailwindcss
+*   Vite
+*   React (TypeScript)
+*   TailwindCSS
 *   Hero Icons
+*   EmailJS API
