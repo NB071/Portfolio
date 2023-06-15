@@ -16,7 +16,22 @@ import DigiBookshelfUserProfile from "@/assets/projectScreenshots/DigiBookshelf/
 import DigiBookshelfSignleBook from "@/assets/projectScreenshots/DigiBookshelf/digiBookshelf-SingleBook.png";
 import DigiBookshelfUserModal from "@/assets/projectScreenshots/DigiBookshelf/digiBookshelf-UserModal.png";
 
-import * as stackLogos from "@/utils/ImportStacksLogo";
+import {
+  htmlLogo,
+  cssLogo,
+  scssLogo,
+  herokuIcon,
+  knexLogo,
+  reactLogo,
+  javascriptLogo,
+  figmaLogo,
+  nodejsLogo,
+  expressjsLogo,
+  mysqlLogo,
+  jwtLogo,
+  socketioLogo,
+  gitLogo,
+} from "@/utils/ImportStacksLogo";
 
 // Components
 import Header from "@/components/Header/Header";
@@ -312,7 +327,7 @@ const ProjectDigiBookShelf = () => {
                       rel="noopener noreferrer"
                     >
                       <img
-                        src={stackLogos.htmlLogo}
+                        src={htmlLogo}
                         className="h-8 w-8 cursor-pointer duration-300 hover:scale-90 lgmob:h-12 lgmob:w-12 tab:h-9 tab:w-9 des:h-14 des:w-14"
                         alt="HTML5 logo"
                         title="HTML5"
@@ -324,7 +339,7 @@ const ProjectDigiBookShelf = () => {
                       rel="noopener noreferrer"
                     >
                       <img
-                        src={stackLogos.cssLogo}
+                        src={cssLogo}
                         className="h-8 w-8 cursor-pointer duration-300 hover:scale-90 lgmob:h-12 lgmob:w-12 tab:h-9 tab:w-9 des:h-14 des:w-14"
                         alt="CSS logo"
                         title="CSS"
@@ -337,7 +352,7 @@ const ProjectDigiBookShelf = () => {
                       rel="noopener noreferrer"
                     >
                       <img
-                        src={stackLogos.scssLogo}
+                        src={scssLogo}
                         className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
                         alt="SASS logo"
                         title="SASS"
@@ -353,7 +368,7 @@ const ProjectDigiBookShelf = () => {
                       rel="noopener noreferrer"
                     >
                       <img
-                        src={stackLogos.javascriptLogo}
+                        src={javascriptLogo}
                         className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
                         alt="JavaScript logo"
                         title="JavaScript"
@@ -365,7 +380,7 @@ const ProjectDigiBookShelf = () => {
                       rel="noopener noreferrer"
                     >
                       <img
-                        src={stackLogos.reactLogo}
+                        src={reactLogo}
                         className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
                         alt="React logo"
                         title="React"
@@ -380,7 +395,7 @@ const ProjectDigiBookShelf = () => {
                       rel="noopener noreferrer"
                     >
                       <img
-                        src={stackLogos.figmaLogo}
+                        src={figmaLogo}
                         className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
                         alt="Figma logo"
                         title="Figma"
@@ -403,7 +418,7 @@ const ProjectDigiBookShelf = () => {
                         rel="noopener noreferrer"
                       >
                         <img
-                          src={stackLogos.nodejsLogo}
+                          src={nodejsLogo}
                           className="h-8 w-8 cursor-pointer duration-300 hover:scale-90 lgmob:h-12 lgmob:w-12 tab:h-9 tab:w-9 des:h-14 des:w-14"
                           alt="Node.js logo"
                           title="Node.js"
@@ -415,7 +430,7 @@ const ProjectDigiBookShelf = () => {
                         rel="noopener noreferrer"
                       >
                         <img
-                          src={stackLogos.expressjsLogo}
+                          src={expressjsLogo}
                           className="h-8 w-8 cursor-pointer duration-300 hover:scale-90 lgmob:h-12 lgmob:w-12 tab:h-9 tab:w-9 des:h-14 des:w-14"
                           alt="Express.js logo"
                           title="Express.js"
@@ -427,7 +442,7 @@ const ProjectDigiBookShelf = () => {
                         rel="noopener noreferrer"
                       >
                         <img
-                          src={stackLogos.mysqlLogo}
+                          src={mysqlLogo}
                           className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
                           alt="MySQL Logo"
                           title="MySQL"
@@ -442,7 +457,7 @@ const ProjectDigiBookShelf = () => {
                         rel="noopener noreferrer"
                       >
                         <img
-                          src={stackLogos.jwtLogo}
+                          src={jwtLogo}
                           className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-14 des:w-14"
                           alt="JWT Logo"
                           title="JWT"
@@ -454,7 +469,7 @@ const ProjectDigiBookShelf = () => {
                         rel="noopener noreferrer"
                       >
                         <img
-                          src={stackLogos.knexLogo}
+                          src={knexLogo}
                           className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
                           alt="Knex logo"
                           title="Knex"
@@ -469,7 +484,7 @@ const ProjectDigiBookShelf = () => {
                         rel="noopener noreferrer"
                       >
                         <img
-                          src={stackLogos.socketioLogo}
+                          src={socketioLogo}
                           className="h-7 w-20 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 tab:h-8 des:h-12"
                           alt="SocketIO logo"
                           title="SocketIO"
@@ -493,7 +508,7 @@ const ProjectDigiBookShelf = () => {
                         rel="noopener noreferrer"
                       >
                         <img
-                          src={stackLogos.herokuIcon}
+                          src={herokuIcon}
                           className="h-8 w-8 cursor-pointer duration-300 hover:scale-90 lgmob:h-12 lgmob:w-12 tab:h-9 tab:w-9 des:h-14 des:w-14"
                           alt="Heroku logo"
                           title="Heroku"
@@ -505,7 +520,7 @@ const ProjectDigiBookShelf = () => {
                         rel="noopener noreferrer"
                       >
                         <img
-                          src={stackLogos.gitLogo}
+                          src={gitLogo}
                           className="h-8 w-8 cursor-pointer duration-300 hover:scale-90 lgmob:h-12 lgmob:w-12 tab:h-9 tab:w-9 des:h-14 des:w-14"
                           alt="Git logo"
                           title="Git"
@@ -520,7 +535,7 @@ const ProjectDigiBookShelf = () => {
           </Reveal>
         </section>
       </main>
-      <footer className="relative z-[2] px-4 flex items-center justify-center py-16 font-medium text-DigiBookshelfPrimary backdrop-blur-[2px]">
+      <footer className="relative z-[2] flex items-center justify-center px-4 py-16 font-medium text-DigiBookshelfPrimary backdrop-blur-[2px]">
         <p className="">Copyright © 2023 Nima Bargestan</p>
       </footer>
 

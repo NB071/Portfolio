@@ -216,8 +216,8 @@ const Landing = () => {
 
             {/* CTAs */}
             <section className="m-auto max-w-[1920px]">
-              <div className="mt-10 flex w-full flex-col gap-2 px-4 tab:mt-16 des:mt-24 des:flex-row-reverse">
-                <div className="flex flex-1 flex-col gap-2">
+              <div className="mt-10 flex w-full flex-col gap-2 px-4 tab:mt-16 des:mt-24 des:flex-row-reverse tab:px-8 des:px-28">
+                <div className="flex flex-1 flex-col gap-2 ">
                   <div className="flex w-full flex-col gap-2 tab:flex-row">
                     <article
                       className="h-[8rem] cursor-pointer rounded-round border-none bg-[#D58F6B] duration-500 hover:scale-95 tab:h-[11rem] tab:flex-1  des:h-[12rem]"
@@ -328,7 +328,7 @@ const Landing = () => {
             </h2>
             <div className="flex-1 rounded-l-round rounded-r-round border-t-2 border-Light-brown"></div>
           </div>
-          <section className="mt-12 flex flex-col gap-2">
+          <section className="mt-12 flex flex-col gap-2 tab:px-4 des:px-28">
             <Reveal>
               <Link to="/projects/Digibookshelf">
                 <article className="group relative flex h-[17.125rem] w-full cursor-pointer flex-col justify-between rounded-round bg-DigiBookshelfPrimary p-10 duration-500 hover:scale-95 tab:h-[24rem]">
@@ -351,7 +351,7 @@ const Landing = () => {
 
             <div className="flex flex-col gap-2 tab:flex-row">
               <Reveal>
-                <Link to="/projects/Lyrist" className="w-full">
+                <Link to="/" className="w-full">
                   <article className="group relative flex h-[17.125rem] w-full cursor-pointer flex-col justify-between rounded-round bg-[#5BAE95] p-10 duration-500 hover:scale-95">
                     <div className="flex w-full justify-between font-medium text-[#186E54]">
                       <p>02.</p>
@@ -359,7 +359,6 @@ const Landing = () => {
                     </div>
                     <div className="flex w-full justify-between font-medium text-[#186E54]">
                       <p>Project in Progress</p>
-                      <ArrowUpRightIcon className="h-5 w-5 group-hover:animate-bounce" />
                     </div>
                     <img
                       src={LyristLogo}
@@ -370,7 +369,7 @@ const Landing = () => {
                 </Link>
               </Reveal>
               <Reveal>
-                <Link to="/projects/DailyQuotes" className="w-full">
+                <Link to="/" className="w-full">
                   <article className="group relative flex h-[17.125rem] w-full cursor-pointer flex-col justify-between rounded-round bg-[#FF59EE] p-10 duration-500 hover:scale-95">
                     <div className="flex w-full justify-between font-medium text-[#99258D]">
                       <p>03.</p>
@@ -378,7 +377,6 @@ const Landing = () => {
                     </div>
                     <div className="flex w-full justify-between font-medium text-[#99258D]">
                       <p>Project in Queue</p>
-                      <ArrowUpRightIcon className="h-5 w-5 group-hover:animate-bounce" />
                     </div>
                     <img
                       src={DailyQuotesLogo}
@@ -792,7 +790,7 @@ const Landing = () => {
                   <div>
                     <Link
                       target="_blank"
-                      className="my-4 flex items-center justify-center gap-2 rounded-round border border-transparent bg-Dark-brown px-10 py-3 text-white-text duration-500 hover:border hover:border-Dark-brown hover:bg-transparent hover:text-Dark-brown"
+                      className="my-4 flex items-center justify-center gap-2 rounded-round border border-transparent bg-Light-brown px-10 py-3 text-white-text duration-500 hover:border hover:border-Light-brown hover:bg-transparent hover:text-Dark-brown"
                       download
                       to={ResumePDF}
                     >
@@ -801,7 +799,7 @@ const Landing = () => {
                     </Link>
                     <Link
                       target="_blank"
-                      className="my-4 flex items-center justify-center gap-2 rounded-round border border-transparent bg-Dark-brown px-10 py-3 text-white-text duration-500 hover:border hover:border-Dark-brown hover:bg-transparent hover:text-Dark-brown"
+                      className="my-4 flex items-center justify-center gap-2 rounded-round border border-transparent bg-Light-brown px-10 py-3 text-white-text duration-500 hover:border hover:border-Light-brown hover:bg-transparent hover:text-Dark-brown"
                       to={ResumePDF}
                     >
                       <MagnifyingGlassIcon className="w-6" />
@@ -1290,8 +1288,8 @@ const Landing = () => {
                 </div>
                 <FormikProvider value={formik}>
                   <form onSubmit={formik.handleSubmit}>
-                    <div className="mt-5 flex flex-col gap-6 tab:gap-2">
-                      <div className="flex flex-col gap-10 tab:flex-row tab:gap-2">
+                    <div className="mt-5 flex flex-col gap-2">
+                      <div className="flex flex-col gap-2 tab:flex-row tab:gap-2">
                         <div className="relative flex-1">
                           <label
                             htmlFor="name"
