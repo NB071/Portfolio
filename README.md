@@ -1,6 +1,6 @@
 <h1 align="center" id="title">My Portfolio Website </h1>
 
-<p align="center"><img src="https://socialify.git.ci/NB071/Portfolio/image?font=Inter&amp;language=1&amp;logo=https%3A%2F%2Fi.ibb.co%2FyFfk1z4%2FLogo.png&amp;name=1&amp;owner=1&amp;pattern=Plus&amp;stargazers=1&amp;theme=Light" alt="project-image"></p>
+<p align="center"><img src="https://socialify.git.ci/NB071/Portfolio/image?description=1&descriptionEditable=My%20Portfolio%20Website&language=1&logo=https%3A%2F%2Fsvgur.com%2Fi%2FuFZ.svg&name=1&owner=1&pattern=Charlie%20Brown&stargazers=1&theme=Dark" alt="project-image"></p>
 
 <p id="description">This repository is dedicated to my portfolio website. After Days of research and arguing with myself, I decided to develop my portfolio.</p>
 
