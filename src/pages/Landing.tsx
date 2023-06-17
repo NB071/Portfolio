@@ -114,9 +114,7 @@ const Landing = () => {
     },
 
     validationSchema: Yup.object({
-      name: Yup.string()
-        .matches(/^[a-zA-Z]+$/, "Invalid name format")
-        .required("This field is required"),
+      name: Yup.string().required("This field is required"),
       email: Yup.string()
         .matches(
           /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
@@ -141,7 +139,7 @@ const Landing = () => {
       } catch (err) {
         setSendformInProgress(false);
         setSendFormSuccess(false);
-        console.log(err);
+        console.error(err);
       }
     },
   });
