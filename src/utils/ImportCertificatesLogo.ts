@@ -5,12 +5,13 @@ import eJPT from "@/assets/certificationsLogos/eJPT.png";
 import AnisaLogo from "@/assets/certificationsLogos/AnisaHouseLogo.jpeg";
 import ArjangLogo from "@/assets/certificationsLogos/ArjangLogo.jpeg";
 import HubspotLogo from "@/assets/certificationsLogos/HubSpot-Academy-Logo.png";
-
+import NDELogo from "@/assets/certificationsLogos/NDE.jpeg"
 export {
     SecurityPlusIcon,
     IBMCybersecurityFundamentals,
     eJPT,
     AnisaLogo,
     ArjangLogo,
-    HubspotLogo
+    HubspotLogo,
+    NDELogo
 }

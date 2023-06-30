@@ -861,6 +861,39 @@ const Landing = () => {
                   className="cert-slider cursor-grab active:cursor-grabbing"
                   modules={[Pagination]}
                 >
+                  
+                  <SwiperSlide className="p-9">
+                    <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
+                      <img
+                        src={certLogos.NDELogo}
+                        className="h-48 w-36 rounded-round bg-white p-5 contrast-[.8] tab:h-full tab:w-52"
+                        alt="N|DE logo"
+                      />
+                      <div className="flex flex-col items-center gap-5 text-white-text">
+                        <h3 className="text-lg font-medium">
+                          Title: <span className="underline">EC-Council Network Defense Essentials (N|DE)</span>
+                        </h3>
+                        <button
+                          type="button"
+                          onClick={() =>
+                            window.open(
+                              "https://drive.google.com/file/d/1HcHErTFDT9PqXGUC_9D_peHvYhZu0W8G/view",
+                              "_blank",
+                              "noopener,noreferrer"
+                            )
+                          }
+                          className="flex items-center justify-center gap-3 rounded-round border border-white-text px-9 py-3 transition-all duration-500 hover:border-Dark-brown hover:bg-Dark-brown"
+                        >
+                          <EyeIcon className="w-5" />
+                          View Certification
+                        </button>
+                      </div>
+                    </div>
+                    <div className="absolute right-5 top-5 flex items-center justify-center rounded-round bg-white-text px-4 py-3 font-medium text-Light-brown">
+                      <p className="text-xs">Achieved: 2023</p>
+                    </div>
+                  </SwiperSlide>
+                  
                   <SwiperSlide className="p-9">
                     <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
                       <img
