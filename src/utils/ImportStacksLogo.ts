@@ -28,6 +28,7 @@ import backstageioIcon from "@/assets/StackLogos/dev/BackstageIO.svg";
 import linuxIcon from "@/assets/StackLogos/dev/Linux.svg";
 import pythonIcon from "@/assets/StackLogos/dev/Python.svg";
 import dockerIcon from "@/assets/StackLogos/dev/Docker.svg";
+import PowerShellIcon from "@/assets/StackLogos/dev/PowerShell.svg"
 
 export {
   // stack logos [front-end]
@@ -60,4 +61,5 @@ export {
   linuxIcon,
   pythonIcon,
   dockerIcon,
+  PowerShellIcon
 };

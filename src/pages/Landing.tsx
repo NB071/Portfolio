@@ -729,6 +729,18 @@ const Landing = () => {
                       />
                     </Link>
                     <Link
+                      to="https://learn.microsoft.com/en-us/powershell/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={stackLogos.PowerShellIcon}
+                        className="h-7 w-7 cursor-pointer duration-300 hover:scale-90 lgmob:h-11 lgmob:w-11 tab:h-8 tab:w-8 des:h-12 des:w-12"
+                        alt="PowerShell logo"
+                        title="PowerShell"
+                      />
+                    </Link>
+                    <Link
                       to="https://www.python.org/"
                       target="_blank"
                       rel="noopener noreferrer"
