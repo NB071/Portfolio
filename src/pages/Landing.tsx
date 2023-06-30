@@ -17,7 +17,7 @@ import ResumePDF from "@/assets/resume/Nima_Bargestan_resume.pdf";
 
 // Projects Logo svgs
 import DigiBookshelfLogo from "@/assets/projectsLogo/DigiBookshelfLogo.svg";
-import LyristLogo from "@/assets/projectsLogo/LyristLogo.svg";
+import genExLogo from "@/assets/projectsLogo/genEx.svg";
 import DailyQuotesLogo from "@/assets/projectsLogo/DailyQuotesLogo.svg";
 
 // Stack logos
@@ -347,19 +347,24 @@ const Landing = () => {
 
             <div className="flex flex-col gap-2 tab:flex-row">
               <Reveal>
-                <Link to="/" className="w-full">
+                <Link
+                  to="https://github.com/NB071/GenEx"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full"
+                >
                   <article className="group relative flex h-[17.125rem] w-full cursor-pointer flex-col justify-between rounded-round bg-[#5BAE95] p-10 duration-500 hover:scale-95">
                     <div className="flex w-full justify-between font-medium text-[#186E54]">
                       <p>02.</p>
                       <p>Showcase</p>
                     </div>
                     <div className="flex w-full justify-between font-medium text-[#186E54]">
-                      <p>Project in Progress</p>
+                      <p>Script Project</p>
                     </div>
                     <img
-                      src={LyristLogo}
-                      className="absolute inset-0 m-auto duration-500 group-hover:scale-125 tab:scale-150"
-                      alt="Digi Bookshelf logo"
+                      src={genExLogo}
+                      className="absolute inset-0 m-auto duration-500 group-hover:scale-100 tab:scale-125"
+                      alt="genEx logo"
                     />
                   </article>
                 </Link>
@@ -873,7 +878,6 @@ const Landing = () => {
                   className="cert-slider cursor-grab active:cursor-grabbing"
                   modules={[Pagination]}
                 >
-                  
                   <SwiperSlide className="p-9">
                     <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
                       <img
@@ -883,7 +887,10 @@ const Landing = () => {
                       />
                       <div className="flex flex-col items-center gap-5 text-white-text">
                         <h3 className="text-lg font-medium">
-                          Title: <span className="underline">EC-Council Network Defense Essentials (N|DE)</span>
+                          Title:{" "}
+                          <span className="underline">
+                            EC-Council Network Defense Essentials (N|DE)
+                          </span>
                         </h3>
                         <button
                           type="button"
@@ -905,7 +912,7 @@ const Landing = () => {
                       <p className="text-xs">Achieved: 2023</p>
                     </div>
                   </SwiperSlide>
-                  
+
                   <SwiperSlide className="p-9">
                     <div className="relative flex h-full flex-col items-center justify-center gap-8 tab:flex-row">
                       <img
